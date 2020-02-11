@@ -26,20 +26,16 @@ public class EnergyBar {
 		this.energy = energy;
 	}
 	
+	public String toString() {
+		String text = "";
+		text += "" + getEnergy();
+		return text;
+	}
+	
 	public static void main(String[] args) {
 		
 		EnergyBar eb = new EnergyBar(20);
-		System.out.println(eb.getEnergy());
-		
-		while(eb.getEnergy() != 15) {
-			eb.decrement();
-		}
-		System.out.println(eb.getEnergy());
-		
-		while(eb.getEnergy() != 18) {
-			eb.increment();
-		}
-		System.out.println(eb.getEnergy());
-		
+		System.out.println(eb.toString());		
+	
 	}
 }

@@ -10,6 +10,8 @@ public class Food {
 	
 	public Food() {
 		hm = new HashMap<Integer, String> ();
+		initFood();
+		typefood = randomFood();
 	}
 	
 	public void initFood() {
@@ -43,5 +45,22 @@ public class Food {
 		
 		f.randomFood();
 		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		f.randomFood();
+		System.out.println(f.getTypeFood());
+		
 	}
 }

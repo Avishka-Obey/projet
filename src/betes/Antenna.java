@@ -5,13 +5,11 @@ public class Antenna {
 	private int smell;
 	private int love;
 	
-	
 	public Antenna() {
 		vision = (int)(Math.random() * 10);
 		smell = (int)(Math.random() * 10) ;
 		love  = (int)(Math.random() * 10);
 	}
-	
 	
 	public int getVision() {
 		return vision;
