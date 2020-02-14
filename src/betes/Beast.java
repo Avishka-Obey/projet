@@ -16,7 +16,7 @@ public class Beast {
 	private EnergyBar energybar;
 	private Characteristic charater;
 	private HashMap <Integer,String> hm;
-	private ArrayList <String> nm;
+	private static ArrayList <String> nm;
 
 	
 	public Beast() {
@@ -29,6 +29,28 @@ public class Beast {
 		this.choice = new Antenna();
 	}
 	
+	
+	public static void initName() {
+		nm = new ArrayList <String> ();
+		nm.add("Georges");
+		nm.add("Michel");
+		nm.add("Gertrude");
+		nm.add("Moncef");
+		nm.add("Salma");
+		nm.add("Enzo");
+		nm.add("Farah");
+		nm.add("Rayane");
+		nm.add("Avishka");
+		nm.add("Yannis");
+	}
+	
+	public String randomName() {
+		int rnd = (int) (Math.random() * nm.size());
+		name = nm.get(rnd);
+		nm.remove(rnd);
+		setName(name);
+		return name;
+	}
 	
 	public void setName(String name) {
 		this.name = name;
@@ -118,13 +140,14 @@ public class Beast {
 	
 
 	public static void main (String[] args) {
-		Beast s = new Beast();
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Veuillez saisir un nom : ");
-		String name = sc.nextLine();
-		s.setName(name);
-		System.out.println(s.toString());
+		
+		Beast.initName();
+		
+		for(int i = 0; i<10; i++) {
+			Beast s = new Beast();
+			s.randomName();
+			System.out.println(s.toString());
+		}
 		
 	}
 }
