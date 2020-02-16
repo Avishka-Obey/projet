@@ -2,30 +2,31 @@ package betes;
 
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
-import java.util.*;
 import java.awt.Color;
 
 public class Beast {
 	private String name;
-	private int age;
+	private Integer age;
 	private String gender;
 	private Color color;
 	private Antenna choice;
 	private EnergyBar energybar;
 	private Characteristic charater;
+	private Environment env;
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
 
 	
 	public Beast() {
-		this.name = name;
-		this.age = 0;
+		this.name = getName();
+		this.age = 0; 
 		this.gender = randomGender();
 		this.color = getColor();
 		this.energybar = new EnergyBar(20);
 		this.charater = new Characteristic();
+		this.env = new Environment();
 		this.choice = new Antenna();
 	}
 	
@@ -35,13 +36,13 @@ public class Beast {
 		nm.add("Georges");
 		nm.add("Michel");
 		nm.add("Gertrude");
-		nm.add("Moncef");
-		nm.add("Salma");
-		nm.add("Enzo");
-		nm.add("Farah");
-		nm.add("Rayane");
-		nm.add("Avishka");
-		nm.add("Yannis");
+		nm.add("Morcef");
+		nm.add("Plot");
+		nm.add("Baltringue");
+		nm.add("Mr Propre");
+		nm.add("La Iech");
+		nm.add("Ave le A");
+		nm.add("Oueeeesh");
 	}
 	
 	public String randomName() {
@@ -110,6 +111,31 @@ public class Beast {
 		return text;
 	}
 	
+	public void bonus() {
+		charater.bonus();
+	}
+	
+	public int somAttaque() {
+		int n;
+		n= charater.getMadness() + charater.getStrength();
+		return n;
+	}
+	
+	public int somDefense() {
+		int n;
+		n = charater.getAgility() + charater.getIntelligence() + charater.getVelocity();
+		return n;
+	}
+	
+	
+	public String getEnvironment() {
+		env.initEnvironment();
+		env.randomEnvironment();
+		return env.getType();
+	}
+	
+	
+	
 	public String ant() {
 		return choice.toString();
 	}
@@ -132,9 +158,19 @@ public class Beast {
 		return color;
 	}
 	
+	public void destroy() {
+		this.name = null;
+		this.age = null; 
+		this.gender = null;
+		this.color = null;
+		this.energybar = null;
+		this.charater = null;
+		this.choice = null;
+	}
+	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + energy();
+		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + energy();
 		return text;
 	}
 	

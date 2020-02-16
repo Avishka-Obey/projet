@@ -1,5 +1,7 @@
 package betes;
 
+import java.util.Arrays;
+
 public class Characteristic {
 
 	private int agility;
@@ -36,8 +38,62 @@ public class Characteristic {
 		return strength;
 	}
 	
-	public void boostCharacteristic() {
+	public void setAgility(int agility) {
+		this.agility = agility;
+	}
+	
+	public void setVelocity(int velocity) {
+		this.velocity = velocity;
+	}
+	
+	public void setMadness(int madness) {
+		this.madness = madness;
+	}
+	
+	public void setIntelligence(int intelligence) {
+		this.intelligence = intelligence;
+	}
+	
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+	
+
+	
+	public void bonus() {
+		int tab[] = {getAgility(), getVelocity(), getMadness(), getIntelligence(), getStrength()};
+		Arrays.sort(tab);
+		int mini = tab[0];
 		
+		if(mini == getAgility()) {
+			mini += 3;
+			setAgility(mini);
+			System.out.println("\nAgility has been changed");
+		}
+		
+		else if(mini == getVelocity()) {
+			mini += 3;
+			setVelocity(mini);
+			System.out.println("\nVelocity has been changed");
+		}
+		
+		else if(mini == getMadness()) {
+			mini += 3;
+			setMadness(mini);
+			System.out.println("\nMadness has been changed");
+		}
+		
+		else if(mini == getIntelligence()) {
+			mini += 3;
+			setIntelligence(mini);
+			System.out.println("\nIntelligence has been changed");
+		}
+		
+		else if(mini == getStrength()) {
+			mini += 3;
+			setStrength(mini);
+			System.out.println("\nStrength has been changed");
+		}
 	}
 	
 	public String toString() {
@@ -49,5 +105,7 @@ public class Characteristic {
 	public static void main (String[] args) {
 		Characteristic at = new Characteristic();
 		System.out.println(at.toString());
+		at.bonus();
+		System.out.println("\n\n" + at.toString());
 	}
 }
