@@ -45,8 +45,8 @@ public class Fight {
 		Fight f = new Fight();
 		
 		Beast.initName();
-		Beast s = new Beast();
 		Beast q = new Beast();
+		Beast s = new Beast();
 		s.randomName();
 		q.randomName();
 		System.out.println(s.toString());

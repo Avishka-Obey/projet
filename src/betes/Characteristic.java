@@ -104,7 +104,7 @@ public class Characteristic {
 	
 	public static void main (String[] args) {
 		Characteristic at = new Characteristic();
-		System.out.println(at.toString());
+		System.out.println("\n" + at.toString());
 		at.bonus();
 		System.out.println("\n\n" + at.toString());
 	}
