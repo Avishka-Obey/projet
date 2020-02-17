@@ -42,6 +42,23 @@ public class Beast {
 		nm.add("La Iech");
 		nm.add("Ave le A");
 		nm.add("Oueeeesh");
+		nm.add("Valentin");
+		nm.add("Hugo");
+		nm.add("Freezer");
+		nm.add("Lak");
+		nm.add("Front");
+		nm.add("Chauve");
+		nm.add("Jentra");
+		nm.add("Haktai");
+		nm.add("Jackie");
+		nm.add("Chang");
+		nm.add("Tram");
+		nm.add("Trousse");
+		nm.add("Oklm");
+		nm.add("Huka");
+		nm.add("Lady Killer");
+		nm.add("Amnesia");
+		nm.add("Fanta");
 	}
 	
 	public String randomName() {
