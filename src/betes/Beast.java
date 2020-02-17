@@ -170,7 +170,7 @@ public class Beast {
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\n\nEnvironment : " + getEnvironment() + "\nCharacteristic : \n" + charact() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + energy();
+		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + energy();
 		return text;
 	}
 	
