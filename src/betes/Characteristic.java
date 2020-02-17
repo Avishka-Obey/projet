@@ -68,31 +68,31 @@ public class Characteristic {
 		if(mini == getAgility()) {
 			mini += 3;
 			setAgility(mini);
-			System.out.println("\nAgility has changed");
+			System.out.println("\nAgility has been changed");
 		}
 		
 		else if(mini == getVelocity()) {
 			mini += 3;
 			setVelocity(mini);
-			System.out.println("\nVelocity has changed");
+			System.out.println("\nVelocity has been changed");
 		}
 		
 		else if(mini == getMadness()) {
 			mini += 3;
 			setMadness(mini);
-			System.out.println("\nMadness has changed");
+			System.out.println("\nMadness has been changed");
 		}
 		
 		else if(mini == getIntelligence()) {
 			mini += 3;
 			setIntelligence(mini);
-			System.out.println("\nIntelligence has changed");
+			System.out.println("\nIntelligence has been changed");
 		}
 		
 		else if(mini == getStrength()) {
 			mini += 3;
 			setStrength(mini);
-			System.out.println("\nStrength has changed");
+			System.out.println("\nStrength has been changed");
 		}
 	}
 	

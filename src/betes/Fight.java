@@ -16,11 +16,13 @@ public class Fight {
 	public void combat(Beast scorpio1, Beast scorpio2) {
 		int n;
 		int m;
-//		randomChance().bonus();
-		n= ((3*scorpio1.somAttaque() + 2*scorpio1.somDefense())/20)+scorpio1.getAge();
-		m = ((3*scorpio2.somAttaque() + 2*scorpio2.somDefense())/20)+scorpio2.getAge();
+//		scorpio1.bonus();
+		n = ((scorpio1.somDefense()/5) + ((3*scorpio1.somAttaque() + 2*scorpio1.somDefense())/120) + (scorpio1.getAge()/2));
+		m = ((scorpio2.somDefense()/5) + ((3*scorpio2.somAttaque() + 2*scorpio2.somDefense())/120) + (scorpio2.getAge()/2));
 		
 		System.out.println("\nCombat entre : " + scorpio1.getName() + " + " + scorpio2.getName());
+		System.out.println(scorpio1.getName() + " a " + n);
+		System.out.println(scorpio2.getName() + " a " + m);
 		if(n<m) {
 			System.out.println(scorpio1.getName() + " est mort");
 			scorpio1.destroy();
@@ -32,7 +34,7 @@ public class Fight {
 	}
 	
 	public Beast randomChance() {
-		Beast s;
+//		Beast s;
 		hm = new HashMap<Integer, Beast> ();
 		hm.put(0, scorpio1);
 		hm.put(1, scorpio2);
