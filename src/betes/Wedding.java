@@ -7,35 +7,28 @@ public class Wedding {
 
 	private static HashMap <String,String> hm;
 	
+	
 	public Wedding() {
 		hm = new HashMap<String,String> ();
 		
 	}
 	
 	public boolean alreadymaried(Beast scorpio1, Beast scorpio2) {
-		if(hm.isEmpty()) {
+		if(hm.containsKey(scorpio1.getName())&& hm.containsKey(scorpio2.getName())) {
+			hm.put(scorpio1.getName(), scorpio2.getName());
+			return true;
+		}
+		
+		else {
 			return false;
 		}
-		else {
-			if(hm.containsKey(scorpio1.getName()) || hm.containsKey(scorpio2.getName())) {
-				return true;
-			}
-			
-			else {
-				return false;
-			}
-		}
+		
 	}
 	
 	
 	public boolean mariage(Beast scorpio1, Beast scorpio2) {
 		if(!alreadymaried(scorpio1, scorpio2)) {
-			if((scorpio1.randomGender().equals("male") && scorpio2.randomGender().equals("female"))) {
-				hm.put(scorpio1.getName(), scorpio2.getName());
-				return true;
-			}
-			
-			else if ((scorpio1.randomGender().equals("female") && scorpio2.randomGender().equals("male"))) {
+			if(( (scorpio1.getGender().equals("male") && scorpio2.getGender().equals("female")  ) || ((scorpio1.getGender().equals("female") && scorpio2.getGender().equals("male"))))) {
 				hm.put(scorpio1.getName(), scorpio2.getName());
 				return true;
 			}
@@ -43,8 +36,9 @@ public class Wedding {
 				return false;
 			}
 		}
-		
-		return false;
+		else {
+			return false;
+		}
 	}
 	
 //	public static void nettoyer()  {

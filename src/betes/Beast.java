@@ -104,6 +104,12 @@ public class Beast {
 		return gender;
 	}
 	
+	public String getGender() {
+		return this.gender ;
+	}
+	
+	
+	
 	
 	public int energy() {
 		return energybar.getEnergy();
