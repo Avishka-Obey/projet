@@ -1,26 +1,32 @@
 package betes;
-
-import java.util.HashMap;
-
-public class Wedding {
+import java.util.ArrayList;
 
 
-	private static HashMap <String,String> hm;
+	public class Wedding {
+
+		private ArrayList<String> al;
+
+
 	
 	
 	public Wedding() {
-		hm = new HashMap<String,String> ();
+
+		al = new ArrayList<String>();
+		
 		
 	}
 	
-	public boolean alreadymaried(Beast scorpio1, Beast scorpio2) {
-		if(hm.containsKey(scorpio1.getName())&& hm.containsKey(scorpio2.getName())) {
-			hm.put(scorpio1.getName(), scorpio2.getName());
-			return true;
-		}
+		public boolean alreadymaried(Beast scorpio1, Beast scorpio2) {
+			if((al.contains(scorpio1.getName()))  ) {
+				al.add(scorpio1.getName()) ;
+				al.add(scorpio2.getName()) ;
+				return true ;
+			}
+		
 		
 		else {
 			return false;
+			
 		}
 		
 	}
@@ -29,7 +35,9 @@ public class Wedding {
 	public boolean mariage(Beast scorpio1, Beast scorpio2) {
 		if(!alreadymaried(scorpio1, scorpio2)) {
 			if(( (scorpio1.getGender().equals("male") && scorpio2.getGender().equals("female")  ) || ((scorpio1.getGender().equals("female") && scorpio2.getGender().equals("male"))))) {
-				hm.put(scorpio1.getName(), scorpio2.getName());
+
+				al.add(scorpio1.getName()) ;
+				al.add(scorpio2.getName()) ;
 				return true;
 			}
 			else {
@@ -41,9 +49,7 @@ public class Wedding {
 		}
 	}
 	
-//	public static void nettoyer()  {
-//		hm.clear();
-//	}
+
 	
 	public static void main(String [] args) {
 		
@@ -90,7 +96,7 @@ public class Wedding {
 		
 		
 		
-//		Wedding.nettoyer();
+
 	}
 	
 	
