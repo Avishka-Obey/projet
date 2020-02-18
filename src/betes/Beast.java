@@ -116,21 +116,7 @@ public class Beast {
 	}
 	
 	public String charact() {
-		int a;
-		int b;
-		int c;
-		int d;
-		int e;
-		
-		a = charater.getAgility();
-		b = charater.getIntelligence();
-		c = charater.getMadness();
-		d = charater.getStrength();
-		e = charater.getVelocity();
-		
-		String text = "";
-		text = "Agility = " + a + "\nVelocity = " + e + "\nMadness = " + c + "\nIntelligence = " + b + "\nStrength = " + d;
-		return text;
+		return charater.toString();
 	}
 	
 	public void bonus() {
@@ -147,6 +133,10 @@ public class Beast {
 		int n;
 		n = charater.getAgility() + charater.getIntelligence() + charater.getVelocity();
 		return n;
+	}
+	
+	public Characteristic getCharacteristic() {
+		return charater;
 	}
 	
 	
