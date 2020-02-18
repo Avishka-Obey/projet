@@ -9,7 +9,7 @@ public class Reproduction {
 	public Reproduction(Beast scorpio1, Beast scorpio2) {
 		this.scorpio1 = scorpio1;
 		this.scorpio2 = scorpio2;
-		this.w = new Wedding(scorpio1, scorpio2);
+		this.w = new Wedding();
 	}
 	
 	public void reproduce() {
