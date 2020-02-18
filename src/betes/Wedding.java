@@ -49,6 +49,7 @@ import java.util.ArrayList;
 		}
 	}
 	
+	//aucune faute dans l'execution
 
 	
 	public static void main(String [] args) {
