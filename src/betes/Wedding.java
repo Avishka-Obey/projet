@@ -94,7 +94,7 @@ import java.util.ArrayList;
 			System.out.println("Impossible pour " + t.getName() + " et " + r.getName() + " de se marier");
 		}
 		
-		
+	
 		
 
 	}
