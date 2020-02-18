@@ -42,8 +42,8 @@ public class Beast {
 		nm.add("La Iech");
 		nm.add("Ave le A");
 		nm.add("Oueeeesh");
-		nm.add("Valentin");
-		nm.add("Hugo");
+		nm.add("Caillement");
+		nm.add("Double bosse");
 		nm.add("Freezer");
 		nm.add("Lak");
 		nm.add("Front");
