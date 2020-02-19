@@ -17,9 +17,7 @@ import java.util.ArrayList;
 	}
 	
 		public boolean alreadymaried(Beast scorpio1, Beast scorpio2) {
-			if((al.contains(scorpio1.getName()))  ) {
-				al.add(scorpio1.getName()) ;
-				al.add(scorpio2.getName()) ;
+			if((al.contains(scorpio1.getName()) || al.contains(scorpio2.getName()))) {
 				return true ;
 			}
 		
@@ -72,6 +70,13 @@ import java.util.ArrayList;
 		System.out.println(q.toString());
 		System.out.println(r.toString());
 		System.out.println(t.toString());
+		
+		System.out.println("\n\n" + s.getName() + " est " + s.getGender());
+		System.out.println(q.getName() + " est " + q.getGender());
+		System.out.println(r.getName() + " est " + r.getGender());
+		System.out.println(t.getName() + " est " + t.getGender() + "\n\n");
+		
+		
 		
 		if(w.mariage(s, q)) {
 			System.out.println(s.getName() + " et " + q.getName() + " se sont marié");
