@@ -178,6 +178,8 @@ public class Beast {
 		this.energybar = null;
 		this.charater = null;
 		this.choice = null;
+		
+//		Normalement il  y a destruction de la bête
 	}
 	
 	public String toString() {
