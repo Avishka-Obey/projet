@@ -19,8 +19,6 @@ public class Square {
 	
 	public static void main(String[] args) {
 		
-//		maisouaimonpote
-//		sa sonnait occupemmmmmmmmmmmdc,oifniom
 		
 	}
 	
