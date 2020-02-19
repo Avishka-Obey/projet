@@ -1,7 +1,7 @@
 package betes;
 
 public class Reproduction {
-
+//regarde avishka
 	private Beast scorpio1;
 	private Beast scorpio2;
 	private Beast scorpio3;
