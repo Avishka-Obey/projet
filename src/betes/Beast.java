@@ -108,7 +108,7 @@ public class Beast {
 		return this.gender ;
 	}
 	
-	
+
 	
 	
 	public int energy() {
