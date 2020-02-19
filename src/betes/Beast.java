@@ -181,6 +181,9 @@ public class Beast {
 		
 //		Normalement il  y a destruction de la bête
 	}
+	public Beast reproduce(Beast scorpio1 ) {
+		return new Beast();
+	}
 	
 	public String toString() {
 		String text = "";
