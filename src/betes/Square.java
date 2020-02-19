@@ -17,6 +17,9 @@ public class Square {
 		return ord;
 	}
 	
+	public static void main(String[] args) {
+		
+	}
 	
 	
 
