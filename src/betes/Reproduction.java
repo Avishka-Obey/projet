@@ -25,7 +25,7 @@ public class Reproduction {
 		texte="scorpio1:"+ scorpio1.getName() + "scorpio2:"+ scorpio2.getName() + "donne naissance au Scorpio3"+scorpio3.getName();
 		return texte;
 	}
-
+//
 	
 
 	public static void main(String[]args) {
