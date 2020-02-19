@@ -111,8 +111,8 @@ public class Beast {
 
 	
 	
-	public int energy() {
-		return energybar.getEnergy();
+	public EnergyBar getEnergy() {
+		return energybar;
 	}
 	
 	public String charact() {
@@ -178,11 +178,13 @@ public class Beast {
 		this.energybar = null;
 		this.charater = null;
 		this.choice = null;
+		
+//		Normalement il  y a destruction de la bête
 	}
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + energy();
+		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
 		return text;
 	}
 	
