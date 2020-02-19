@@ -96,6 +96,18 @@ public class Characteristic {
 		}
 	}
 	
+	public int somAttaque() {
+		int n;
+		n= getMadness() + getStrength();
+		return n;
+	}
+	
+	public int somDefense() {
+		int n;
+		n = getAgility() + getIntelligence() + getVelocity();
+		return n;
+	}
+	
 	public String toString() {
 		String text = "";
 		text = "Agility = " + getAgility() + "\nVelocity = " + getVelocity() + "\nMadness = " + getMadness() + "\nIntelligence = " + getIntelligence() + "\nStrength = " + getStrength();

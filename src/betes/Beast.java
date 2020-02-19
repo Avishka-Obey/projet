@@ -82,11 +82,7 @@ public class Beast {
 	public int getAge() {
 		return age;
 	}
-	
-	public int incrementAge() {
-		age++;
-		return age;
-	}
+
 	
 	
 	public void initGender() {
@@ -115,25 +111,6 @@ public class Beast {
 		return energybar;
 	}
 	
-	public String charact() {
-		return charater.toString();
-	}
-	
-	public void bonus() {
-		charater.bonus();
-	}
-	
-	public int somAttaque() {
-		int n;
-		n= charater.getMadness() + charater.getStrength();
-		return n;
-	}
-	
-	public int somDefense() {
-		int n;
-		n = charater.getAgility() + charater.getIntelligence() + charater.getVelocity();
-		return n;
-	}
 	
 	public Characteristic getCharacteristic() {
 		return charater;
@@ -148,8 +125,8 @@ public class Beast {
 	
 	
 	
-	public String ant() {
-		return choice.toString();
+	public Antenna getAnt() {
+		return choice;
 	}
 	
 	public Color randomColor() {
@@ -187,7 +164,7 @@ public class Beast {
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + charact() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + ant() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
+		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
 		return text;
 	}
 	

@@ -77,7 +77,6 @@ public class Eating {
 			
 			else {
 				s.destroy();
-//				Normalement ici ça détruit la bête
 			}
 		}
 		
