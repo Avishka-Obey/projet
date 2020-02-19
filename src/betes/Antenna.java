@@ -23,6 +23,18 @@ public class Antenna {
 		return love;
 	}
 	
+	public void setVision(int vision) {
+		this.vision = vision;
+	}
+	
+	public void setSmell(int smell) {
+		this.smell = smell;
+	}
+	
+	public void setLove(int love) {
+		this.love = love;
+	}
+	
 	public String toString() {
 		String text = "";
 		text = "Vision = " + getVision() + "\nSmell = " + getSmell() + "\nLove = " + getLove();

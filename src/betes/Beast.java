@@ -123,6 +123,10 @@ public class Beast {
 		return env.getType();
 	}
 	
+	public Environment getEnv() {
+		return env;
+	}
+	
 	
 	
 	public Antenna getAnt() {
@@ -158,8 +162,19 @@ public class Beast {
 		
 //		Normalement il  y a destruction de la bête
 	}
-	public Beast reproduce(Beast scorpio1 ) {
-		return new Beast();
+	
+	public Beast reproduce(Beast scorpio1) {
+		Beast s = new Beast();
+		s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
+		s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
+		s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
+		s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
+		s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
+		s.getAnt().setLove(this.getAnt().getLove());
+		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
+		s.getAnt().setVision(this.getAnt().getVision());
+		s.getEnv().setType(this.getEnv().getType()); //Seule ligne qui marche pas
+		return s;
 	}
 	
 	public String toString() {

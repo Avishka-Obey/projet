@@ -34,6 +34,12 @@ public class Environment {
 		return type;
 	}
 	
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
+	
 	public static void main(String [] args) {
 		Environment env = new Environment();
 		env.initEnvironment();

@@ -11,6 +11,8 @@ public class Test {
 		if(w.mariage(b1, b2)) {
 			Beast enfant = b1.reproduce(b2) ;
 			enfant.randomName();
+			System.out.println(b1.toString());
+			System.out.println(b2.toString());
 			System.out.println(b1.getName() + " et " + b2.getName() + " se sont marié et on donner naissance " + enfant.getName());
 			System.out.println(enfant) ;
 		}
