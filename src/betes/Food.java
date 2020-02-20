@@ -17,6 +17,7 @@ public class Food implements Element{
 	public Food(String typefood,Position pos) {
 		this.typefood = typefood;
 		this.pos = pos;
+		
 	}
 	
 	public void initFood() {

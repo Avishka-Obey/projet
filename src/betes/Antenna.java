@@ -14,6 +14,7 @@ public class Antenna {
 		this.vision = vision;
 		this.smell = smell;
 		this.love = love;
+		
 	}
 	
 	public int getVision() {

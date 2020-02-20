@@ -7,7 +7,7 @@ public class Square {
 	private Element elt2;
 	private int nbElt;
 	private int nbEltMax;
-	//
+
 	public Square(Position pos, int nbEltMax) {
 		this.pos = pos;
 		this.nbEltMax = nbEltMax;

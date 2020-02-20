@@ -28,6 +28,7 @@ public class Characteristic {
 	
 	public int getAgility() {
 		return agility;
+		
 	}
 	
 	public int getVelocity() {

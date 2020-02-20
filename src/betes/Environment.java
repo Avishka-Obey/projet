@@ -14,6 +14,7 @@ public class Environment {
 	}
 	public Environment(String type) {
 		this.type = type;
+		
 	}
 	
 	public void initEnvironment() {

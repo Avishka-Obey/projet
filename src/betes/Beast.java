@@ -18,6 +18,7 @@ public class Beast implements Element {
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
 	
+	
 
 	
 	public Beast() {
