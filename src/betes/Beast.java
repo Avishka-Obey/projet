@@ -173,7 +173,7 @@ public class Beast {
 		s.getAnt().setLove(this.getAnt().getLove());
 		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
 		s.getAnt().setVision(this.getAnt().getVision());
-		s.getEnv().setType(this.getEnvironment()); //Seule ligne qui marche pas
+		s.getEnv().setType(this.getEnvironment());
 		return s;
 	}
 	
