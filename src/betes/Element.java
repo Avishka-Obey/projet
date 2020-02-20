@@ -1,16 +1,6 @@
 package betes;
 
-public class Element {
+public interface Element {
+	public Position getPosition();
 
-	private Food subsistence;
-	private Beast scorpio;
-	
-	public Element() {
-		this.subsistence = subsistence;
-		this.scorpio = scorpio;
-	}
-	
-	public boolean isElement () {
-		return subsistence == null || scorpio == null;
-	}
 }

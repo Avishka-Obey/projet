@@ -3,9 +3,10 @@ package betes;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Food {
+public class Food implements Element{
 
 	private String typefood;
+	private Position pos;
 	private HashMap <Integer,String> hm;
 	
 	public Food() {
@@ -37,6 +38,10 @@ public class Food {
 	
 	public String getTypeFood() {
 		return typefood;
+	}
+	public Position getPosition() {
+		return pos;
+		
 	}
 	
 	public static void main(String [] args) {

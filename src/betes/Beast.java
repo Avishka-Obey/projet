@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.awt.Color;
 
-public class Beast {
+public class Beast implements Element {
 	private String name;
 	private Integer age;
 	private String gender;
@@ -14,6 +14,7 @@ public class Beast {
 	private EnergyBar energybar;
 	private Characteristic charater;
 	private Environment env;
+	private Position pos;
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
 
@@ -27,6 +28,18 @@ public class Beast {
 		this.charater = new Characteristic();
 		this.env = new Environment();
 		this.choice = new Antenna();
+	}
+	
+	public Beast(Position position) {
+		this.name = getName();
+		this.age = 0; 
+		this.gender = randomGender();
+		this.color = getColor();
+		this.energybar = new EnergyBar(20);
+		this.charater = new Characteristic();
+		this.env = new Environment();
+		this.choice = new Antenna();
+		this.pos = position ;
 	}
 	
 	
@@ -175,6 +188,11 @@ public class Beast {
 		s.getAnt().setVision(this.getAnt().getVision());
 		s.getEnvironment();
 		return s;
+	}
+	public Position getPosition() {
+	
+		return pos;
+		
 	}
 	
 	public String toString() {
