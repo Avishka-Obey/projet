@@ -10,6 +10,7 @@ public class Environment {
 	
 	public Environment() {
 		hm = new HashMap<Integer, String> ();
+		type = randomEnvironment();
 	}
 	
 	public void initEnvironment() {

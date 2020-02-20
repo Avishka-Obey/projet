@@ -42,7 +42,7 @@ public class Beast {
 		nm.add("La Iech");
 		nm.add("Ave le A");
 		nm.add("Oueeeesh");
-		nm.add("Caillement");
+		nm.add("Biche biche");
 		nm.add("Double bosse");
 		nm.add("Freezer");
 		nm.add("Lak");
@@ -173,7 +173,7 @@ public class Beast {
 		s.getAnt().setLove(this.getAnt().getLove());
 		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
 		s.getAnt().setVision(this.getAnt().getVision());
-		s.getEnv().setType(this.getEnv().getType()); //Seule ligne qui marche pas
+		s.getEnv().setType(this.getEnvironment()); //Seule ligne qui marche pas
 		return s;
 	}
 	
