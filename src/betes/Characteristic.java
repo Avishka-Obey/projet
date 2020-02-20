@@ -23,6 +23,7 @@ public class Characteristic {
 		this.madness = madness ;
 		this.intelligence = intelligence;
 		this.strength = strength;
+		
 	}
 	
 	public int getAgility() {

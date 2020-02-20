@@ -12,6 +12,9 @@ public class Environment {
 		hm = new HashMap<Integer, String> ();
 		type = randomEnvironment();
 	}
+	public Environment(String type) {
+		this.type = type;
+	}
 	
 	public void initEnvironment() {
 		hm.put(0, "Desert");

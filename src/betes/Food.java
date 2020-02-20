@@ -14,6 +14,10 @@ public class Food implements Element{
 		initFood();
 		typefood = randomFood();
 	}
+	public Food(String typefood,Position pos) {
+		this.typefood = typefood;
+		this.pos = pos;
+	}
 	
 	public void initFood() {
 		hm.put(0, "Spider");
