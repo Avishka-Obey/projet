@@ -14,6 +14,7 @@ public class Grid {
 		for(i=0 ; i<nbCaseH ; i++) {
 			for(j=0 ; j<nbCaseV ; j++) {
 				ca.put(Square.pos(),);
+//				
 			}
 		}
 		
