@@ -43,6 +43,11 @@ public class Food implements Element{
 		return pos;
 		
 	}
+	public String toString() {
+		String texte = "";
+		texte +="Food : "+ typefood + "Position :" + pos;
+		return texte;
+	}
 	
 	public static void main(String [] args) {
 		Food f = new Food();

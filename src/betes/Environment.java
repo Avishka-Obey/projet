@@ -38,6 +38,11 @@ public class Environment {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public String toString() {
+		String texte="";
+		texte+="type:"+ type;
+		return texte;
+	}
 	
 	
 	

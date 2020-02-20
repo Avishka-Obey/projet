@@ -10,6 +10,11 @@ public class Antenna {
 		smell = (int)(Math.random() * 10) ;
 		love  = (int)(Math.random() * 10);
 	}
+	public Antenna(int vision , int smell, int love) {
+		this.vision = vision;
+		this.smell = smell;
+		this.love = love;
+	}
 	
 	public int getVision() {
 		return vision;

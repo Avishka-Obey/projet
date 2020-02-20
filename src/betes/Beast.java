@@ -29,6 +29,17 @@ public class Beast implements Element {
 		this.env = new Environment();
 		this.choice = new Antenna();
 	}
+	public Beast(String name , Integer age , String gender , Color color , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
+		this.name = name;
+		this.age = age ;
+		this.gender = gender;
+		this.color = color;
+		this.choice = choice ;
+		this.energybar = energybar;
+		this.charater = charater;
+		this.env = env;
+		this.pos = pos;
+	}
 	
 	public Beast(Position position) {
 		this.name = getName();
@@ -117,7 +128,10 @@ public class Beast implements Element {
 		return this.gender ;
 	}
 	
-
+	public Position getPosition() {
+		return pos;
+		
+	}
 	
 	
 	public EnergyBar getEnergy() {
@@ -189,11 +203,7 @@ public class Beast implements Element {
 		s.getEnvironment();
 		return s;
 	}
-	public Position getPosition() {
 	
-		return pos;
-		
-	}
 	
 	public String toString() {
 		String text = "";

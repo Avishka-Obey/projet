@@ -17,6 +17,13 @@ public class Characteristic {
 		intelligence=(int)(Math.random() * 10);
 		strength = (int)(Math.random() * 10);
 	}
+	public Characteristic(int agility,int velocity, int madness, int intelligence,int strength) {
+		this.agility = agility ;
+		this.velocity = velocity;
+		this.madness = madness ;
+		this.intelligence = intelligence;
+		this.strength = strength;
+	}
 	
 	public int getAgility() {
 		return agility;
