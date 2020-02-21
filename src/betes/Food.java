@@ -48,6 +48,10 @@ public class Food implements Element{
 		return pos;
 		
 	}
+	
+	public void setPosition(Position pos) {
+		this.pos = pos;
+	}
 	public String toString() {
 		String texte = "";
 		texte +="Food : "+ typefood + "Position :" + pos;
