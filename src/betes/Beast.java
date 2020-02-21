@@ -1,6 +1,7 @@
 package betes;
 
 import java.util.HashMap;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.awt.Color;
@@ -31,6 +32,7 @@ public class Beast implements Element {
 		this.env = new Environment();
 		this.choice = new Antenna();
 	}
+	
 	public Beast(String name , Integer age , String gender , Color color , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
 		this.name = name;
 		this.age = age ;
@@ -43,18 +45,7 @@ public class Beast implements Element {
 		this.pos = pos;
 	}
 	
-	public Beast(Position position) {
-		this.name = getName();
-		this.age = 0; 
-		this.gender = randomGender();
-		this.color = getColor();
-		this.energybar = new EnergyBar(20);
-		this.charater = new Characteristic();
-		this.env = new Environment();
-		this.choice = new Antenna();
-		this.pos = position ;
-	}
-	
+
 	
 	public static void initName() {
 		nm = new ArrayList <String> ();
@@ -86,6 +77,8 @@ public class Beast implements Element {
 		nm.add("Amnesia");
 		nm.add("Fanta");
 	}
+	
+	
 	
 	public String randomName() {
 		int rnd = (int) (Math.random() * nm.size());
