@@ -27,6 +27,16 @@ public class Position {
 		this.y = y;
 	}
 	
+	public int randomX() {
+		x = (int)(Math.random() * 12);
+		return x; 
+	}
+	
+	public int randomY() {
+		y = (int)(Math.random() * 12);
+		return y;
+	}
+	
 	public String toString() {
 		String text = "";
 		text += "L'abscisse est : " + getX() + "\nEt l'ordonnée est : " + getY();

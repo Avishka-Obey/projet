@@ -5,20 +5,26 @@ import java.util.HashMap;
 public class Grid {
 	
 	private HashMap<Position,Square> ca;
-	private int nbCaseH;
-	private int nbCaseV;
+	private int nbCaseX;
+	private int nbCaseY;
+	private Square tab[][];
 	
-	public Grid() {
+	public Grid(int n) {
+		tab = new Square[n][n];
+		
+	}
+	
+	public void ilyaquoidanscettegrille() {
 		int i;
-		int j ;
-		for(i=0 ; i<nbCaseH ; i++) {
-			for(j=0 ; j<nbCaseV ; j++) {
-				ca.put(Square.pos(),);
-//				
+		int j;
+		
+		for(i=0 ; i<nbCaseX ; i++) {
+			for(j=0 ; j<nbCaseY ; j++) {
+				Position pos = new Position(nbCaseX, nbCaseY);
+				Square s = new Square(pos, 2);
+				ca.put(pos, s);
 			}
 		}
-		
-		
 	}
 
 }
