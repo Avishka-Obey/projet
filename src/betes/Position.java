@@ -12,11 +12,11 @@ public class Position {
 	
 
 	public int getX() {
-		return this.x;
+		return x;
 	}
 	
 	public int getY() {
-		return this.y;
+		return y;
 	}
 	
 	public void setX(int x) {
@@ -41,6 +41,12 @@ public class Position {
 		String text = "";
 		text += "L'abscisse est : " + getX() + "\nEt l'ordonnée est : " + getY();
 		return text;
+	}
+	
+	public static void main(String[] args) {
+		Position pos = new Position(Position.randomX(), Position.randomY());
+		System.out.println(pos.toString());
+		pos.setX(3);
 	}
 
 }

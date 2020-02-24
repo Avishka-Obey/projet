@@ -16,7 +16,7 @@ public class Grid {
 	public void ilyaquoidanscettegrille() {
 		int i;
 		int j;
-		
+		ca = new HashMap<Position,Square>();
 		for(i=0 ; i<nbCaseX ; i++) {
 			for(j=0 ; j<nbCaseY ; j++) {
 				Position pos = new Position(nbCaseX, nbCaseY);
@@ -52,7 +52,7 @@ public class Grid {
 	public static void main(String[] args) {
 		Grid g = new Grid();
 		g.initFood();
-//		g.initBeast();
+		g.initBeast();
 		
 		for(int i=0; i<=12; i++ ) {
 			for(int j=0; j<=12; j++) {
