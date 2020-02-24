@@ -3,8 +3,8 @@ package betes;
 public class Square {
 	private Position pos;
 	private Environment env;
-	private Element elt1;
-	private Element elt2;
+	private Food elt1;
+	private Beast elt2;
 	private int nbElt;
 	private int nbEltMax;
 
@@ -16,6 +16,25 @@ public class Square {
 		this.elt2= null;
 		nbElt = 0 ;
 	}
+	
+	public Square(Position pos, Beast elt2, int nbEltMax) {
+		this.pos = pos;
+		this.nbEltMax = nbEltMax;
+		this.env = new Environment();
+		this.elt1 = null;
+		this.elt2 = elt2;
+		nbElt = 0 ;
+	}
+	
+	public Square(Position pos, Food elt1,int nbEltMax) {
+		this.pos = pos;
+		this.nbEltMax = nbEltMax;
+		this.env = new Environment();
+		this.elt1 = elt1;
+		this.elt2= null;
+		nbElt = 0 ;
+	}
+	
 	public int getnbEltMax() {
 		return nbEltMax;
 	}
@@ -23,6 +42,13 @@ public class Square {
 		return nbElt;
 	}
 	
+	public Beast beast() {
+		return elt2;
+	}
+	
+	public Food food() {
+		return elt1;
+	}
 
 	public String toString() {
 		String text = "";

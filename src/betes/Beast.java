@@ -125,7 +125,6 @@ public class Beast implements Element {
 	
 	public Position getPosition() {
 		return pos;
-		
 	}
 	
 	

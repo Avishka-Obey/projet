@@ -1,8 +1,8 @@
 package betes;
 
 public class Position {
-	private int x;
-	private int y;
+	private static int x;
+	private static int y;
 	
 	public Position(int x, int y) {
 		this.x = x;
@@ -27,12 +27,12 @@ public class Position {
 		this.y = y;
 	}
 	
-	public int randomX() {
+	public static int randomX() {
 		x = (int)(Math.random() * 12);
 		return x; 
 	}
 	
-	public int randomY() {
+	public static int randomY() {
 		y = (int)(Math.random() * 12);
 		return y;
 	}

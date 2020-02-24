@@ -14,6 +14,7 @@ public class Food implements Element{
 		initFood();
 		typefood = randomFood();
 	}
+	
 	public Food(String typefood,Position pos) {
 		this.typefood = typefood;
 		this.pos = pos;
@@ -44,14 +45,15 @@ public class Food implements Element{
 	public String getTypeFood() {
 		return typefood;
 	}
+	
 	public Position getPosition() {
 		return pos;
-		
 	}
 	
 	public void setPosition(Position pos) {
 		this.pos = pos;
 	}
+	
 	public String toString() {
 		String texte = "";
 		texte +="Food : "+ typefood + "Position :" + pos;

@@ -9,10 +9,8 @@ public class Grid {
 	private int nbCaseY;
 	private Square tab[][];
 	
-	public Grid(int n) {
-		tab = new Square[n][n];
-		
-		
+	public Grid() {
+		tab = new Square[12][12];
 	}
 	
 	public void ilyaquoidanscettegrille() {
@@ -30,10 +28,10 @@ public class Grid {
 	
 	public void initFood() {
 		for (int i=0 ; i<30 ; i++) {
-			Position pos = new Position(nbCaseX, nbCaseY);
+			Position pos = new Position(Position.randomX(), Position.randomY());
 			Food fo = new Food();
-//			fo.setPosition(new Position (fo.getPosition().randomX(), 5)) ;
-			tab[fo.getPosition().randomX()][fo.getPosition().randomY()] = new Square(pos,3);
+			fo.randomFood();
+			tab[pos.getX()][pos.getY()] = new Square(pos,fo,3);
 		}
 		
 	}
@@ -41,11 +39,27 @@ public class Grid {
 	
 	public void initBeast() {
 		for (int i=0 ; i<20 ; i++) {
-			Position pos = new Position(nbCaseX, nbCaseY);
 			Beast be = new Beast();
-			tab[be.getPosition().randomX()][be.getPosition().randomX()] = new Square(pos,5);
-			
+			Beast.initName();
+			be.randomName();
+			Position pos = new Position(Position.randomX(), Position.randomY());
+			tab[pos.getX()][pos.getY()] = new Square(pos,be,3);
 		}
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		Grid g = new Grid();
+		g.initFood();
+//		g.initBeast();
+		
+		for(int i=0; i<=12; i++ ) {
+			for(int j=0; j<=12; j++) {
+				System.out.println(g.tab[i][j]);
+			}
+		}
+		
 	}
 
 }
