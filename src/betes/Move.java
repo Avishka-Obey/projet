@@ -62,11 +62,11 @@ public class Move {
 	public static void main(String[] args) {
 		Move m = new Move();
 		
-		System.out.println(m.getPos().toString());
+		System.out.println(m.getPos().toString() + "\n");
 		
 		
 		m.gauche(m.getPos());
-		System.out.println("\n" + m.toString());
+		System.out.println(m.toString());
 	}
 	
 }

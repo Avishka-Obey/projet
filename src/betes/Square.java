@@ -56,9 +56,10 @@ public class Square {
 		return text;
 	}
 	public static void main(String[] args) {
+		Beast r = new Beast();
 		Position p = new Position(3,4);
 		Square s = new Square(p, 3);
-		Beast r = new Beast();
+		
 		
 		System.out.println(s.toString());
 
