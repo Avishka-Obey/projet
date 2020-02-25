@@ -54,27 +54,27 @@ public class Beast implements Element {
 		nm.add("Gertrude");
 		nm.add("Morcef");
 		nm.add("Plot");
-		nm.add("Baltringue");
+		nm.add("Baba");
 		nm.add("Mr Propre");
-		nm.add("La Iech");
+		nm.add("Da uz");
 		nm.add("Ave le A");
-		nm.add("Oueeeesh");
+		nm.add("Nana");
 		nm.add("Biche biche");
 		nm.add("Double bosse");
 		nm.add("Freezer");
 		nm.add("Lak");
 		nm.add("Front");
-		nm.add("Chauve");
+		nm.add("Captain");
 		nm.add("Jentra");
 		nm.add("Haktai");
 		nm.add("Jackie");
 		nm.add("Chang");
-		nm.add("Tram");
-		nm.add("Trousse");
+		nm.add("Travis");
+		nm.add("Truth");
 		nm.add("Oklm");
 		nm.add("Huka");
 		nm.add("Lady Killer");
-		nm.add("Amnesia");
+		nm.add("Liberty");
 		nm.add("Fanta");
 	}
 	
