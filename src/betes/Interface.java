@@ -44,7 +44,7 @@ public class Interface extends JFrame{
 		pan.setLayout(new BorderLayout());
 		
 		pan.add(panCenter, BorderLayout.CENTER);
-		panCenter.setBackground(Color.red) ;
+		panCenter.setBackground(Color.pink) ;
 		
 		panNord.setMinimumSize(new Dimension(0,0));
 		panNord.setPreferredSize(new Dimension(0,0));
