@@ -16,6 +16,9 @@ public class Interface extends JFrame{
 	private JPanel panCenter = new JPanel();
 	private JPanel panEst = new JPanel();
 	private JPanel panOuest = new JPanel();
+	private JLabel tx = new JLabel("Journal du scorpion :");
+	private JLabel env = new JLabel("Environnements :");
+	private JLabel tr = new JLabel("Nombre de tours :");
 	
 	public int setMainWindowVisible() {
 		setVisible(true);
@@ -47,25 +50,28 @@ public class Interface extends JFrame{
 		panNord.setPreferredSize(new Dimension(100,50));
 		panNord.setMaximumSize(new Dimension(100,50));
 		pan.add(panNord, BorderLayout.NORTH);
-		panNord.setBackground(Color.black);
+		panNord.setBackground(Color.white);
 		
 		panSud.setMinimumSize(new Dimension(100,50));
 		panSud.setPreferredSize(new Dimension(100,50));
 		panSud.setMaximumSize(new Dimension(100,50));
 		pan.add(panSud, BorderLayout.SOUTH);
-		panSud.setBackground(Color.black);
+		panSud.setBackground(Color.white);
+		panSud.add(tx);
 		
 		panEst.setMinimumSize(new Dimension(100,50));
 		panEst.setPreferredSize(new Dimension(100,50));
 		panEst.setMaximumSize(new Dimension(100,50));
 		pan.add(panEst, BorderLayout.EAST);
-		panEst.setBackground(Color.black);
+		panEst.setBackground(Color.white);
+		panEst.add(tr);
 		
 		panOuest.setMinimumSize(new Dimension(100,50));
 		panOuest.setPreferredSize(new Dimension(100,50));
 		panOuest.setMaximumSize(new Dimension(100,50));
 		pan.add(panOuest, BorderLayout.WEST);
-		panOuest.setBackground(Color.black);
+		panOuest.setBackground(Color.white);
+		panOuest.add(env);
 		
 		    
 		
