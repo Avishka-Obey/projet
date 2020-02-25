@@ -68,7 +68,7 @@ public class Beast implements Element {
 		nm.add("Jentra");
 		nm.add("Haktai");
 		nm.add("Jackie");
-		nm.add("Chang");
+		nm.add("Coto");
 		nm.add("Travis");
 		nm.add("Truth");
 		nm.add("Oklm");
