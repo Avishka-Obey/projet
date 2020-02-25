@@ -78,6 +78,7 @@ public class Eating {
 			else {
 				s.destroy();
 			}
+			
 		}
 		
 	}
