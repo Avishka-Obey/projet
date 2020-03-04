@@ -10,6 +10,8 @@ import javax.swing.*;
 
 public class Interface extends JFrame{
 	
+	private static final long serialVersionUID = -541698616292452515L;
+	
 	private JPanel pan = new JPanel();
 	private JPanel panNord = new JPanel();
 	private JPanel panSud = new JPanel();
@@ -19,6 +21,8 @@ public class Interface extends JFrame{
 	private JLabel tx = new JLabel("Journal du scorpion :");
 	private JLabel env = new JLabel("Environnements :");
 	private JLabel tr = new JLabel("Nombre de tours :");
+	
+	private GridConstructor grid;
 	
 	public int setMainWindowVisible() {
 		setVisible(true);
@@ -30,14 +34,16 @@ public class Interface extends JFrame{
 	}
 	
 	public Interface() {
+		grid = new GridConstructor();
+		grid.setSize(1200,700);
 		build();
 	}
 	
-	void build(){
+	private void build(){
 		
 		this.setTitle("Betes : simulation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE) ; 
-		this.setSize(800, 400);
+		this.setSize(1500, 750);
 		setResizable(true) ;
 		setVisible(true) ;
 		
@@ -45,6 +51,10 @@ public class Interface extends JFrame{
 		
 		pan.add(panCenter, BorderLayout.CENTER);
 		panCenter.setBackground(Color.pink) ;
+		panCenter.setSize(1200,700);
+		panCenter.add(grid);
+
+		
 		
 		panNord.setMinimumSize(new Dimension(0,0));
 		panNord.setPreferredSize(new Dimension(0,0));
@@ -74,10 +84,7 @@ public class Interface extends JFrame{
 		panOuest.add(env);
 		
 		    
-		
-		    
 		this.setContentPane(pan);
-		
+	
 	}
-
 }

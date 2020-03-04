@@ -15,6 +15,7 @@ public class Eating {
 		
 		if(f.getTypeFood() == "Spider") {
 			s.getCharacteristic().setStrength(s.getCharacteristic().getStrength() +1);
+			System.out.println("Strength has changed");
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
 			}
