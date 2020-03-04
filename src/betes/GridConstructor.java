@@ -26,10 +26,10 @@ public class GridConstructor extends JPanel {
 		int width = 600; //getWidth();
 		int height = 600; //getHeight();
 		
-		g.drawLine(0, 0, 0, 600);
-		g.drawLine(0, 0, 600, 0);
 		g.drawLine(600, 0, 600, 600);
 		g.drawLine(0, 600, 600, 600);
+		g.drawLine(0, 0, 0, 600);
+		g.drawLine(0, 0, 600, 0);
 		g.setColor(Color.GRAY);
 
 		for (int i = 0; i <= width; i += 50) {
