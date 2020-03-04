@@ -27,7 +27,7 @@ public class Beast implements Element {
 		this.age = 0; 
 		this.gender = randomGender();
 		this.color = getColor();
-		this.energybar = new EnergyBar(20);
+		this.energybar = new EnergyBar(9);
 		this.charater = new Characteristic();
 		this.env = new Environment();
 		this.choice = new Antenna();
@@ -185,17 +185,20 @@ public class Beast implements Element {
 	}
 	
 	public Beast reproduce(Beast scorpio1) {
-		Beast s = new Beast();
-		s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
-		s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
-		s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
-		s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
-		s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
-		s.getAnt().setLove(this.getAnt().getLove());
-		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
-		s.getAnt().setVision(this.getAnt().getVision());
-		s.getEnvironment();
-		return s;
+			Beast s = new Beast();
+			s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
+			s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
+			s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
+			s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
+			s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
+			s.getAnt().setLove(this.getAnt().getLove());
+			s.getAnt().setSmell(scorpio1.getAnt().getSmell());
+			s.getAnt().setVision(this.getAnt().getVision());
+			s.getEnvironment();
+			return s;
+		
+		
+		
 	}
 	
 	
