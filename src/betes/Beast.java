@@ -4,13 +4,11 @@ import java.util.HashMap;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.awt.Color;
 
 public class Beast implements Element {
 	private String name;
 	private Integer age;
 	private String gender;
-	private Color color;
 	private Antenna choice;
 	private EnergyBar energybar;
 	private Characteristic charater;
@@ -26,18 +24,16 @@ public class Beast implements Element {
 		this.name = getName();
 		this.age = 0; 
 		this.gender = randomGender();
-		this.color = getColor();
 		this.energybar = new EnergyBar(20);
 		this.charater = new Characteristic();
 		this.env = new Environment();
 		this.choice = new Antenna();
 	}
 	
-	public Beast(String name , Integer age , String gender , Color color , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
+	public Beast(String name , Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
 		this.name = name;
 		this.age = age ;
 		this.gender = gender;
-		this.color = color;
 		this.choice = choice ;
 		this.energybar = energybar;
 		this.charater = charater;
@@ -154,29 +150,10 @@ public class Beast implements Element {
 		return choice;
 	}
 	
-	public Color randomColor() {
-		Random rm = new Random();
-		int n;
-		int m;
-		int o;
-		n = rm.nextInt(250);
-		m = rm.nextInt(250);
-		o = rm.nextInt(250);
-		
-		Color z = new Color(n,m,o);
-		return z;
-	}
-	
-	public Color getColor() {
-		color = randomColor();		
-		return color;
-	}
-	
 	public void destroy() {
 		this.name = null;
 		this.age = null; 
 		this.gender = null;
-		this.color = null;
 		this.energybar = null;
 		this.charater = null;
 		this.choice = null;
@@ -185,23 +162,26 @@ public class Beast implements Element {
 	}
 	
 	public Beast reproduce(Beast scorpio1) {
-		Beast s = new Beast();
-		s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
-		s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
-		s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
-		s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
-		s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
-		s.getAnt().setLove(this.getAnt().getLove());
-		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
-		s.getAnt().setVision(this.getAnt().getVision());
-		s.getEnvironment();
-		return s;
+			Beast s = new Beast();
+			s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
+			s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
+			s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
+			s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
+			s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
+			s.getAnt().setLove(this.getAnt().getLove());
+			s.getAnt().setSmell(scorpio1.getAnt().getSmell());
+			s.getAnt().setVision(this.getAnt().getVision());
+			s.getEnvironment();
+			return s;
+		
+		
+		
 	}
 	
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nColor : " + getColor() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
+		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
 		return text;
 	}
 	
