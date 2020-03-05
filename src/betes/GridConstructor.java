@@ -28,6 +28,7 @@ public class GridConstructor extends JPanel {
 		drawDebugGrid(g);
 		Graphics2D g2 = (Graphics2D) g;
 		printBeast(g2);
+		printFood(g2);
 	}
 	
 	private void drawDebugGrid(Graphics g) {
@@ -60,8 +61,41 @@ public class GridConstructor extends JPanel {
 	}
 	
 	private void printBeast(Graphics g2) {
-		g2.drawImage(readImage("src/images/scorpion.jpg"),50, 100, null, null);
+		g2.drawImage(readImage("src/images/scorpio.png"),51, 101, null, null);
+		g2.drawImage(readImage("src/images/blue.png"),51, 151, null, null);
+		g2.drawImage(readImage("src/images/brown.png"),51, 201, null, null);
+		g2.drawImage(readImage("src/images/burgundy.png"),51, 251, null, null);
+		g2.drawImage(readImage("src/images/darkb.png"),51, 301, null, null);
+		g2.drawImage(readImage("src/images/gray.png"),51, 351, null, null);
+		g2.drawImage(readImage("src/images/green.png"),51, 401, null, null);
+		g2.drawImage(readImage("src/images/greenblue.png"),51, 451, null, null);
+		g2.drawImage(readImage("src/images/lightb.png"),51, 501, null, null);
+		g2.drawImage(readImage("src/images/nude.png"),51, 551, null, null);
+		g2.drawImage(readImage("src/images/orange.png"),1, 1, null, null);
+		g2.drawImage(readImage("src/images/pastelblue.png"),251, 51, null, null);
+		g2.drawImage(readImage("src/images/pi.png"),251, 101, null, null);
+		g2.drawImage(readImage("src/images/pink.png"),251, 151, null, null);
+		g2.drawImage(readImage("src/images/purple.png"),251, 201, null, null);
+		g2.drawImage(readImage("src/images/purplelight.png"),251, 251, null, null);
+		g2.drawImage(readImage("src/images/red.png"),251, 301, null, null);
+		g2.drawImage(readImage("src/images/salmon.png"),251, 351, null, null);
+		g2.drawImage(readImage("src/images/turquoise.png"),251, 401, null, null);
+		g2.drawImage(readImage("src/images/yellow.png"),251, 451, null, null);
+		
+		
 		
 	}
 	
+	private void printFood(Graphics g2) {
+		g2.drawImage(readImage("src/images/snake.png"),601, 201, null, null);
+		g2.drawImage(readImage("src/images/spider.png"),101, 101, null, null);
+		g2.drawImage(readImage("src/images/lezard.png"),201, 201, null, null);
+		g2.drawImage(readImage("src/images/mouse.png"),301, 301, null, null);
+		g2.drawImage(readImage("src/images/mosquito.png"),401, 401, null, null);
+		g2.drawImage(readImage("src/images/berries.png"),501, 501, null, null);
+	
+	}
+	
+	
+
 }

@@ -70,14 +70,14 @@ public class Interface extends JFrame{
 		panSud.add(tx);
 		
 		panEst.setMinimumSize(new Dimension(100,50));
-		panEst.setPreferredSize(new Dimension(100,50));
+		panEst.setPreferredSize(new Dimension(300,150));
 		panEst.setMaximumSize(new Dimension(100,50));
 		pan.add(panEst, BorderLayout.EAST);
 		panEst.setBackground(Color.gray);
 		panEst.add(tr);
 		
 		panOuest.setMinimumSize(new Dimension(100,50));
-		panOuest.setPreferredSize(new Dimension(100,50));
+		panOuest.setPreferredSize(new Dimension(300,150));
 		panOuest.setMaximumSize(new Dimension(100,50));
 		pan.add(panOuest, BorderLayout.WEST);
 		panOuest.setBackground(Color.gray);
