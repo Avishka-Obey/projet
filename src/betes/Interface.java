@@ -53,7 +53,7 @@ public class Interface extends JFrame{
 		panCenter.setBackground(Color.pink) ;
 		panCenter.setSize(1200,700);
 		panCenter.add(grid);
-//		C'est la qu'on ajoute la grille
+//		C'est la qu'on ajoute la grille.111
 		
 		
 		panNord.setMinimumSize(new Dimension(0,0));

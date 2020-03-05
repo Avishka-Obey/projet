@@ -59,7 +59,7 @@ public class GridConstructor extends JPanel {
 			return null;
 		}
 	}
-	
+//	abcd
 	private void printBeast(Graphics g2) {
 		g2.drawImage(readImage("src/images/scorpio.png"),51, 101, null, null);
 		g2.drawImage(readImage("src/images/blue.png"),51, 151, null, null);
