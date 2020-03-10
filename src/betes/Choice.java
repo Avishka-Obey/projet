@@ -7,8 +7,8 @@ public class Choice {
 		this.a = a ;
 		this.pos = pos;
 	}
-	public Position choice(Position pos) {
-		if(vision>6)&& )
+	public Position choice(Position pos,Beast a) {
+		if(smell>6) {
 		return pos;
 		
 	}
