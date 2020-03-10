@@ -67,9 +67,9 @@ public class GridConstructor extends JPanel {
 	}
 	
 	public void initEnvironment() {
-		env.add("src/images/montagne48.jpg");
-		env.add("src/images/desert49.jpg");
-		env.add("src/images/foret4847.jpg");
+		env.add("src/images/mountain.png");
+		env.add("src/images/desert.png");
+		env.add("src/images/forest.png");
 	}
 	
 	public void initImage() {
