@@ -31,12 +31,15 @@ public class Interface extends JFrame{
 	
 	public static void main (String[]args) {
 		new Interface();
+		
+		
 	}
 	
 	public Interface() {
 		grid = new GridConstructor();
 		grid.setSize(1200,700);
 		build();
+		
 	}
 	
 	private void build(){

@@ -32,7 +32,7 @@ public class Beast implements Element {
 		
 	}
 	
-	public Beast(Image image) {
+	public Beast(Image image, Position pos) {
 		this.name = getName();
 		this.age = 0; 
 		this.gender = randomGender();
@@ -41,6 +41,7 @@ public class Beast implements Element {
 		this.env = new Environment();
 		this.choice = new Antenna();
 		this.image = image;
+		this.pos = pos;
 	}
 	
 	public Beast(String name , Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
@@ -108,8 +109,7 @@ public class Beast implements Element {
 	public String getName() {
 		return name;
 	}
-
-	
+		
 	
 	public int getAge() {
 		return age;
@@ -198,7 +198,7 @@ public class Beast implements Element {
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy();
+		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy() + "\n\nPosition : " + getPosition() ;
 		return text;
 	}
 	
