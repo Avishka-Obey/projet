@@ -26,6 +26,7 @@ public class GridConstructor extends JPanel {
 	private Beast[] b = new Beast[fin];
 	
 	
+	
 	public GridConstructor() {
 //		int windowWidth = 500;
 		setPreferredSize(new Dimension(601,601));

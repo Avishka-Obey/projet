@@ -211,6 +211,7 @@ public class Beast implements Element {
 			//Beast s = new Beast();
 			//s.randomName();
 			//System.out.println(s.toString());
+		
 		}
 		
 	}
