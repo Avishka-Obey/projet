@@ -22,7 +22,7 @@ public class GridConstructor extends JPanel {
 	private ArrayList<String> array = new ArrayList<String>(6);
 	private ArrayList<String> env = new ArrayList<String>(3);
 	private int fin = 20;
-//	private Food[] f = new Food[30];
+	private Food[] f = new Food[30];
 	private Beast[] b = new Beast[fin];
 	
 	
@@ -31,6 +31,7 @@ public class GridConstructor extends JPanel {
 //		int windowWidth = 500;
 		setPreferredSize(new Dimension(601,601));
 //		getAll();
+		
 	}
 	
 	
@@ -40,7 +41,7 @@ public class GridConstructor extends JPanel {
 		Graphics2D g2 = (Graphics2D) g;
 		printEnv(g2);
 		printBeast(g2);
-//		printFood(g2);
+		printFood(g2);
 	}
 	
 	private void drawDebugGrid(Graphics g) {
@@ -127,7 +128,7 @@ public class GridConstructor extends JPanel {
 			Beast.initName();
 			b[i] = new Beast(readImage(img),pos);
 			b[i].randomName();
-			System.out.println(b[i]);
+//			System.out.println(b[i]);
 		
 			
 			g2.drawImage(b[i].getImage(),b[i].getPosition().getX(), b[i].getPosition().getY(), null, null);
@@ -153,19 +154,22 @@ public class GridConstructor extends JPanel {
 //		
 //	}
 	
-//	private void printFood(Graphics g2) {
-//		String img;
-//		initImage();
-//		
-//		for(int i = 0; i<30; i++) {
-//			int n = (int)(Math.random() * 12)*50+1;
-//			int m = (int)(Math.random() * 12) * 50 + 1;
-//			int rnd = (int) (Math.random() * array.size());
-//			img = array.get(rnd);
-//			Food.initFood();
-//			
-//			
-//			f[i] = new Food(readImage(img));
+	private void printFood(Graphics g2) {
+		String img;
+		initFood();
+	
+	
+		for(int i = 0; i<30; i++) {
+			int n = (int)(Math.random() * 12) * 50 + 1;
+			int m = (int)(Math.random() * 12) * 50 + 1;
+			Position pos = new Position(n,m);
+			int rnd = (int) (Math.random() * array.size());
+			
+			f[i] = new Food(readImage(array.get(rnd)), pos);
+			System.out.println(f[i]);
+			g2.drawImage(f[i].getImage(),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+		}
+	}
 //			g2.drawImage(f[i].getImage(),n, m, null, null);
 //		}
 		

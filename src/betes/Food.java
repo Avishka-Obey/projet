@@ -17,11 +17,12 @@ public class Food implements Element{
 		typefood = randomFood();
 	}
 	
-	public Food(Image image) {
+	public Food(Image image,Position pos) {
 		hm = new HashMap<Integer, String> ();
 		initFood();
 		typefood = randomFood();
 		this.image = image;
+		this.pos=pos;
 	}
 	
 	public Food(String typefood,Position pos) {
@@ -69,7 +70,7 @@ public class Food implements Element{
 	
 	public String toString() {
 		String texte = "";
-		texte +="Food : "+ typefood + "Position :" + pos;
+		texte +="Food : "+ getTypeFood() + "\n\nPosition :" + getPosition();
 		return texte;
 	}
 	
@@ -80,7 +81,7 @@ public class Food implements Element{
 		Food.initFood();
 		
 		f.randomFood();
-		System.out.println(f.getTypeFood());
+		System.out.println(f.toString());
 		f.randomFood();
 		System.out.println(f.getTypeFood());
 		f.randomFood();
