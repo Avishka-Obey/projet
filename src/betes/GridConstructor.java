@@ -20,6 +20,9 @@ public class GridConstructor extends JPanel {
 	private ArrayList<String> al = new ArrayList<String>(20);
 	private ArrayList<String> array = new ArrayList<String>(6);
 	private ArrayList<String> env = new ArrayList<String>(3);
+	private int fin = 20;
+	private Food[] f = new Food[fin+10];
+	private Beast[] b = new Beast[fin];
 	
 	
 	public GridConstructor() {
@@ -33,7 +36,7 @@ public class GridConstructor extends JPanel {
 		drawDebugGrid(g);
 		Graphics2D g2 = (Graphics2D) g;
 		printEnv(g2);
-		printBeast(g2);
+//		printBeast(g2);
 		printFood(g2);
 	}
 	
@@ -104,35 +107,61 @@ public class GridConstructor extends JPanel {
 		array.add("src/images/berries.png");
 	}
 
-	private void printBeast(Graphics g2) {
-		String img;
-		initImage();
-		
-		for(int i = 0; i<20; i++) {
-			int n = (int)(Math.random() * 12)*50+1;
-			int m = (int)(Math.random() * 12) * 50 + 1;
-			int rnd = (int) (Math.random() * al.size());
-			img = al.get(rnd);
-//			System.out.println(img);
-			al.remove(rnd);
-			
-			g2.drawImage(readImage(img),n, m, null, null);
-		}
-		
-	}
+//	private void printBeast(Graphics g2) {
+//		String img;
+//		initImage();
+//		
+//		for(int i = 0; i<20; i++) {
+//			int n = (int)(Math.random() * 12)*50+1;
+//			int m = (int)(Math.random() * 12) * 50 + 1;
+//			int rnd = (int) (Math.random() * al.size());
+//			img = al.get(rnd);
+////			System.out.println(img);
+//			al.remove(rnd);
+//			Beast.initName();
+//			b[i] = new Beast(readImage(img));
+//			g2.drawImage(b[i].getImage(),n, m, null, null);
+//		}
+//		
+//	}
 	
 	private void printFood(Graphics g2) {
 		
 		String img;
-		initFood();
+		Food.initFood();
 		
-		for(int i = 0; i<6; i++) {
+		for(int i = 0; i<30; i++) {
 			int n = (int)(Math.random() * 12)*50+1;
 			int m = (int)(Math.random() * 12) * 50 + 1;
 			int rnd = (int) (Math.random() * array.size());
 			img = array.get(rnd);
+			img = f[i].randomFood();
 			
-			g2.drawImage(readImage(img),n, m, null, null);
+			if(img.equals("Spider")) {
+				f[i] =new Food(readImage("src/images/spider.png"));
+			}
+			
+			else if(img.equals("Mouse")) {
+				f[i] =new Food(readImage("src/images/mouse.png"));
+			}
+			
+			else if(img.equals("Lizard")) {
+				f[i] =new Food(readImage("src/images/lezard.png"));
+			}
+			
+			else if(img.equals("Snake")) {
+				f[i] =new Food(readImage("src/images/snake.png"));
+			}
+			
+			else if(img.equals("Mosquito")) {
+				f[i] =new Food(readImage("src/images/mosquito.png"));
+			}
+			
+			else if(img.equals("Bay")) {
+				f[i] =new Food(readImage("src/images/berries.png"));
+			}
+			
+			g2.drawImage(f[i].getImage(),n, m, null, null);
 		}
 		
 //		g2.drawImage(readImage("src/images/snake.png"),551, 551, null, null);

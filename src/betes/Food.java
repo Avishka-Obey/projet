@@ -1,5 +1,6 @@
 package betes;
 
+import java.awt.Image;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -7,12 +8,20 @@ public class Food implements Element{
 
 	private String typefood;
 	private Position pos;
-	private HashMap <Integer,String> hm;
+	private static HashMap <Integer,String> hm;
+	private Image image;
 	
 	public Food() {
 		hm = new HashMap<Integer, String> ();
 		initFood();
 		typefood = randomFood();
+	}
+	
+	public Food(Image image) {
+		hm = new HashMap<Integer, String> ();
+		initFood();
+		typefood = randomFood();
+		this.image = image;
 	}
 	
 	public Food(String typefood,Position pos) {
@@ -21,7 +30,7 @@ public class Food implements Element{
 		
 	}
 	
-	public void initFood() {
+	public static void initFood() {
 		hm.put(0, "Spider");
 		hm.put(1, "Mouse");
 		hm.put(2, "Lizard");
@@ -54,15 +63,21 @@ public class Food implements Element{
 		this.pos = pos;
 	}
 	
+	public Image getImage() {
+		return this.image;
+	}
+	
 	public String toString() {
 		String texte = "";
 		texte +="Food : "+ typefood + "Position :" + pos;
 		return texte;
 	}
 	
+//	Faut dire que araignée c'est cette image en gros etc .. Il faut faire correspondre chaque nourriture au image puis justement les afficher
+	
 	public static void main(String [] args) {
 		Food f = new Food();
-		f.initFood();
+		Food.initFood();
 		
 		f.randomFood();
 		System.out.println(f.getTypeFood());

@@ -1,7 +1,7 @@
 package betes;
 
 import java.util.HashMap;
-
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,6 +16,7 @@ public class Beast implements Element {
 	private Position pos;
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
+	private Image image;
 	
 	
 
@@ -28,6 +29,18 @@ public class Beast implements Element {
 		this.charater = new Characteristic();
 		this.env = new Environment();
 		this.choice = new Antenna();
+		
+	}
+	
+	public Beast(Image image) {
+		this.name = getName();
+		this.age = 0; 
+		this.gender = randomGender();
+		this.energybar = new EnergyBar(20);
+		this.charater = new Characteristic();
+		this.env = new Environment();
+		this.choice = new Antenna();
+		this.image = image;
 	}
 	
 	public Beast(String name , Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
@@ -39,6 +52,10 @@ public class Beast implements Element {
 		this.charater = charater;
 		this.env = env;
 		this.pos = pos;
+	}
+	
+	public Image getImage() {
+		return this.image;
 	}
 	
 
@@ -191,9 +208,9 @@ public class Beast implements Element {
 		Beast.initName();
 		
 		for(int i = 0; i<10; i++) {
-			Beast s = new Beast();
-			s.randomName();
-			System.out.println(s.toString());
+			//Beast s = new Beast();
+			//s.randomName();
+			//System.out.println(s.toString());
 		}
 		
 	}
