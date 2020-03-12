@@ -24,7 +24,7 @@ public class GridConstructor extends JPanel {
 	private int fin = 20;
 	private Food[] f = new Food[30];
 	private Beast[] b = new Beast[fin];
-	private Environment[] e = new Environment[3];
+	private Environment[] e = new Environment[50];
 	private int p = 0;
 	
 	public GridConstructor() {
@@ -209,45 +209,74 @@ public class GridConstructor extends JPanel {
 	
 	
 	
+//	private void printEnv(Graphics g2) {
+//		
+//		initEnvironment();
+//		
+//		for(int i = 0; i<3; i++) {
+//			int n = (int)(Math.random() * 9) * 50 + 1;
+//			int m = (int)(Math.random() * 9) * 50 + 1;
+//			
+//			Position pos = new Position(n,m);
+//			int rnd = (int) (Math.random() * env.size());
+//			e[i] = new Environment(readImage(env.get(rnd)), pos);
+////			System.out.println(e[i]);
+//			
+//			
+////			for(int j = n; j<=(n+(50*3+1)); j += 51) {
+////				for(int k = m; k<=(m+(50*3+1)); k += 51) {
+//					
+////					pos.setX(j);
+////					pos.setY(k);
+//					if (e[i].getType().equals("Mountain")) {
+//						e[p] = new Environment(readImage(env.get(rnd)), pos);
+//						g2.drawImage(readImage("src/images/mountain.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+//					}
+//					
+//					else if (e[i].getType().equals("Desert")) {
+//						e[p] = new Environment(readImage(env.get(rnd)), pos);
+//						g2.drawImage(readImage("src/images/desert.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+//					}
+//					
+//					else  if (e[i].getType().equals("Forest")) {
+//						e[p] = new Environment(readImage(env.get(rnd)), pos);
+//						g2.drawImage(readImage("src/images/forest.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+//					}
+//					
+//					System.out.println(e[i].toString());
+//					
+//				}
+//			}
+////		}
+////	}
 	private void printEnv(Graphics g2) {
-		
 		initEnvironment();
 		
-		for(int i = 0; i<3; i++) {
-			int n = (int)(Math.random() * 9) * 50 + 1;
-			int m = (int)(Math.random() * 9) * 50 + 1;
-			
+		
+		for(int i = 0; i<30; i++) {
+			int n = (int)(Math.random() * 12) * 50 + 1;
+			int m = (int)(Math.random() * 12) * 50 + 1;
 			Position pos = new Position(n,m);
 			int rnd = (int) (Math.random() * env.size());
+			
 			e[i] = new Environment(readImage(env.get(rnd)), pos);
-//			System.out.println(e[i]);
+
 			
-			
-			for(int j = n; j<=(n+(50*3+1)); j += 51) {
-				for(int k = m; k<=(m+(50*3+1)); k += 51) {
-					
-					pos.setX(j);
-					pos.setY(k);
-					if (e[i].getType().equals("Mountain")) {
-						e[p] = new Environment(readImage(env.get(rnd)), pos);
-						g2.drawImage(readImage("src/images/mountain.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
-					}
-					
-					else if (e[i].getType().equals("Desert")) {
-						e[p] = new Environment(readImage(env.get(rnd)), pos);
-						g2.drawImage(readImage("src/images/desert.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
-					}
-					
-					else  if (e[i].getType().equals("Forest")) {
-						e[p] = new Environment(readImage(env.get(rnd)), pos);
-						g2.drawImage(readImage("src/images/forest.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
-					}
-					
-					System.out.println(e[i].toString());
-					
-				}
+			if (e[i].getType().equals("Moutain")) {
+				g2.drawImage(readImage("src/images/mountain.png"),e[i].getPosition().getX(), e[i].getPosition().getY(), null, null);
 			}
+			
+			else if (e[i].getType().equals("Desert")) {
+				g2.drawImage(readImage("src/images/desert.png"),e[i].getPosition().getX(), e[i].getPosition().getY(), null, null);
+			}
+			
+			else if (e[i].getType().equals("Forest")) {
+				g2.drawImage(readImage("src/images/forest.png"),e[i].getPosition().getX(), e[i].getPosition().getY(), null, null);
+			}
+			
+			System.out.println(e[i].toString());
+	}
 		}
 	}
 
-}
+
