@@ -66,7 +66,7 @@ public class Environment {
 	
 	public String toString() {
 		String texte="";
-		texte+="type:"+ type;
+		texte+=" type: " + type + " Position :" + getPosition();
 		return texte;
 	}
 	

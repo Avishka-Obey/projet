@@ -223,8 +223,8 @@ public class GridConstructor extends JPanel {
 //			System.out.println(e[i]);
 			
 			
-			for(int j = n; j<=(n+(50*3)); j += 50) {
-				for(int k = m; k<=(m+(50*3)); k += 50) {
+			for(int j = n; j<=(n+(50*3+1)); j += 51) {
+				for(int k = m; k<=(m+(50*3+1)); k += 51) {
 					
 					pos.setX(j);
 					pos.setY(k);
@@ -243,7 +243,7 @@ public class GridConstructor extends JPanel {
 						g2.drawImage(readImage("src/images/forest.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
 					}
 					
-					System.out.println(e[i].getType());
+					System.out.println(e[i].toString());
 					
 				}
 			}
