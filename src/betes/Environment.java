@@ -1,5 +1,6 @@
 package betes;
 
+import java.awt.Image;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -7,11 +8,23 @@ public class Environment {
 
 	private String type;
 	private HashMap <Integer,String> hm;
+	private Image image;
+	private Position pos;
 	
 	public Environment() {
 		hm = new HashMap<Integer, String> ();
+		initEnvironment();
 		type = randomEnvironment();
 	}
+	
+	public Environment(Image image, Position pos) {
+		hm = new HashMap<Integer, String> ();
+		initEnvironment();
+		type = randomEnvironment();
+		this.image = image;
+		this.pos=pos;
+	}
+	
 	public Environment(String type) {
 		this.type = type;
 		
@@ -35,6 +48,10 @@ public class Environment {
 		return type;
 	}
 	
+	public Image getImage() {
+		return this.image;
+	}
+	
 	public String getType() {
 		return type;
 	}
@@ -42,6 +59,11 @@ public class Environment {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public Position getPosition() {
+		return pos;
+	}
+	
 	public String toString() {
 		String texte="";
 		texte+="type:"+ type;

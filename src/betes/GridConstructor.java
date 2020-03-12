@@ -24,8 +24,9 @@ public class GridConstructor extends JPanel {
 	private int fin = 20;
 	private Food[] f = new Food[30];
 	private Beast[] b = new Beast[fin];
-	
-	
+	private Environment[] e = new Environment[3];
+	private int p = 0;
+	private Position[] posi;
 	
 	public GridConstructor() {
 //		int windowWidth = 500;
@@ -133,6 +134,7 @@ public class GridConstructor extends JPanel {
 			
 			g2.drawImage(b[i].getImage(),b[i].getPosition().getX(), b[i].getPosition().getY(), null, null);
 		}
+		
 	}
 	
 
@@ -155,11 +157,11 @@ public class GridConstructor extends JPanel {
 //	}
 	
 	private void printFood(Graphics g2) {
-		String img;
+		
 		initFood();
 	
 	
-		for(int i = 0; i<30; i++) {
+		for(int i = 0; i<3; i++) {
 			int n = (int)(Math.random() * 12) * 50 + 1;
 			int m = (int)(Math.random() * 12) * 50 + 1;
 			Position pos = new Position(n,m);
@@ -167,7 +169,30 @@ public class GridConstructor extends JPanel {
 			
 			f[i] = new Food(readImage(array.get(rnd)), pos);
 			System.out.println(f[i]);
-			g2.drawImage(f[i].getImage(),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			
+			if (f[i].getTypeFood().equals("Spider")) {
+				g2.drawImage(readImage("src/images/spider.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
+			
+			else if (f[i].getTypeFood().equals("Mouse")) {
+				g2.drawImage(readImage("src/images/mouse.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
+			
+			else if (f[i].getTypeFood().equals("Mosquito")) {
+				g2.drawImage(readImage("src/images/Mosquito.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
+			
+			else if (f[i].getTypeFood().equals("Snake")) {
+				g2.drawImage(readImage("src/images/snake.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
+			
+			else if (f[i].getTypeFood().equals("Bay")) {
+				g2.drawImage(readImage("src/images/berries.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
+			
+			else if (f[i].getTypeFood().equals("Lizard")) {
+				g2.drawImage(readImage("src/images/lezard.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
+			}
 		}
 	}
 //			g2.drawImage(f[i].getImage(),n, m, null, null);
@@ -183,19 +208,41 @@ public class GridConstructor extends JPanel {
 	
 //	}
 	
+	
+	
 	private void printEnv(Graphics g2) {
-		String img;
+		
 		initEnvironment();
 		
 		for(int i = 0; i<3; i++) {
 			int n = (int)(Math.random() * 10) * 50 + 1;
 			int m = (int)(Math.random() * 10) * 50 + 1;
+			
+			Position pos = new Position(n,m);
 			int rnd = (int) (Math.random() * env.size());
-			img = env.get(rnd);
+			e[i] = new Environment(readImage(env.get(rnd)), pos);
+//			System.out.println(e[i]);
+			
 			
 			for(int j = n; j<=(n+(50*3+1)); j += 51) {
-				for(int p = m;p<=(m+(50*3+1)); p += 51) {
-					g2.drawImage(readImage(img),j, p, null, null);
+				for(int k = m; k<=(m+(50*3+1)); k += 51) {
+					posi[p] = new Position(j,k);
+					if (e[i].getType().equals("Mountain")) {
+						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+						g2.drawImage(readImage("src/images/mountain.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+					}
+					
+					else if (e[i].getType().equals("Desert")) {
+						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+						g2.drawImage(readImage("src/images/desert.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+					}
+					
+					else if (e[i].getType().equals("Forest")) {
+						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+						g2.drawImage(readImage("src/images/forest.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
+					}
+					
+					p++;
 				}
 			}
 		}
