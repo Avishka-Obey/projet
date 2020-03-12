@@ -26,7 +26,6 @@ public class GridConstructor extends JPanel {
 	private Beast[] b = new Beast[fin];
 	private Environment[] e = new Environment[3];
 	private int p = 0;
-	private Position[] posi;
 	
 	public GridConstructor() {
 //		int windowWidth = 500;
@@ -161,14 +160,14 @@ public class GridConstructor extends JPanel {
 		initFood();
 	
 	
-		for(int i = 0; i<3; i++) {
+		for(int i = 0; i<30; i++) {
 			int n = (int)(Math.random() * 12) * 50 + 1;
 			int m = (int)(Math.random() * 12) * 50 + 1;
 			Position pos = new Position(n,m);
 			int rnd = (int) (Math.random() * array.size());
 			
 			f[i] = new Food(readImage(array.get(rnd)), pos);
-			System.out.println(f[i]);
+//			System.out.println(f[i]);
 			
 			if (f[i].getTypeFood().equals("Spider")) {
 				g2.drawImage(readImage("src/images/spider.png"),f[i].getPosition().getX(), f[i].getPosition().getY(), null, null);
@@ -215,8 +214,8 @@ public class GridConstructor extends JPanel {
 		initEnvironment();
 		
 		for(int i = 0; i<3; i++) {
-			int n = (int)(Math.random() * 10) * 50 + 1;
-			int m = (int)(Math.random() * 10) * 50 + 1;
+			int n = (int)(Math.random() * 9) * 50 + 1;
+			int m = (int)(Math.random() * 9) * 50 + 1;
 			
 			Position pos = new Position(n,m);
 			int rnd = (int) (Math.random() * env.size());
@@ -224,25 +223,28 @@ public class GridConstructor extends JPanel {
 //			System.out.println(e[i]);
 			
 			
-			for(int j = n; j<=(n+(50*3+1)); j += 51) {
-				for(int k = m; k<=(m+(50*3+1)); k += 51) {
-					posi[p] = new Position(j,k);
+			for(int j = n; j<=(n+(50*3)); j += 50) {
+				for(int k = m; k<=(m+(50*3)); k += 50) {
+					
+					pos.setX(j);
+					pos.setY(k);
 					if (e[i].getType().equals("Mountain")) {
-						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+						e[p] = new Environment(readImage(env.get(rnd)), pos);
 						g2.drawImage(readImage("src/images/mountain.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
 					}
 					
 					else if (e[i].getType().equals("Desert")) {
-						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+						e[p] = new Environment(readImage(env.get(rnd)), pos);
 						g2.drawImage(readImage("src/images/desert.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
 					}
 					
-					else if (e[i].getType().equals("Forest")) {
-						e[p] = new Environment(readImage(env.get(rnd)), posi[p]);
+					else  if (e[i].getType().equals("Forest")) {
+						e[p] = new Environment(readImage(env.get(rnd)), pos);
 						g2.drawImage(readImage("src/images/forest.png"),e[p].getPosition().getX(), e[p].getPosition().getY(), null, null);
 					}
 					
-					p++;
+					System.out.println(e[i].getType());
+					
 				}
 			}
 		}
