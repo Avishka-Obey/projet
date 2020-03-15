@@ -39,7 +39,7 @@ public class Position {
 	
 	public String toString() {
 		String text = "";
-		text += "L'abscisse est : " + getX() + "\nEt l'ordonnée est : " + getY();
+		text += "L'abscisse est : " + getX() + "\nEt l'ordonnée est : " + getY() + "\n";
 		return text;
 	}
 	

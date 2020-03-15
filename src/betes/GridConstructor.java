@@ -24,7 +24,7 @@ public class GridConstructor extends JPanel {
 	private ArrayList<Beast> po = new ArrayList<Beast>();
 	private int fin = 20;
 	private Food[] f = new Food[30];
-	private Beast[] b = new Beast[fin];
+	private Beast[] b = new Beast[fin+1];
 	private Environment[] e = new Environment[50];
 	private int p = 0;
 	
@@ -40,9 +40,9 @@ public class GridConstructor extends JPanel {
 		super.paintComponent(g);
 		drawDebugGrid(g);
 		Graphics2D g2 = (Graphics2D) g;
-		printEnv(g2);
+//		printEnv(g2);
 		printBeast(g2);
-		printFood(g2);
+//		printFood(g2);
 	}
 	
 	private void drawDebugGrid(Graphics g) {
@@ -120,25 +120,23 @@ public class GridConstructor extends JPanel {
 		initImage();
 		
 		for(int i = 0; i<20; i++) {
-			int n = (int)(Math.random() * 12)*50+1;
+			int n = (int)(Math.random() * 12) * 50 + 1;
 			int m = (int)(Math.random() * 12) * 50 + 1;
 			Position pos = new Position(n,m);
 			int rnd = (int) (Math.random() * al.size());
 			img = al.get(rnd);
-	//		System.out.println(img);
+//			System.out.println(img);
 			al.remove(rnd);
 			Beast.initName();
 			b[i] = new Beast(readImage(img),pos);
 			b[i].randomName();
-//			System.out.println(b[i]);
+//			System.out.println(b[i].getPosition());
 			
 			if(i==0) {
 				po.add(b[i]);
 			}
 			else  {
 				for(int a=0; a<=po.size();a++) {
-					
-					
 					
 						if ((b[i].getPosition().getX() == b[a].getPosition().getX()) && (b[i].getPosition().getY() == b[a].getPosition().getY())) {
 						
@@ -147,12 +145,13 @@ public class GridConstructor extends JPanel {
 							
 //							b[a].getPosition().setY(b[i].getPosition().getY()*(int)(Math.random() * 12)*50+1);
 						}
-					
-				
+									
 				}
 				po.add(b[i]);
 				
 			}
+			
+			System.out.println(b[i].getPosition());
 			
 			g2.drawImage(b[i].getImage(),b[i].getPosition().getX(), b[i].getPosition().getY(), null, null);
 		}
