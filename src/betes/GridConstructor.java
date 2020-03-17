@@ -21,8 +21,8 @@ public class GridConstructor extends JPanel {
 	private ArrayList<String> al = new ArrayList<String>(20);
 	private ArrayList<String> array = new ArrayList<String>(6);
 	private ArrayList<String> env = new ArrayList<String>(3);
-	private ArrayList<Beast> po = new ArrayList<Beast>();
 	private int fin = 20;
+	private ArrayList<Beast> po = new ArrayList<Beast>();
 	private Food[] f = new Food[30];
 	private Beast[] b = new Beast[fin+1];
 	private Environment[] e = new Environment[50];
@@ -40,9 +40,9 @@ public class GridConstructor extends JPanel {
 		super.paintComponent(g);
 		drawDebugGrid(g);
 		Graphics2D g2 = (Graphics2D) g;
-//		printEnv(g2);
+		printEnv(g2);
 		printBeast(g2);
-//		printFood(g2);
+		printFood(g2);
 	}
 	
 	private void drawDebugGrid(Graphics g) {
@@ -273,6 +273,8 @@ public class GridConstructor extends JPanel {
 //			}
 ////		}
 ////	}
+	
+	
 	private void printEnv(Graphics g2) {
 		initEnvironment();
 		
@@ -286,7 +288,7 @@ public class GridConstructor extends JPanel {
 			e[i] = new Environment(readImage(env.get(rnd)), pos);
 
 			
-			if (e[i].getType().equals("Moutain")) {
+			if (e[i].getType().equals("Mountain")) {
 				g2.drawImage(readImage("src/images/mountain.png"),e[i].getPosition().getX(), e[i].getPosition().getY(), null, null);
 			}
 			
@@ -299,9 +301,10 @@ public class GridConstructor extends JPanel {
 			}
 			
 			System.out.println(e[i].toString());
-	}
 		}
 	}
+	
+}
 
 
 
