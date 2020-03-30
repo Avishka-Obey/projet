@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.util.HashMap;
 import java.util.Random;
 
-public class Environment {
+public class Environment implements Item{
 
 	private String type;
 	private HashMap <Integer,String> hm;
@@ -17,10 +17,11 @@ public class Environment {
 		type = randomEnvironment();
 	}
 	
-	public Environment(Image image, Position pos) {
+	public Environment(String type,Image image, Position pos) {
 		hm = new HashMap<Integer, String> ();
 		initEnvironment();
 		type = randomEnvironment();
+		this.type=type;
 		this.image = image;
 		this.pos=pos;
 	}
@@ -66,7 +67,7 @@ public class Environment {
 	
 	public String toString() {
 		String texte="";
-		texte+=" type: " + type + " Position :" + getPosition();
+		texte+=" type: " + getType() + " Position :" + getPosition();
 		return texte;
 	}
 	

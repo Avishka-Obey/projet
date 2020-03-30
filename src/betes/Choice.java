@@ -14,3 +14,7 @@ public class Choice {
 	}
 
 }
+	// cette classe doit reperer un partenaire ideal et se deplacer vers ce partenaire dans ma grille
+	//car sa caractéristique getVision 
+	// est superieur a smell et a love
+	//mais elle doit verifier d'autres conditions (les conditions pour se battre (fighting)

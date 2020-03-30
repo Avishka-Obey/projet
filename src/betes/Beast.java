@@ -5,7 +5,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Beast implements Element {
+public class Beast implements Item{
 	private String name;
 	private Integer age;
 	private String gender;
@@ -17,6 +17,7 @@ public class Beast implements Element {
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
 	private Image image;
+	private InterfaceChoice ic ;
 	
 	
 
@@ -42,6 +43,7 @@ public class Beast implements Element {
 		this.choice = new Antenna();
 		this.image = image;
 		this.pos = pos;
+		//this.ic =ic;
 	}
 	
 	public Beast(String name , Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
@@ -90,6 +92,23 @@ public class Beast implements Element {
 		nm.add("Lady Killer");
 		nm.add("Liberty");
 		nm.add("Fanta");
+		
+		nm.add("Jacquline");
+		nm.add("Issaq");
+		nm.add("Antoine");
+		nm.add("Benjamin");
+		nm.add("Lou");
+		nm.add("Logane");
+		nm.add("Mattieu");
+		nm.add("Christophe");
+		nm.add("Ad");
+		nm.add("Vivi");
+		nm.add("Charlie");
+		nm.add("Vanessa");
+		nm.add("Julie");
+		nm.add("Megane");
+		
+		
 	}
 	
 	
@@ -107,6 +126,7 @@ public class Beast implements Element {
 	}
 	
 	public String getName() {
+		randomName();
 		return name;
 	}
 		
@@ -194,7 +214,9 @@ public class Beast implements Element {
 		
 		
 	}
-	
+//	public void move(Beast,Map) {
+//		this.ic.move(this, Map);
+//	}
 	
 	public String toString() {
 		String text = "";
@@ -207,10 +229,10 @@ public class Beast implements Element {
 		
 		Beast.initName();
 		
-		for(int i = 0; i<10; i++) {
-			//Beast s = new Beast();
-			//s.randomName();
-			//System.out.println(s.toString());
+		for(int i = 0; i<14; i++) {
+			Beast s = new Beast();
+
+			System.out.println(s.toString());
 		
 		}
 		
