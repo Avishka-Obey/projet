@@ -1,6 +1,6 @@
 package betes;
 
-public class Start {
+public class Start extends Thread {
 	private Beast b ;
 	private Eating e ;
 	private Fight f ;

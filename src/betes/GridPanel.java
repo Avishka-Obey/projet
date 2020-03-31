@@ -21,6 +21,7 @@ public class GridPanel extends JPanel implements Runnable {
 	Simulation sim ;
 	private HashMap<String,Item> items;
 	private GridConstructor grid;
+	public static boolean stop =true;
 	
 		public GridPanel() {
 			setPreferredSize(new Dimension(601,601));
@@ -84,22 +85,25 @@ public class GridPanel extends JPanel implements Runnable {
 			public void run() {
 				while(!Thread.currentThread().isInterrupted()) {
 					try {
-						for(int j=0;j<20;j++) {
-							int i =(int)(Math.random()*4+1);
-							Move.move(grid.getBeasts().get(j), i);
+						if(!stop) {
+							for(int j=0;j<20;j++) {
+								int i =(int)(Math.random()*4+1);
+								Move.move(grid.getBeasts().get(j), i);
+							}
+							this.repaint() ;
+							Thread.sleep(3000);
 						}
-						this.repaint() ;
-						Thread.sleep(3000);
 						
 					}
 					catch(InterruptedException e) {
 						System.out.println("erreur");
 					}
-					//Thread.currentThread().interrupt();
+//					Thread.currentThread().interrupt();
 				}	
 				
 				
 			}
+			
 
 }
 			

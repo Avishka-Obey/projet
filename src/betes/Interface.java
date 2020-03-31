@@ -54,7 +54,7 @@ public class Interface extends JFrame implements ActionListener{
 		this.setTitle("Betes : simulation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE) ; 
 		this.setSize(1500, 750);
-		setResizable(true) ;		
+		setResizable(false) ;		
 		pan.setLayout(new BorderLayout());
 		
 		stop  = new JButton ("Stop");
@@ -105,21 +105,24 @@ public class Interface extends JFrame implements ActionListener{
 		setVisible(true) ;
 		
 		tred = new Thread(p);
-		//tred.start();	
+		tred.start();
+			
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object Button = e.getSource() ;
-		if (Button == start && !tred.isAlive()) {
+		if (Button == start) {
 			System.out.println("start");
-			tred.start();
+			
+			GridPanel.stop = false;
 			
 		}
 		
-		if (Button == stop) {
+		if (Button==stop) {
 			System.out.println("stop");
-			Thread.currentThread().interrupt();
+//			Thread.currentThread().interrupt();
+			GridPanel.stop = true;
 		}
 	}
 		
