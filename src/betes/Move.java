@@ -15,23 +15,23 @@ public class Move {
 //		this.pos = new Position(Position.randomX(), Position.randomY());
 	}
 	
-	public static void move(Item b,int code) {
+	public static void move(Item b,int code, int rdm) {
 		if(code==1 && b.getPosition().getX()>0) {  // a gauche
 			b.getPosition().setX(b.getPosition().getX()-1);
 		}
-		else if(code==2 && b.getPosition().getX()<12) { // a droite
+		else if(code==2 && b.getPosition().getX()<rdm-1) { // a droite
 			b.getPosition().setX(b.getPosition().getX()+1);
 		}
 		
 		else if(code==3 && b.getPosition().getY()>0) { // haut
 			b.getPosition().setY(b.getPosition().getY()-1);
 		}
-		else if(code==4 && b.getPosition().getY()<12) { // bas
+		else if(code==4 && b.getPosition().getY()<rdm-1) { // bas
 			b.getPosition().setY(b.getPosition().getY()+1);
 		}
 	}
 	
-	public Position getPos() {
+	/*public Position getPos() {
 		return pos;
 	}
 	
@@ -78,6 +78,6 @@ public class Move {
 		System.out.println(m.getPos().toString() + "\n");
 		m.gauche(m.getPos());
 		System.out.println(m.toString());
-	}
+	}*/
 	
 }

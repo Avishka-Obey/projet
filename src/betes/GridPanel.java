@@ -15,7 +15,9 @@ import javax.swing.JPanel;
 
 public class GridPanel extends JPanel implements Runnable {
 	
-
+	public static int taille;
+	public static int width =600;
+	public static int rdm;
 		
 	private static final long serialVersionUID = -541698616292452515L;
 	Simulation sim ;
@@ -23,87 +25,87 @@ public class GridPanel extends JPanel implements Runnable {
 	private GridConstructor grid;
 	public static boolean stop =true;
 	
-		public GridPanel() {
-			setPreferredSize(new Dimension(601,601));
-			this.setSize(1200,700);
-			grid = new GridConstructor();
-			grid.initBeasts();
-			grid.initFoods();
-			grid.initEnvironments();
-			items = grid.getItems();
-			
-		}
+	public GridPanel(int i, int j, int k, int rdm) {
+		setPreferredSize(new Dimension(601,601));
+		this.setSize(1200,700);
+		grid = new GridConstructor();
+		items = grid.getItems();
+		grid.initFoods(j, rdm);
+		grid.initEnvironments(k, rdm);
+		grid.initBeasts(i, rdm);
 		
-		@Override
-		public void paint(Graphics g) {
-			super.paint(g);
-			Graphics2D g2 = (Graphics2D) g;
-			drawDebugGrid(g);
-			printEnv(g2);
-			printBeast(g2);
-			printFood(g2);			
-		}
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		Graphics2D g2 = (Graphics2D) g;
+		drawDebugGrid(g, width,  taille);
+		printEnv(g2, taille);
+		printFood(g2, taille);
+		printBeast(g2, taille);
+	}
+	
+	private void drawDebugGrid(Graphics g, int width, int taille) {
 		
-		private void drawDebugGrid(Graphics g) {
-			int width = 600; //getWidth();
-			int height = 600; //getHeight();
-			
-			g.drawLine(600, 0, 600, 600);
-			g.drawLine(0, 600, 600, 600);
-			g.drawLine(0, 0, 0, 600);
-			g.drawLine(0, 0, 600, 0);
-			g.setColor(Color.GRAY);
+		g.drawLine(width, 0, width, width);
+		g.drawLine(0, width, width, width);
+		g.drawLine(0, 0, 0, width);
+		g.drawLine(0, 0, width, 0);
+		g.setColor(Color.BLACK);
 
-			for (int i = 0; i <= width; i += 50) {
-				g.drawLine(i, 0, i, height);
-			}
+		for (int i = 0; i <= width; i += taille) {
+			g.drawLine(i, 0, i, width);
+		}
 
-			for (int i = 0; i <= height; i += 50) {
-				g.drawLine(1, i, width, i);
-			}
+		for (int i = 0; i <= width; i += taille) {
+			g.drawLine(1, i, width, i);
 		}
-		
-		private void printBeast(Graphics g2) {
-			for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
-				Item val = it.next();
-				g2.drawImage(val.getImage(),val.getPosition().getX()*50,val.getPosition().getY()*50, null);
-			}
+	}
+	
+	private void printBeast(Graphics g2, int taille) {
+		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
+			Item val = it.next();
+			g2.drawImage(val.getImage(),val.getPosition().getX()*taille+1,val.getPosition().getY()*taille+1, taille-1, taille-1, null);
 		}
-		private void printFood(Graphics g2) {
-				for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
-						Item val2 = it.next();
-						g2.drawImage(val2.getImage(),val2.getPosition().getX()*50,val2.getPosition().getY()*50, null);
-				}
-			}
-			private void printEnv(Graphics g2) {
-				for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
-						Item val3 = it.next();
-						g2.drawImage(val3.getImage(),val3.getPosition().getX()*50,val3.getPosition().getY()*50, null);
-				}
-			}
-			@Override
-			public void run() {
-				while(!Thread.currentThread().isInterrupted()) {
-					try {
-						if(!stop) {
-							for(int j=0;j<20;j++) {
-								int i =(int)(Math.random()*4+1);
-								Move.move(grid.getBeasts().get(j), i);
-							}
-							this.repaint() ;
-							Thread.sleep(3000);
-						}
-						
+	}
+	
+	private void printFood(Graphics g2, int taille) {
+		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
+				Item val2 = it.next();
+				g2.drawImage(val2.getImage(),val2.getPosition().getX()*taille+1,val2.getPosition().getY()*taille+1, taille-1, taille-1, null);
+		}
+	}
+	
+	private void printEnv(Graphics g2, int taille) {
+		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
+				Item val3 = it.next();
+				g2.drawImage(val3.getImage(),val3.getPosition().getX()*taille+1,val3.getPosition().getY()*taille+1,taille-1, taille-1, null);
+		}
+	}
+	
+	@Override
+	public void run() {
+		while(!Thread.currentThread().isInterrupted()) {
+			try {
+				if(!stop) {
+					for(int j=0;j<GridConstructor.nbScorpion;j++) {
+						int i =(int)(Math.random()*4+1);
+						Move.move(grid.getBeasts().get(j), i, rdm);
 					}
-					catch(InterruptedException e) {
-						System.out.println("erreur");
-					}
-//					Thread.currentThread().interrupt();
-				}	
-				
+					this.repaint() ;
+					Thread.sleep(500);
+				}
 				
 			}
-			
+			catch(InterruptedException e) {
+				System.out.println("erreur");
+			}
+//			Thread.currentThread().interrupt();
+		}	
+		
+		
+	}
 
 }
 			

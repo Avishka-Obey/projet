@@ -22,16 +22,18 @@ public class GridConstructor {
 	private HashMap<String,Item> items;
 	private HashMap <Integer,String> fm = new HashMap<Integer,String>();
 	private HashMap <Integer,String> em = new HashMap<Integer,String>();
-	private int nbScorpion=0;
+	public static int nbScorpion=0;
 	private int nbFood=0;
 	private int nbEnvironment;
-	private ArrayList<Beast> beasts; 
+	private ArrayList<Beast> beasts;
+	private ArrayList<Food> foods;
 	
 	
 	public GridConstructor() {
 		items = new HashMap<String,Item>();
 		nbEnvironment=0;
 		beasts = new ArrayList<Beast>();
+		foods = new ArrayList<Food>();
 		showBeast();
 		showFood();
 		showEnvironment();
@@ -92,14 +94,14 @@ public class GridConstructor {
 		fm.put(5, "Bay");
 	}
 	
-	public void initBeasts() {
+	public void initBeasts(int i, int rdm) {
 	
 		///a corriger////
 		Beast.initName();
 		/////////
 		
-		while(nbScorpion<20) {
-			Position pos = new Position((int)(Math.random() * 12),(int)(Math.random() * 12));
+		while(nbScorpion< i) {
+			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {
 				
 				/////A corriger//////
@@ -112,7 +114,6 @@ public class GridConstructor {
 			//	System.out.println(beasts.get(nbScorpion));
 				nbScorpion++;
 			}
-			
 		}
 	}
 		
@@ -134,26 +135,28 @@ public class GridConstructor {
 		}
 	}
 									
-	public void initFoods() {
-		while(nbFood<30) {
-			Position pos = new Position((int)(Math.random() * 12),(int)(Math.random() * 12));
+	public void initFoods(int i, int rdm) {
+		while(nbFood<i) {
+			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {
 				int random = (int) (Math.random() * fm.size());
 				String typefood = fm.get(random);
-				Food f = new Food(typefood,readImage(array.get(random)), pos);
-				items.put(f.getPosition().toString(), f);
+				foods.add(new Food(typefood,readImage(array.get(random)), pos));
+				items.put(foods.get(nbFood).getPosition().toString(), foods.get(nbFood));
 				nbFood++;
 			//	System.out.println(f);
 			}
 		}	
 	}
+	
+	public ArrayList<Food> getFoods(){
+		return this.foods;
+	}
 
-	public void initEnvironments() {
+	public void initEnvironments(int i, int rdm) {
 
-		
-		
-		while(nbEnvironment<20) {
-			Position pos = new Position((int)(Math.random() * 12),(int)(Math.random() * 12));
+		while(nbEnvironment<i) {
+			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {
 				int rnds = (int) (Math.random() * em.size());
 				String type = em.get(rnds);
@@ -170,6 +173,7 @@ public class GridConstructor {
 	
 	
 }
+
 
 
 

@@ -1,14 +1,10 @@
 package betes;
 
-import javax.swing.JPanel;
-
-
-
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -38,8 +34,9 @@ public class Interface extends JFrame implements ActionListener{
 	private JLabel tr = new JLabel("Nombre de tours restants :");
 	private JButton start;
 	private JButton stop;
-	private GridPanel p;
+	public static GridPanel p;
 	Thread tred;
+	
 		
 	public static void main (String[]args) {
 		 new Interface();	
@@ -54,14 +51,14 @@ public class Interface extends JFrame implements ActionListener{
 		this.setTitle("Betes : simulation");
 		setDefaultCloseOperation(EXIT_ON_CLOSE) ; 
 		this.setSize(1500, 750);
-		setResizable(false) ;		
+		setResizable(false) ;
+		setLocationRelativeTo(null);
 		pan.setLayout(new BorderLayout());
 		
 		stop  = new JButton ("Stop");
 		stop.addActionListener(this);
 		start = new JButton("Start");
 		start.addActionListener(this);
-		p = new GridPanel();
 
 		panCenter.setBackground(Color.pink) ;
 		panCenter.setSize(1200,700);
@@ -105,10 +102,11 @@ public class Interface extends JFrame implements ActionListener{
 		setVisible(true) ;
 		
 		tred = new Thread(p);
-		tred.start();
-			
+		tred.start();	
+		
 	}
 	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object Button = e.getSource() ;
@@ -125,7 +123,6 @@ public class Interface extends JFrame implements ActionListener{
 			GridPanel.stop = true;
 		}
 	}
-		
 }
 
 
