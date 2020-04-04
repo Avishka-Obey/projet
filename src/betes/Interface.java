@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +33,12 @@ public class Interface extends JFrame implements ActionListener{
 	private JLabel tt = new JLabel("Nombre total de tours :      ");
 	private JLabel ta = new JLabel("Nombre de tours actuel :    ");
 	private JLabel tr = new JLabel("Nombre de tours restants :");
+	private JLabel ok1 = new JLabel("ok");
+	private JLabel ok2 = new JLabel("okok");
+	private JLabel ok3 = new JLabel("okokok");
+	private JLabel oe1 = new JLabel("oe");
+	private JLabel oe2 = new JLabel("oeoe");
+	private JLabel oe3 = new JLabel("oeoeoe");
 	private JButton start;
 	private JButton stop;
 	public static GridPanel p;
@@ -80,22 +87,35 @@ public class Interface extends JFrame implements ActionListener{
 		panSud.add(tx);
 		pan.add(panSud, BorderLayout.SOUTH);
 		
+		
+		panEst.setLayout(new GridLayout(3,1));
 		panEst.setMinimumSize(new Dimension(100,50));
 		panEst.setPreferredSize(new Dimension(300,150));
 		panEst.setMaximumSize(new Dimension(100,50));
 		panEst.setBackground(Color.gray);
 		panEst.add(tr);
+		panEst.add(oe1);
 		panEst.add(tt);
+		panEst.add(oe2);
 		panEst.add(ta);
+		panEst.add(oe3);
 		pan.add(panEst, BorderLayout.EAST);
 		
+		
+		
+		
+		panOuest.setLayout(new GridLayout(3,1));
 		panOuest.setMinimumSize(new Dimension(100,50));
 		panOuest.setPreferredSize(new Dimension(300,150));
 		panOuest.setMaximumSize(new Dimension(100,50));
 		panOuest.setBackground(Color.gray);
 		panOuest.add(bv);
+		panOuest.add(ok1);
 		panOuest.add(bm);
+		panOuest.add(ok2);
 		panOuest.add(n);
+		panOuest.add(ok3);
+//		panOuest.add(tecG);
 		pan.add(panOuest, BorderLayout.WEST);
 		
 		this.setContentPane(pan);
