@@ -12,11 +12,19 @@ public class Food implements Item{
 	private static HashMap <Integer,String> hm;
 	private Image image;
 	
+	public Food() {
+		hm = new HashMap<Integer, String> ();
+		initFood();
+	}
 	public Food(String typefood) {
 		hm = new HashMap<Integer, String> ();
 		initFood();
 		this.typefood=typefood;
 //		typefood = randomFood();
+	}
+	
+	public String getStringType() {
+		return "food";
 	}
 	
 	public Food(String typefood,Image image,Position pos) {

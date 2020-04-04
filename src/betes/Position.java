@@ -19,6 +19,15 @@ public class Position {
 		return y;
 	}
 	
+	public boolean equals(Position p) {
+		if(p.getX()==this.x && p.getY()==this.y) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	public void setX(int x) {
 		this.x = x;
 	}

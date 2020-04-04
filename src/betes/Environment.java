@@ -31,6 +31,10 @@ public class Environment implements Item{
 		
 	}
 	
+	public String getStringType() {
+		return "environnement";
+	}
+	
 	public void initEnvironment() {
 		hm.put(0, "Desert");
 		hm.put(1, "Mountain");

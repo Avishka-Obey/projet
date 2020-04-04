@@ -3,15 +3,7 @@ package betes;
 
 public class Eating {
 	
-	private Food f;
-	private Beast s;
-	
-	public Eating() {
-		Food f = new Food();
-		Beast s = new Beast();
-	}
-	
-	public void evolution(Beast s, Food f) {
+	public static void evolution(Beast s, Food f) {
 		
 		if(f.getTypeFood() == "Spider") {
 			s.getCharacteristic().setStrength(s.getCharacteristic().getStrength() +1);

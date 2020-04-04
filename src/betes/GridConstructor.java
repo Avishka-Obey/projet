@@ -111,7 +111,7 @@ public class GridConstructor {
 				///////
 				beasts.add( new Beast(readImage(imgPath),pos));
 				items.put(beasts.get(nbScorpion).getPosition().toString(),beasts.get(nbScorpion));
-			//	System.out.println(beasts.get(nbScorpion));
+				//System.out.println(beasts.get(nbScorpion));
 				nbScorpion++;
 			}
 		}
@@ -170,6 +170,7 @@ public class GridConstructor {
 		}
 		
 	}
+	
 	
 	
 }

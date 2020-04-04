@@ -61,6 +61,9 @@ public class Beast implements Item{
 		return this.image;
 	}
 	
+	public String getStringType() {
+		return "beast";
+	}
 
 	
 	public static void initName() {
