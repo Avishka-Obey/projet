@@ -3,39 +3,50 @@ package betes;
 public class Round implements Runnable {
 
 	//VARIABLES
-		private final int PAUSE =1000;
-		private int compteurRound ;
-		private String str;
+	private final int PAUSE =2500;
+	private int actuel = 0;
+	private int compteurRound ;
+	public static String str;
+	public static String atc;
+	
+	public Round(int i){
+		this.compteurRound =i;
+		this.str = "Tours restants : " + i;
+		this.atc = "Tours actuel : " + actuel;
+		Thread compteurRound = new Thread(this);
+		compteurRound.start();
 		
-		
-		public Round(){
-			this.compteurRound =50;
-			this.str = "Temps restant :50";
-			Thread compteurRound = new Thread(this);
-			compteurRound.start();
-			
-		}
-		public int getCompteurRound() {
-			return compteurRound;
-		}
-		public String getStr() {
-			return str;
-		}
-		@Override
-		public void run() {
-			while(true) {
-				try {
+	}
+	
+	public int getCompteurRound() {
+		return compteurRound;
+	}
+	
+	public String getStr() {
+		return str;
+	}
+	
+	public String getAtc() {
+		return atc;
+	}
+	
+	@Override
+	public void run() {
+		while(true) {
+			try {
 				Thread.sleep(PAUSE);
-			}
-				catch(InterruptedException e) {
-					
+				if(!GridPanel.stop && getCompteurRound()>0) {
+					this.compteurRound --;
+					this.actuel++;
+					str = "Tours restants : " +this.compteurRound;
+					atc = "Tours actuel : " + actuel;
+					Interface.tr.setText(str);
+					Interface.ta.setText(atc);
 				}
-				this.compteurRound --;
-				this.str = "Temps restant :" +this.compteurRound;
-			
+			}
+			catch(InterruptedException e) {
+				
+			}
 		}
-		}
-	
-	
-	
+	}
 }

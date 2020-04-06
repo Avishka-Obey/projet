@@ -23,9 +23,9 @@ public class Beast implements Item{
 
 	
 	public Beast() {
-		this.name = getName();
+		randomName();
 		this.age = 0; 
-		this.gender = randomGender();
+		randomGender();
 		this.energybar = new EnergyBar(20);
 		this.charater = new Characteristic();
 		this.env = new Environment();
@@ -34,9 +34,9 @@ public class Beast implements Item{
 	}
 	
 	public Beast(Image image, Position pos) {
-		this.name = getName();
+		randomName();
 		this.age = 0; 
-		this.gender = randomGender();
+		randomGender();
 		this.energybar = new EnergyBar(20);
 		this.charater = new Characteristic();
 		this.env = new Environment();
@@ -46,10 +46,10 @@ public class Beast implements Item{
 		//this.ic =ic;
 	}
 	
-	public Beast(String name , Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
-		this.name = name;
+	public Beast( Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
+		randomName();
 		this.age = age ;
-		this.gender = gender;
+		randomGender();
 		this.choice = choice ;
 		this.energybar = energybar;
 		this.charater = charater;
@@ -116,12 +116,10 @@ public class Beast implements Item{
 	
 	
 	
-	public String randomName() {
+	public void randomName() {
 		int rnd = (int) (Math.random() * nm.size());
-		name = nm.get(rnd);
+		this.name = nm.get(rnd);
 		nm.remove(rnd);
-		setName(name);
-		return name;
 	}
 	
 	public void setName(String name) {
@@ -129,9 +127,9 @@ public class Beast implements Item{
 	}
 	
 	public String getName() {
-		randomName();
-		return name;
+		return this.name;
 	}
+	
 		
 	
 	public int getAge() {
@@ -175,15 +173,8 @@ public class Beast implements Item{
 	
 	
 	public String getEnvironment() {
-		env.initEnvironment();
-		env.randomEnvironment();
 		return env.getType();
 	}
-	
-	public Environment getEnv() {
-		return env;
-	}
-	
 	
 	
 	public Antenna getAnt() {
@@ -223,7 +214,7 @@ public class Beast implements Item{
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + randomGender() + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy() + "\n\nPosition : " + getPosition() ;
+		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + gender + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy() + "\n\nPosition : " + getPosition() ;
 		return text;
 	}
 	

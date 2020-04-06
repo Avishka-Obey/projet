@@ -14,13 +14,14 @@ public class Environment implements Item{
 	public Environment() {
 		hm = new HashMap<Integer, String> ();
 		initEnvironment();
-		type = randomEnvironment();
+		randomEnvironment();
+		
 	}
 	
 	public Environment(String type,Image image, Position pos) {
 		hm = new HashMap<Integer, String> ();
 		initEnvironment();
-		type = randomEnvironment();
+		randomEnvironment();
 		this.type=type;
 		this.image = image;
 		this.pos=pos;
@@ -48,9 +49,8 @@ public class Environment implements Item{
 		return n;
 	}
 	
-	public String randomEnvironment() {
+	public void randomEnvironment() {
 		type = hm.get(Random());
-		return type;
 	}
 	
 	public Image getImage() {

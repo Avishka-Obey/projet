@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class Simulation {
 	private ArrayList<Beast> beasts; 
-	private ArrayList<Food> foods;
+	public static ArrayList<Food> foods;
 	private HashMap<String,Item> items;
 	
 
@@ -19,6 +19,7 @@ public class Simulation {
 	public void update() {
 		beasts = new ArrayList<Beast>();
 		foods = new ArrayList<Food>();
+		
 		for(Iterator<Item> it = items.values().iterator();it.hasNext(); ) {
 			Item i = it.next();
 			if(i.getStringType().equals("beast")) {
@@ -28,6 +29,7 @@ public class Simulation {
 				foods.add((Food)i);
 			}
 		}
+		
 		for(int i = 0; i<beasts.size();i++) {
 			Position currentposBeast = beasts.get(i).getPosition();
 			for(int j =0;j<foods.size();j++) {
@@ -36,17 +38,29 @@ public class Simulation {
 					Eating.evolution(beasts.get(i),foods.get(j));
 //					System.out.println(beasts.get(i));
 					items.remove(foods.get(j).getPosition().toString());
+					Interface.nbfood--;
+					Interface.nsub.setText("Nombre de subsistances : " + Interface.nbfood);
 //					System.out.println(Eating.evolution(beasts.get(i),foods.get(j);
-					
 				}
 			}
 		}
 		
+		for(int p = 0; p<beasts.size();p++) {
+			Position currentposBeast1 = beasts.get(p).getPosition();
+			for(int q = 0; q<beasts.size(); q++) {
+				Position currentposBeast2 = beasts.get(q).getPosition();
+				 if(currentposBeast2.equals(currentposBeast1)&&p!=q) {
+					Fight f = new Fight();
+					Beast perdante =f.combat(beasts.get(p), beasts.get(q));
+					items.remove(perdante.getPosition().toString());	
+					
+				}
+				
+			}
+		}
 		
 		
-		
-		
-	}
+		}
 	
 	
 	/*@Override

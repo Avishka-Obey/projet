@@ -28,11 +28,13 @@ public class OpenGame extends JFrame implements ActionListener {
 	private JLabel bete = new JLabel("Combien de bêtes voulez vous ?");
 	private JLabel nourriture = new JLabel("Combien de nourritures voulez vous ?");
 	private JLabel environnement = new JLabel("Combien d'environnements voulez vous ?    ");
+	private JLabel tour = new JLabel("Combien de tours voulez vous ?");
 //	private JTextField taille1 = new JTextField();
 //	private JTextField bete1 = new JTextField();
 //	private JTextField nourriture1 = new JTextField();
 //	private JTextField environnement1 = new JTextField();
 	
+	JComboBox tour1 = new JComboBox();
 	JComboBox taille1 = new JComboBox();
 	JComboBox bete1 = new JComboBox();
 	JComboBox nourriture1 = new JComboBox();
@@ -63,12 +65,15 @@ public class OpenGame extends JFrame implements ActionListener {
 		
 
 		
-		taille1.addItemListener(new ItemState());
 		taille1.addActionListener(new ItemAction1());
 		bete1.addActionListener(new ItemAction2());
 		nourriture1.addActionListener(new ItemAction3());
 		environnement1.addActionListener(new ItemAction4());
+		tour1.addActionListener(new ItemAction5());
 		
+		for(int p = 5; p<=100; p = p+5) {
+			tour1.addItem(p);
+		}
 		
 		for(int f = 4; f<13; f++) {
 			taille1.addItem(f);
@@ -87,7 +92,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		}
 		
 		JPanel container = new JPanel();
-		container.setLayout(new GridLayout(4,2));
+		container.setLayout(new GridLayout(5,2));
 		container.add(taille);
 		container.add(taille1);
 		container.add(bete);
@@ -96,6 +101,8 @@ public class OpenGame extends JFrame implements ActionListener {
 		container.add(nourriture1);
 		container.add(environnement);
 		container.add(environnement1);
+		container.add(tour);
+		container.add(tour1);
 		
 		JPanel squette = new JPanel();
 		squette.setLayout(new GridLayout(2,1));
@@ -135,6 +142,10 @@ public class OpenGame extends JFrame implements ActionListener {
 			Interface.p.width = 600-(600%(int)taille1.getSelectedItem());
 			Interface.p.taille = 600/(int)taille1.getSelectedItem();
 			Interface.p.rdm = (int)taille1.getSelectedItem();
+			Interface.p.round = new Round((int)tour1.getSelectedItem());
+			Interface.tt = new JLabel("Nombre tour total : " + (int)tour1.getSelectedItem());
+			Interface.nsub = new JLabel("Nombre de subsistances : " + (int)nourriture1.getSelectedItem());
+			Interface.nbfood = (int)nourriture1.getSelectedItem();
 			Interface.p = new GridPanel((int)bete1.getSelectedItem(), (int)nourriture1.getSelectedItem(), (int)environnement1.getSelectedItem(), (int)taille1.getSelectedItem());
 			new Interface();
 			dispose();
@@ -143,13 +154,13 @@ public class OpenGame extends JFrame implements ActionListener {
 	
 	class ItemState implements ItemListener{
 	    public void itemStateChanged(ItemEvent e) {
-	      
+	    	
 	    }               
 	  }
 	
 	class ItemAction1 implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-		     	System.out.println("La taille est : " + (int)taille1.getSelectedItem());
+//		     	System.out.println("La taille est : " + (int)taille1.getSelectedItem());
 		    }
 	}
 
@@ -166,6 +177,12 @@ public class OpenGame extends JFrame implements ActionListener {
 	}
 	
 	class ItemAction4 implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+		
+		}
+	}
+	
+	class ItemAction5 implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 		
 		}

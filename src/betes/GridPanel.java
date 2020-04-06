@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import javax.imageio.ImageIO;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GridPanel extends JPanel implements Runnable {
@@ -18,13 +19,13 @@ public class GridPanel extends JPanel implements Runnable {
 	public static int taille;
 	public static int width =600;
 	public static int rdm;
-	private Simulation sim ;
+	public static Simulation sim;
 		
 	private static final long serialVersionUID = -541698616292452515L;
 	private HashMap<String,Item> items;
 	private GridConstructor grid;
 	public static boolean stop =true;
-	private Round round = new Round();
+	public static Round round;
 	
 	public GridPanel(int i, int j, int k, int rdm) {
 		setPreferredSize(new Dimension(601,601));
@@ -47,7 +48,7 @@ public class GridPanel extends JPanel implements Runnable {
 		printEnv(g2, taille);
 		printFood(g2, taille);
 		printBeast(g2, taille);
-		printResultat(g2);
+//		printResultat(g2);
 	}
 	
 	private void drawDebugGrid(Graphics g, int width, int taille) {
@@ -87,15 +88,16 @@ public class GridPanel extends JPanel implements Runnable {
 				g2.drawImage(val3.getImage(),val3.getPosition().getX()*taille+1,val3.getPosition().getY()*taille+1,taille-1, taille-1, null);
 		}
 	}
-	private void printResultat(Graphics g2) {
-		g2.drawString(this.round.getStr(),5 ,25 );
-	}
+	
+	/*public static void printResultat(Graphics g2) {
+		g2.drawString(round.getStr(), 5, 25);
+	}*/
 	
 	@Override
 	public void run() {
 		while(!Thread.currentThread().isInterrupted()) {
 			try {
-				if(!stop && this.round.getCompteurRound()>=0) {
+				if(!stop && this.round.getCompteurRound()>0) {
 					for(int j=0;j<GridConstructor.nbScorpion;j++) {
 						int i =(int)(Math.random()*4+1);
 						Move.move(grid.getBeasts().get(j), i, rdm);

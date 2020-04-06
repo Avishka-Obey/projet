@@ -39,8 +39,7 @@ public class GridConstructor {
 		showEnvironment();
 		selectFood();
 		selectEnvironment();
-		
-		
+		Beast.initName();		
 	}
 	
 	public void showBeast() {
@@ -97,13 +96,12 @@ public class GridConstructor {
 	public void initBeasts(int i, int rdm) {
 	
 		///a corriger////
-		Beast.initName();
+		
 		/////////
 		
 		while(nbScorpion< i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {
-				
 				/////A corriger//////
 				int rnd = (int) (Math.random() * al.size());
 				String imgPath = al.get(rnd);
@@ -124,8 +122,7 @@ public class GridConstructor {
 	public ArrayList<Beast> getBeasts(){
 		return this.beasts;
 	}
-		
-		
+
 	public static Image readImage(String filePath) {
 		try {
 			return ImageIO.read(new File(filePath));
@@ -146,7 +143,7 @@ public class GridConstructor {
 				nbFood++;
 			//	System.out.println(f);
 			}
-		}	
+		}
 	}
 	
 	public ArrayList<Food> getFoods(){
@@ -154,7 +151,6 @@ public class GridConstructor {
 	}
 
 	public void initEnvironments(int i, int rdm) {
-
 		while(nbEnvironment<i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {
@@ -165,14 +161,9 @@ public class GridConstructor {
 				items.put(e.getPosition().toString(), e);
 				nbEnvironment++;
 			//	System.out.println(e);
-			}
-			
-		}
-		
+			}	
+		}	
 	}
-	
-	
-	
 }
 
 

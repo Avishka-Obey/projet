@@ -14,7 +14,7 @@ public class Fight {
 		this.scorpio2 = scorpio2;
 	}
 	
-	public void combat(Beast scorpio1, Beast scorpio2) {
+	public Beast combat(Beast scorpio1, Beast scorpio2) {
 		int n;
 		int m;
 
@@ -37,11 +37,13 @@ public class Fight {
 		System.out.println(scorpio2.getName() + " a " + m + " points");
 		if(n<m) {
 			System.out.println(scorpio1.getName() + " est mort");
-			scorpio1.destroy();
+//			scorpio1.destroy();
+			return scorpio1;
 		}
 		else {
 			System.out.println(scorpio2.getName() + " est mort");
-			scorpio2.destroy();
+//			scorpio2.destroy();
+			return scorpio2;
 		}
 	}
 	
