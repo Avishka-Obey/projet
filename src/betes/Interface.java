@@ -27,8 +27,8 @@ public class Interface extends JFrame implements ActionListener{
 	private JPanel panEst = new JPanel();
 	private JPanel panOuest = new JPanel();
 	private JLabel jds = new JLabel("Journal du scorpion : ");
-	private JLabel bv = new JLabel("Nombre de bêtes vivantes : ");
-	private JLabel bm = new JLabel("Nombre de bêtes mortes : ");
+	public static JLabel bv;
+	public static JLabel bm;
 	public static JLabel nsub;
 	public static JLabel tt;
 	public static JLabel ta= new JLabel(Round.atc);
@@ -38,6 +38,8 @@ public class Interface extends JFrame implements ActionListener{
 	private JButton stop;
 	public static GridPanel p;
 	public static int nbfood;
+	public static int numberAlive;
+	public static int numberDead;
 	Thread tred;
 	
 		

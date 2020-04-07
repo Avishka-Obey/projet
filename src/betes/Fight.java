@@ -10,8 +10,7 @@ public class Fight {
 	private HashMap<Integer, Beast> hm;
 	
 	public Fight () {
-		this.scorpio1 = scorpio1;
-		this.scorpio2 = scorpio2;
+
 	}
 	
 	public Beast combat(Beast scorpio1, Beast scorpio2) {
@@ -49,31 +48,31 @@ public class Fight {
 	
 
 	
-	public static void main(String[] args) {
-		Fight f = new Fight();
-		
-		Beast.initName();
-		Beast s = new Beast();
-		Beast q = new Beast();
-		s.randomName();
-		q.randomName();
-		System.out.println(s.toString());
-		System.out.println(q.toString());
-
-		f.combat(s, q);
-		
-		try {
-			System.out.println(s.toString());		
-		} catch (NullPointerException e) {
-			System.err.println("La bête n'existe plus");
-		}
-		
-		try {
-			System.out.println(q.toString());		
-		} catch (NullPointerException e) {
-			System.err.println("La bête n'existe plus");
-		}
-	}
+//	public static void main(String[] args) {
+//		Fight f = new Fight();
+//		
+//		Beast.initName();
+//		Beast s = new Beast();
+//		Beast q = new Beast();
+//		s.randomName();
+//		q.randomName();
+//		System.out.println(s.toString());
+//		System.out.println(q.toString());
+//
+//		f.combat(s, q);
+//		
+//		try {
+//			System.out.println(s.toString());		
+//		} catch (NullPointerException e) {
+//			System.err.println("La bête n'existe plus");
+//		}
+//		
+//		try {
+//			System.out.println(q.toString());		
+//		} catch (NullPointerException e) {
+//			System.err.println("La bête n'existe plus");
+//		}
+//	}
 	
 	
 	

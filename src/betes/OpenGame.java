@@ -146,6 +146,10 @@ public class OpenGame extends JFrame implements ActionListener {
 			Interface.tt = new JLabel("Nombre tour total : " + (int)tour1.getSelectedItem());
 			Interface.nsub = new JLabel("Nombre de subsistances : " + (int)nourriture1.getSelectedItem());
 			Interface.nbfood = (int)nourriture1.getSelectedItem();
+			Interface.numberAlive = (int)bete1.getSelectedItem();
+			Interface.bv = new JLabel("Nombre de bete vivante : " + Interface.numberAlive);
+			Interface.numberDead = 0;
+			Interface.bm = new JLabel("Nombre de bete vivante : " + Interface.numberDead);
 			Interface.p = new GridPanel((int)bete1.getSelectedItem(), (int)nourriture1.getSelectedItem(), (int)environnement1.getSelectedItem(), (int)taille1.getSelectedItem());
 			new Interface();
 			dispose();
@@ -194,3 +198,42 @@ public class OpenGame extends JFrame implements ActionListener {
 	
 	
 }
+
+
+
+/*for(hashmap de bete) {			i
+	for(hasghmap de bete)		j
+		if(pos(i)==pos(j))
+			fight f = new fight(i,j);
+			perdant = f.fight();
+			hashmap.remove(perdant);	
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

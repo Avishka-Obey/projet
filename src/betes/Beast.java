@@ -18,6 +18,7 @@ public class Beast implements Item{
 	private static ArrayList <String> nm;
 	private Image image;
 	private InterfaceChoice ic ;
+	Position initPosition ;
 	
 	
 
@@ -35,6 +36,7 @@ public class Beast implements Item{
 	
 	public Beast(Image image, Position pos) {
 		randomName();
+		initPosition = new Position(pos.getX(),pos.getY());
 		this.age = 0; 
 		randomGender();
 		this.energybar = new EnergyBar(20);
@@ -55,6 +57,10 @@ public class Beast implements Item{
 		this.charater = charater;
 		this.env = env;
 		this.pos = pos;
+	}
+	
+	public Position getInitPosition(){
+		return this.initPosition;
 	}
 	
 	public Image getImage() {

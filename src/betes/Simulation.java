@@ -49,18 +49,23 @@ public class Simulation {
 			Position currentposBeast1 = beasts.get(p).getPosition();
 			for(int q = 0; q<beasts.size(); q++) {
 				Position currentposBeast2 = beasts.get(q).getPosition();
-				 if(currentposBeast2.equals(currentposBeast1)&&p!=q) {
+				 if(currentposBeast2.equals(currentposBeast1)&& beasts.get(q)!=beasts.get(p)) {
 					Fight f = new Fight();
 					Beast perdante =f.combat(beasts.get(p), beasts.get(q));
-					items.remove(perdante.getPosition().toString());	
-					
+					items.remove(perdante.getInitPosition().toString());	
+					beasts.remove(perdante);
+					System.out.println("OK");
+					Interface.numberDead++;
+					Interface.numberAlive--;
+					Interface.bv.setText("Nombre de bêtes vivante : " + Interface.numberAlive);
+					Interface.bm.setText("Nombre de bêtes morte : " + Interface.numberDead);
 				}
-				
-			}
-		}
 		
 		
 		}
+	}
+	}
+}
 	
 	
 	/*@Override
@@ -142,6 +147,6 @@ public class Simulation {
 	
 	
 		
-	}
+	
 
 	
