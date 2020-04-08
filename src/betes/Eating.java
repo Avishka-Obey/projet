@@ -6,57 +6,62 @@ public class Eating {
 	public static void evolution(Beast s, Food f) {
 		
 		if(f.getTypeFood() == "Spider") {
-//			System.out.println(s);
+			System.out.println(s);
 			s.getCharacteristic().setStrength(s.getCharacteristic().getStrength() +1);
-//			System.out.println("Strength has changed");
-//			System.out.println(s);
+			System.out.println("Strength has changed");
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
-				
 			}
+			System.out.println(s);
 		}
 		
 		else if(f.getTypeFood() == "Mouse") {
-//			System.out.println(s);
+			System.out.println(s);
 			s.getCharacteristic().setIntelligence(s.getCharacteristic().getIntelligence() +1);
-//			System.out.println("Intelligence has changed");
-//			System.out.println(s);
+			System.out.println("Intelligence has changed");
+
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
 			}
+			System.out.println(s);
 		}
 		
 		else if(f.getTypeFood() == "Lizard") {
-//			System.out.println(s);
+			System.out.println(s);
 			s.getCharacteristic().setAgility(s.getCharacteristic().getAgility() + 1);
-//			System.out.println("Agility has changed");
-//			System.out.println(s);
+			System.out.println("Agility has changed");
+
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
 			}
+			System.out.println(s);
 		}
 		
 		else if(f.getTypeFood() == "Snake") {
-//			System.out.println(s);
+			System.out.println(s);
 			s.getCharacteristic().setMadness(s.getCharacteristic().getMadness() + 1);
-//			System.out.println("Madness has changed");
-//			System.out.println(s);
+			System.out.println("Madness has changed");
+
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
 			}
+			System.out.println(s);
 		}
 		
 		else if(f.getTypeFood() == "Mosquito") {
-//			System.out.println(s);
+			System.out.println(s);
 			s.getCharacteristic().setVelocity(s.getCharacteristic().getVelocity() + 1);
-//			System.out.println("Velocity has changed");
-//			System.out.println(s);
+			System.out.println("Velocity has changed");
+
 			if(s.getEnergy().getEnergy() <= 19) {
 				s.getEnergy().increment();
 			}
+			System.out.println(s);
 		}
 		
 		else if(f.getTypeFood() == "Bay") {
+			System.out.println(s);
+			System.out.println("Bay has been eat");
 			if(s.getCharacteristic().getStrength() !=0) {
 				s.getCharacteristic().setStrength(s.getCharacteristic().getStrength() - 1);
 			}
@@ -83,10 +88,8 @@ public class Eating {
 				}
 			}
 			
-			else {
-				s.destroy();
-			}
 			
+			System.out.println(s);
 		}
 		
 	}

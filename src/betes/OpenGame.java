@@ -142,7 +142,7 @@ public class OpenGame extends JFrame implements ActionListener {
 			Interface.p.width = 600-(600%(int)taille1.getSelectedItem());
 			Interface.p.taille = 600/(int)taille1.getSelectedItem();
 			Interface.p.rdm = (int)taille1.getSelectedItem();
-			Interface.p.round = new Round((int)tour1.getSelectedItem());
+			Interface.nbRound = (int)tour1.getSelectedItem();
 			Interface.tt = new JLabel("Nombre tour total : " + (int)tour1.getSelectedItem());
 			Interface.nsub = new JLabel("Nombre de subsistances : " + (int)nourriture1.getSelectedItem());
 			Interface.nbfood = (int)nourriture1.getSelectedItem();
@@ -201,13 +201,7 @@ public class OpenGame extends JFrame implements ActionListener {
 
 
 
-/*for(hashmap de bete) {			i
-	for(hasghmap de bete)		j
-		if(pos(i)==pos(j))
-			fight f = new fight(i,j);
-			perdant = f.fight();
-			hashmap.remove(perdant);	
-}*/
+
 
 
 

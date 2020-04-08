@@ -12,23 +12,24 @@ public class Simulation {
 	private HashMap<String,Item> items;
 	
 
-	public Simulation(HashMap<String,Item> items ) {
+	public Simulation(HashMap<String,Item> items,ArrayList<Beast>beasts, ArrayList<Food> foods) {
 		this.items = items;
+		this.beasts=beasts;
+		this.foods = foods;
 	}
 	
 	public void update() {
-		beasts = new ArrayList<Beast>();
-		foods = new ArrayList<Food>();
 		
-		for(Iterator<Item> it = items.values().iterator();it.hasNext(); ) {
-			Item i = it.next();
-			if(i.getStringType().equals("beast")) {
-				beasts.add((Beast)i);
-			}
-			else if (i.getStringType().equals("food")) {
-				foods.add((Food)i);
-			}
-		}
+		
+//		for(Iterator<Item> it = items.values().iterator();it.hasNext(); ) {
+//			Item i = it.next();
+//			if(i.getStringType().equals("beast")) {
+//				beasts.add((Beast)i);
+//			}
+//			else if (i.getStringType().equals("food")) {
+//				foods.add((Food)i);
+//			}
+//		}
 		
 		for(int i = 0; i<beasts.size();i++) {
 			Position currentposBeast = beasts.get(i).getPosition();
@@ -54,99 +55,59 @@ public class Simulation {
 					Beast perdante =f.combat(beasts.get(p), beasts.get(q));
 					items.remove(perdante.getInitPosition().toString());	
 					beasts.remove(perdante);
-					System.out.println("OK");
 					Interface.numberDead++;
+					GridConstructor.nbScorpion--;
 					Interface.numberAlive--;
 					Interface.bv.setText("Nombre de bêtes vivante : " + Interface.numberAlive);
 					Interface.bm.setText("Nombre de bêtes morte : " + Interface.numberDead);
 				}
 		
 		
+			}
 		}
-	}
+		for(int p = 0; p<beasts.size();p++) {
+			 if(beasts.get(p).getAge()==8 || beasts.get(p).getEnergy().getEnergy()<=0) {
+//				 System.out.println(beasts.get(p));
+				 items.remove(beasts.get(p).getInitPosition().toString());	
+				 beasts.remove(beasts.get(p));
+				 GridConstructor.nbScorpion--;
+				 Interface.numberDead++;
+				 Interface.numberAlive--;
+				 Interface.bv.setText("Nombre de bêtes vivante : " + Interface.numberAlive);
+				 Interface.bm.setText("Nombre de bêtes morte : " + Interface.numberDead);
+				
+				 
+			 }
+			 
+//			 else if(beasts.get(p).getEnergy().getEnergy()<=0) {
+////				 System.out.println(beasts.get(p));
+//				 items.remove(beasts.get(p).getInitPosition().toString());	
+//				 beasts.remove(p);
+//				 Interface.numberDead++;
+//				 Interface.numberAlive--;
+//				 Interface.bv.setText("Nombre de bêtes vivante : " + Interface.numberAlive);
+//				 Interface.bm.setText("Nombre de bêtes morte : " + Interface.numberDead);
+//				 
+//			 }
+		}
+//		for(int p = 0; p<beasts.size();p++) {
+//			if(Round.actuel>1 ) {
+//				beasts.get(p).getEnergy().decrement(); 	
+//				
+//				System.out.println(beasts.get(p));
+//			}
+//			
+//			if(Round.actuel%16 == 0) {
+//				beasts.get(p).ageIncrement(); 	
+//			}
+//		
+//		}
+//		
 	}
 }
 	
 	
-	/*@Override
-	public void run() {
-		while(!Thread.currentThread().isInterrupted()) {
-			try {
-				if(!stop) {
-					
-					for(int j=0;j<GridConstructor.nbScorpion;j++) {
-						int i =(int)(Math.random()*4+1);
-						Move.move(grid.getBeasts().get(j), i, rdm);
-						
-						for(int p = 0; p<grid.getFoods().size(); p++) {
-//							if(grid.getBeasts().get(j).getPosition() == grid.getFoods().get(p).getPosition()) {
-							Position currentposBeast = grid.getBeasts().get(j).getPosition();
-							Position currentposFood = grid.getFoods().get(p).getPosition();
-							if(currentposBeast.equals(currentposFood)) {
-								Eating eat = new Eating();
-								eat.evolution(grid.getBeasts().get(j), grid.getFoods().get(p));
-								grid.getFoods().remove(p);
-								System.out.println(grid.getBeasts().get(j));
-							}
-						}
-						
-					}
-					this.repaint() ;
-					Thread.sleep(500);
-				}
-				
-			}
-			catch(InterruptedException e) {
-				System.out.println("erreur");
-			}
-//			Thread.currentThread().interrupt();
-		}	
-		
-		
-	}
-	
-	
-	@Override
-	public void run() {
-		while(!Thread.currentThread().isInterrupted()) {
-			try {
-				if(!stop) {
-					
-					for(int j=0;j<GridConstructor.nbScorpion;j++) {
-						int i =(int)(Math.random()*4+1);
-						Move.move(grid.getBeasts().get(j), i, rdm);
-						
-						for(int p = 0; p<grid.getFoods().size(); p++) {
-//							if(grid.getBeasts().get(j).getPosition() == grid.getFoods().get(p).getPosition()) {
-							Position currentposBeast = grid.getBeasts().get(j).getPosition();
-							Position currentposFood = grid.getFoods().get(p).getPosition();
-							if(currentposBeast.equals(currentposFood)) {
-								Simulation sim = new Simulation();
-								sim.evolution(grid.getBeasts().get(j), grid.getFoods().get(p));
-								grid.getFoods().remove(p);
-								System.out.println(grid.getBeasts().get(j));
-							}
-						}
-						
-					}
-					this.repaint() ;
-					Thread.sleep(500);
-				}
-				
-			}
-			catch(InterruptedException e) {
-				System.out.println("erreur");
-			}
-//			Thread.currentThread().interrupt();
-		}	
-		
-		
-	}
-	
-	*/
-	
-	
-		
+
 	
 
 	

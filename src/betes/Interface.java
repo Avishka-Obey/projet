@@ -40,6 +40,7 @@ public class Interface extends JFrame implements ActionListener{
 	public static int nbfood;
 	public static int numberAlive;
 	public static int numberDead;
+	public static int nbRound;
 	Thread tred;
 	
 		

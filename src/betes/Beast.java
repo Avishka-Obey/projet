@@ -141,6 +141,11 @@ public class Beast implements Item{
 	public int getAge() {
 		return age;
 	}
+	
+	public int ageIncrement() {
+		age++;
+		return age;
+	}
 
 	
 	
@@ -187,16 +192,6 @@ public class Beast implements Item{
 		return choice;
 	}
 	
-	public void destroy() {
-		this.name = null;
-		this.age = null; 
-		this.gender = null;
-		this.energybar = null;
-		this.charater = null;
-		this.choice = null;
-		
-//		Normalement il  y a destruction de la bête
-	}
 	
 	public Beast reproduce(Beast scorpio1) {
 			Beast s = new Beast();

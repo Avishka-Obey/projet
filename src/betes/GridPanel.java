@@ -32,10 +32,11 @@ public class GridPanel extends JPanel implements Runnable {
 		this.setSize(1200,700);
 		grid = new GridConstructor();
 		items = grid.getItems();
-		sim = new Simulation(items);
+		sim = new Simulation(items,grid.getBeasts(),grid.getFoods());
 		grid.initFoods(j, rdm);
 		grid.initEnvironments(k, rdm);
 		grid.initBeasts(i, rdm);
+		round = new Round(Interface.nbRound,grid.getBeasts());
 		
 	}
 	
@@ -101,9 +102,11 @@ public class GridPanel extends JPanel implements Runnable {
 					for(int j=0;j<GridConstructor.nbScorpion;j++) {
 						int i =(int)(Math.random()*4+1);
 						Move.move(grid.getBeasts().get(j), i, rdm);
+						 System.out.println(grid.getBeasts().get(j));	
 					}
 					this.repaint() ;
 					Thread.sleep(500);
+					
 				}
 				
 			}
