@@ -34,14 +34,23 @@ public class Fight {
 		System.out.println("\nCombat entre : " + scorpio1.getName() + " + " + scorpio2.getName());
 		System.out.println(scorpio1.getName() + " a " + n + " points");
 		System.out.println(scorpio2.getName() + " a " + m + " points");
+		
 		if(n<m) {
 			System.out.println(scorpio1.getName() + " est mort");
 //			scorpio1.destroy();
+			scorpio2.getEnergy().decrement();
+			scorpio2.getEnergy().decrement();
+			scorpio2.getEnergy().decrement();
+			scorpio2.getEnergy().decrement();
 			return scorpio1;
 		}
 		else {
 			System.out.println(scorpio2.getName() + " est mort");
 //			scorpio2.destroy();
+			scorpio1.getEnergy().decrement();
+			scorpio1.getEnergy().decrement();
+			scorpio1.getEnergy().decrement();
+			scorpio1.getEnergy().decrement();
 			return scorpio2;
 		}
 	}

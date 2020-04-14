@@ -95,10 +95,6 @@ public class GridConstructor {
 	
 	public void initBeasts(int i, int rdm) {
 	
-		///a corriger////
-		
-		/////////
-		
 		while(nbScorpion< i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
 			if( !items.containsKey(pos.toString()) ) {

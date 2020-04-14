@@ -149,7 +149,7 @@ public class OpenGame extends JFrame implements ActionListener {
 			Interface.numberAlive = (int)bete1.getSelectedItem();
 			Interface.bv = new JLabel("Nombre de bete vivante : " + Interface.numberAlive);
 			Interface.numberDead = 0;
-			Interface.bm = new JLabel("Nombre de bete vivante : " + Interface.numberDead);
+			Interface.bm = new JLabel("Nombre de bete morte : " + Interface.numberDead);
 			Interface.p = new GridPanel((int)bete1.getSelectedItem(), (int)nourriture1.getSelectedItem(), (int)environnement1.getSelectedItem(), (int)taille1.getSelectedItem());
 			new Interface();
 			dispose();

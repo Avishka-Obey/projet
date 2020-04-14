@@ -1,5 +1,6 @@
-package betes;
+package data;
 
+import process.*;
 import java.util.HashMap;
 import java.awt.Image;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Beast implements Item{
 	private HashMap <Integer,String> hm;
 	private static ArrayList <String> nm;
 	private Image image;
-	private InterfaceChoice ic ;
+//	private InterfaceChoice ic ;
 	private Position initPosition ;
 	private String marriedWith;
 	
@@ -239,7 +240,7 @@ public class Beast implements Item{
 	
 	public String toString() {
 		String text = "";
-		text += "\n\nName : " + getName() + "\nAge : " + getAge() + "\nGender : " + gender + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy() + "\n\nPosition : " + getPosition() ;
+		text += "Name : " + getName() + "\nAge : " + getAge() + "\nGender : " + gender + "\nCharacteristic : \n" + getCharacteristic().toString() + "\n\nEnvironment : " + getEnvironment() + "\n\nAntenna : \n" + getAnt().toString() + "\n\nEnergy Bar : " + getEnergy().getEnergy() + "\n\nPosition : " + getPosition() ;
 		return text;
 	}
 	

@@ -49,7 +49,33 @@ public class GridPanel extends JPanel implements Runnable {
 		printEnv(g2, taille);
 		printFood(g2, taille);
 		printBeast(g2, taille);
-//		printResultat(g2);
+		if(Simulation.isMarried) {
+			for(int i=0;i<Simulation.marriedPos.size();i++) {
+				try {
+					g2.drawImage(ImageIO.read(new File("src/images/coeur.png")),Simulation.marriedPos.get(i).getX()*taille+1, Simulation.marriedPos.get(i).getY()*taille+1,taille-1,taille-1,null);
+					Simulation.isMarried = false ;
+					Simulation.marriedPos.clear();
+				} 
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
+			
+		}
+		if(Simulation.isFighting) {
+			for(int i=0;i<Simulation.fightPos.size();i++) {
+				try {
+					g2.drawImage(ImageIO.read(new File("src/images/fight.png")),Simulation.fightPos.get(i).getX()*taille+1, Simulation.fightPos.get(i).getY()*taille+1,taille-1,taille-1,null);
+					Simulation.isFighting = false ;
+					Simulation.fightPos.clear();					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
 	}
 	
 	private void drawDebugGrid(Graphics g, int width, int taille) {
@@ -68,11 +94,11 @@ public class GridPanel extends JPanel implements Runnable {
 			g.drawLine(1, i, width, i);
 		}
 	}
-	
-	private void printBeast(Graphics g2, int taille) {
+			
+	private void printEnv(Graphics g2, int taille) {
 		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
-			Item val = it.next();
-			g2.drawImage(val.getImage(),val.getPosition().getX()*taille+1,val.getPosition().getY()*taille+1, taille-1, taille-1, null);
+				Item val3 = it.next();
+				g2.drawImage(val3.getImage(),val3.getPosition().getX()*taille+1,val3.getPosition().getY()*taille+1,taille-1, taille-1, null);
 		}
 	}
 	
@@ -83,16 +109,17 @@ public class GridPanel extends JPanel implements Runnable {
 		}
 	}
 	
-	private void printEnv(Graphics g2, int taille) {
+	private void printBeast(Graphics g2, int taille) {
+		
 		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
-				Item val3 = it.next();
-				g2.drawImage(val3.getImage(),val3.getPosition().getX()*taille+1,val3.getPosition().getY()*taille+1,taille-1, taille-1, null);
+			Item val = it.next();
+			g2.drawImage(val.getImage(),val.getPosition().getX()*taille+1,val.getPosition().getY()*taille+1, taille-1, taille-1, null);
 		}
 	}
 	
-	/*public static void printResultat(Graphics g2) {
-		g2.drawString(round.getStr(), 5, 25);
-	}*/
+	
+	
+	
 	
 	@Override
 	public void run() {
