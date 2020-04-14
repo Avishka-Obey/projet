@@ -1,5 +1,7 @@
-package betes;
+package process;
 
+import data.*;
+import gui.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,7 +10,7 @@ public class Round implements Runnable {
 	private ArrayList<Beast> beasts; 
 	//VARIABLES
 	private final int PAUSE = 2500;
-	public  int actuel = 0;
+	public static int actuel = 0;
 	private int compteurRound ;
 	public static String str;
 	public static String atc;
@@ -44,7 +46,7 @@ public class Round implements Runnable {
 			try {
 				Thread.sleep(PAUSE);
 				if(!GridPanel.stop && getCompteurRound()>0) {
-					this.compteurRound --;
+					this.compteurRound--;
 					this.actuel++;
 					for(int p = 0; p<beasts.size();p++) {
 						beasts.get(p).getEnergy().decrement();

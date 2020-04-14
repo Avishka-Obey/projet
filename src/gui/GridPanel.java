@@ -1,4 +1,7 @@
-package betes;
+package gui;
+
+import process.*;
+import data.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -33,9 +36,10 @@ public class GridPanel extends JPanel implements Runnable {
 		grid = new GridConstructor();
 		items = grid.getItems();
 		sim = new Simulation(items,grid.getBeasts(),grid.getFoods());
+		grid.initBeasts(i, rdm);
 		grid.initFoods(j, rdm);
 		grid.initEnvironments(k, rdm);
-		grid.initBeasts(i, rdm);
+		
 		round = new Round(Interface.nbRound,grid.getBeasts());
 		
 	}
@@ -52,6 +56,7 @@ public class GridPanel extends JPanel implements Runnable {
 		if(Simulation.isMarried) {
 			for(int i=0;i<Simulation.marriedPos.size();i++) {
 				try {
+//					g2.drawImage(ImageIO.read("image avec 2 scorpion));
 					g2.drawImage(ImageIO.read(new File("src/images/coeur.png")),Simulation.marriedPos.get(i).getX()*taille+1, Simulation.marriedPos.get(i).getY()*taille+1,taille-1,taille-1,null);
 					Simulation.isMarried = false ;
 					Simulation.marriedPos.clear();

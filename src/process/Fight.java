@@ -1,5 +1,6 @@
-package betes;
+package process;
 
+import data.*;
 import java.util.HashMap;
 
 public class Fight {

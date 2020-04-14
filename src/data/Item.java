@@ -1,4 +1,4 @@
-package betes;
+package data;
 
 import java.awt.Image;
 

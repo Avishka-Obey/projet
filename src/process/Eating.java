@@ -1,9 +1,10 @@
-package betes;
+package process;
 
+import data.*;
 
 public class Eating {
 	
-	public static void evolution(Beast s, Food f) {
+	public static String evolution(Beast s, Food f) {
 		
 		if(f.getTypeFood() == "Spider") {
 			System.out.println(s);
@@ -13,6 +14,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
+			return "Araignée et a amélioré sa force";
 		}
 		
 		else if(f.getTypeFood() == "Mouse") {
@@ -24,6 +26,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
+			return "Souris et a amélioré son inteligence";
 		}
 		
 		else if(f.getTypeFood() == "Lizard") {
@@ -35,6 +38,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
+			return "Lézard et a amélioré son agilité";
 		}
 		
 		else if(f.getTypeFood() == "Snake") {
@@ -46,6 +50,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
+			return "Serpent et a amélioré sa folie";
 		}
 		
 		else if(f.getTypeFood() == "Mosquito") {
@@ -57,6 +62,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
+			return "Moustique et a amélioré sa vitesse";
 		}
 		
 		else if(f.getTypeFood() == "Bay") {
@@ -90,7 +96,11 @@ public class Eating {
 			
 			
 			System.out.println(s);
+			
+			return "Baie et a fait descendre de 1 toutes ses capacités";
 		}
+		
+		return "";
 		
 	}
 	

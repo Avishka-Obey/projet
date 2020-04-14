@@ -1,4 +1,4 @@
-package betes;
+package data;
 
 public class Antenna {
 	private int vision;

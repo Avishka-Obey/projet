@@ -1,14 +1,14 @@
-package betes;
+package process;
 
+import data.*;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import javax.imageio.ImageIO;
-
-
 
 
 
@@ -27,10 +27,12 @@ public class GridConstructor {
 	private int nbEnvironment;
 	private ArrayList<Beast> beasts;
 	private ArrayList<Food> foods;
+	private ArrayList<String> positions;
 	
 	
 	public GridConstructor() {
 		items = new HashMap<String,Item>();
+		positions = new ArrayList<String>();
 		nbEnvironment=0;
 		beasts = new ArrayList<Beast>();
 		foods = new ArrayList<Food>();
@@ -97,17 +99,20 @@ public class GridConstructor {
 	
 		while(nbScorpion< i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
-			if( !items.containsKey(pos.toString()) ) {
+			
+			if( !positions.contains(pos.toString()) ) {
 				/////A corriger//////
 				int rnd = (int) (Math.random() * al.size());
 				String imgPath = al.get(rnd);
 				al.remove(rnd);
 				///////
-				beasts.add( new Beast(readImage(imgPath),pos));
-				items.put(beasts.get(nbScorpion).getInitPosition().toString(),beasts.get(nbScorpion));
+				beasts.add(new Beast(readImage(imgPath),pos));
+				items.put(beasts.get(nbScorpion).getName(),beasts.get(nbScorpion));
+				positions.add(pos.toString());
 				//System.out.println(beasts.get(nbScorpion));
 				nbScorpion++;
 			}
+			
 		}
 	}
 		
@@ -131,7 +136,7 @@ public class GridConstructor {
 	public void initFoods(int i, int rdm) {
 		while(nbFood<i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
-			if( !items.containsKey(pos.toString()) ) {
+			if( !items.containsKey(pos.toString()) && !positions.contains(pos.toString())) {
 				int random = (int) (Math.random() * fm.size());
 				String typefood = fm.get(random);
 				foods.add(new Food(typefood,readImage(array.get(random)), pos));
@@ -149,7 +154,7 @@ public class GridConstructor {
 	public void initEnvironments(int i, int rdm) {
 		while(nbEnvironment<i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));
-			if( !items.containsKey(pos.toString()) ) {
+			if( !items.containsKey(pos.toString()) && !positions.contains(pos.toString()) ) {
 				int rnds = (int) (Math.random() * em.size());
 				String type = em.get(rnds);
 			//	System.out.println(type);

@@ -1,8 +1,13 @@
-package betes;
+package data;
+
+import gui.*;
 
 public class Position {
 	private  int x;
 	private  int y;
+	
+	private static int rx;
+	private static int ry;
 	
 	public Position(int x, int y) {
 		this.x = x;
@@ -34,6 +39,16 @@ public class Position {
 	
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public static int randomX() {
+		rx = (int)(Math.random()*Interface.p.rdm);
+		return rx;
+	}
+	
+	public static int randomY() {
+		ry = (int)(Math.random()*Interface.p.rdm);
+		return ry;
 	}
 	
 	public String toString() {

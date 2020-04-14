@@ -1,4 +1,4 @@
-package betes;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -103,6 +103,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		container.add(environnement1);
 		container.add(tour);
 		container.add(tour1);
+		container.setBackground(Color.PINK);
 		
 		JPanel squette = new JPanel();
 		squette.setLayout(new GridLayout(2,1));
@@ -111,6 +112,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		
 		JPanel titre = new JPanel();
 		titre.add(bienvenue);
+		titre.setBackground(Color.pink);
 		pan.add(titre, BorderLayout.NORTH);
 		
 		panCenter.setBackground(Color.pink) ;
@@ -198,36 +200,3 @@ public class OpenGame extends JFrame implements ActionListener {
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

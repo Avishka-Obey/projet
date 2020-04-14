@@ -1,4 +1,6 @@
-package betes;
+package process;
+
+import data.*;
 
 public class Move {
 	private int up;
