@@ -1,5 +1,10 @@
 package gui;
 
+/**
+ * Cette classe represente la création de la fenêtre principale
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import process.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -158,6 +163,10 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseEntered(MouseEvent e) {}
+	
+	/**
+	 * Cette méthode permet d'avoir les informations d'une bête en cliquant dessus 
+	 */
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -192,42 +201,27 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent e) {
 		Object Button = e.getSource() ;
 		if (Button == start) {
-//			System.out.println("start");
 			
 			GridPanel.stop = false;
 			
 		}
 		
 		if (Button==stop) {
-//			System.out.println("stop");
-//			Thread.currentThread().interrupt();
+			
 			GridPanel.stop = true;
 		}
 		
-if(Button==ok) {
+		if(Button==ok) {
 			
 			JTextArea journal = new JTextArea(Simulation.mort.get(js.getSelectedItem()));
 			JScrollPane scrollPane = new JScrollPane(journal);
-			
-//			getContentPane().add(scrollPane);
-//			this.setVisible(true);
-			
 			JFrame jf = new JFrame();
 			jf.add(scrollPane);
 			jf.setSize(400, 800) ;
 			jf.setVisible(true);
 			jf.setLocationRelativeTo(null);
 			jf.setLocationRelativeTo(null);
-			/*JTextArea journal = new JTextArea(Simulation.mort.get(js.getSelectedItem()));
-			JFrame fenJournal = new JFrame () ;
 			
-			//setVisible(false);
-			fenJournal.setVisible(true) ;
-			fenJournal.add(journal);
-			fenJournal.setSize(400, 800) ;
-			fenJournal.setResizable(true);
-			fenJournal.setLocationRelativeTo(null);
-			fenJournal.setDefaultCloseOperation(1) ; */
 		}
 	}
 }

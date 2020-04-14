@@ -1,5 +1,11 @@
 package data;
 
+
+/**
+ * Cette classe represente la barre d'energie du scorpion
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 public class EnergyBar {
 
 	private int energy;
@@ -7,6 +13,10 @@ public class EnergyBar {
 	public EnergyBar(int energy) {
 		this.energy = energy;
 	}
+	
+	/**
+	 * Ces méthodes permettent d'incrémenter et décrémenter la barre d'énergie de la bête 
+	 */
 	
 	public int increment() {
 		energy++;
@@ -32,10 +42,5 @@ public class EnergyBar {
 		return text;
 	}
 	
-	public static void main(String[] args) {
-		
-		EnergyBar eb = new EnergyBar(20);
-		System.out.println(eb.toString());		
 	
-	}
 }

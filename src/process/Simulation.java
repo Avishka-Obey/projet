@@ -1,5 +1,9 @@
 package process;
 
+/**
+ * Cette classe represente la simulation de l'interface
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
 
 import data.*;
 import gui.*;
@@ -8,9 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import javax.imageio.ImageIO;
-
-
-
 
 public class Simulation {
 	public static ArrayList<Beast> beasts; 
@@ -36,6 +37,8 @@ public class Simulation {
 	}
 	
 	public void update() {
+		
+		//Une fois que la bête a manger suppression de la nourriture
 		
 		for(int i = 0; i<beasts.size();i++) {
 			try {
@@ -65,6 +68,7 @@ public class Simulation {
 			}
 		}
 		
+		//Suppresion de la bete perdante du combat
 		
 		for(int p = 0; p<beasts.size();p++) {
 			Position currentposBeast1 = beasts.get(p).getPosition();
@@ -109,7 +113,7 @@ public class Simulation {
 			}
 		}
 		
-
+		//Après le mariage vient la reproduction
 		for(int p = 0; p<beasts.size();p++) {
 			Position currentposBeast1 = beasts.get(p).getPosition();
 			for(int q = 0; q<beasts.size(); q++) {
@@ -150,7 +154,7 @@ public class Simulation {
 			}
 		}
 		
-		
+		//Mort de la bête si l'âge est egale à 8 ou si son énergie est inférieur ou égale à 0
 		for(int p = 0; p<beasts.size();p++) {
 			 if(beasts.get(p).getAge()==8 || beasts.get(p).getEnergy().getEnergy()<=0) {
 //				System.out.println(beasts.get(p));

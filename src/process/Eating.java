@@ -1,5 +1,10 @@
 package process;
 
+/**
+ * Cette classe permet de d'augmenter ou de diminuer les charactéristiques des bêtes par rapport à la nourriture manger
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import data.*;
 
 public class Eating {
@@ -110,13 +115,7 @@ public class Eating {
 		Food f = new Food();
 		Eating e = new Eating();
 		
-		Beast.initName();
-		s.randomName();
 		System.out.println(s.toString());
-		
-		f.initFood();
-		f.randomFood();
-		
 		e.evolution(s, f);
 		
 		System.out.println("La nourriture est : " + f.getTypeFood());

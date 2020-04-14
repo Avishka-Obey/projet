@@ -1,5 +1,10 @@
 package data;
 
+/**
+ * Cette classe represente les charactéristique constituant l'attaque et la défense de la bête (scorpion)
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import java.util.Arrays;
 
 public class Characteristic {
@@ -9,6 +14,10 @@ public class Characteristic {
 	private int madness;
 	private int intelligence;
 	private int strength;
+	
+	/** 
+	 * Ce constructeur permet d'attribuer aléatoirement les charactéristiques de la bête entre 0 et 10
+	 */
 	
 	public Characteristic() {
 		agility =(int)(Math.random() * 10);
@@ -67,7 +76,9 @@ public class Characteristic {
 		this.strength = strength;
 	}
 	
-
+	/** 
+	 * Cette méthode permettra de conféré un bonus de 3 point à une bête sur sa charatéristique la plus faible lors d'un combat
+	 */
 	
 	public void bonus() {
 		int tab[] = {getAgility(), getVelocity(), getMadness(), getIntelligence(), getStrength()};
@@ -105,11 +116,19 @@ public class Characteristic {
 		}
 	}
 	
+	/** 
+	 * Cette méthode fait la somme des charatéristiques constituant l'attaque de la bête
+	 */
+	
 	public int somAttaque() {
 		int n;
 		n= getMadness() + getStrength();
 		return n;
 	}
+	
+	/** 
+	 * Cette méthode fait la somme des charatéristiques constituant la défense de la bête
+	 */
 	
 	public int somDefense() {
 		int n;
@@ -122,6 +141,11 @@ public class Characteristic {
 		text = "Agility = " + getAgility() + "\nVelocity = " + getVelocity() + "\nMadness = " + getMadness() + "\nIntelligence = " + getIntelligence() + "\nStrength = " + getStrength();
 		return text;
 	}
+	
+	/**
+	 * Ce main est présent afin de tester dans la console que les charactéristiques sont générés aléatoirement
+	 * et que la méthode bonus modifie bien la charactérisque la plus faible
+	 */
 	
 	public static void main (String[] args) {
 		Characteristic at = new Characteristic();

@@ -1,5 +1,9 @@
 package data;
 
+/**
+ * Cette classe represente la nourriture qui est un objet de la grille
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
 import java.awt.Image;
 
 import java.util.HashMap;
@@ -12,20 +16,19 @@ public class Food implements Item{
 	private static HashMap <Integer,String> hm;
 	private Image image;
 	
+	/**
+	 * Ce constructeur a été créer uniquement pour les tests en console
+	 */
+	
 	public Food() {
 		hm = new HashMap<Integer, String> ();
 		initFood();
 	}
-	public Food(String typefood) {
-		hm = new HashMap<Integer, String> ();
-		initFood();
-		this.typefood=typefood;
-//		typefood = randomFood();
-	}
 	
-	public String getStringType() {
-		return "food";
-	}
+	/**
+	 *Dans l'Interface graphique chaque objet sera déterminé par une image ainsi qu'une position
+	 *Ce constructeur attribue un type de nourriture, une image et une position à l'objet
+	 */
 	
 	public Food(String typefood,Image image,Position pos) {
 		hm = new HashMap<Integer, String> ();
@@ -35,11 +38,17 @@ public class Food implements Item{
 		this.pos=pos;
 	}
 	
-	public Food(String typefood,Position pos) {
-		this.typefood = typefood;
-		this.pos = pos;
-		
+	/**
+	 *Methode redefinit de l'interface item permettant de determiner que l'objet est de type "food"
+	 */
+	
+	public String getStringType() {
+		return "food";
 	}
+	
+	/**
+	 *Initialisation des différentes nourritures dans une HashMap
+	 */
 	
 	public static void initFood() {
 		hm.put(0, "Spider");
@@ -56,6 +65,10 @@ public class Food implements Item{
 		n = rm.nextInt(6);
 		return n;
 	}
+	
+	/**
+	 *Cette méthode renvoie une nourriture aléatoirement
+	 */
 	
 	public String randomFood() {
 		typefood = hm.get(Random());

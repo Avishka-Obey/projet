@@ -1,5 +1,10 @@
 package data;
 
+/**
+ * Cette classe represente notre objet principale qui est une bete (scorpion)
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import process.*;
 import java.util.HashMap;
 import java.awt.Image;
@@ -22,8 +27,10 @@ public class Beast implements Item{
 	private Position initPosition ;
 	private String marriedWith;
 	
-	
-
+	/**
+	 * Ce constructeur ne prend aucun argument en paramètre car il est
+	 * seulement utiliser pour tester nos méthodes dans la console
+	 */
 	
 	public Beast() {
 		randomName();
@@ -36,6 +43,11 @@ public class Beast implements Item{
 		this.marriedWith = null;
 		
 	}
+	
+	/**
+	 *Dans l'Interface graphique chaque objet sera déterminé 
+	 * par une image ainsi qu'une position
+	 */
 	
 	public Beast(Image image, Position pos) {
 		randomName();
@@ -50,18 +62,6 @@ public class Beast implements Item{
 		this.pos = pos;
 		this.marriedWith = null;
 		//this.ic =ic;
-	}
-	
-	public Beast( Integer age , String gender , Antenna choice , EnergyBar energybar , Characteristic charater , Environment env , Position pos) {
-		randomName();
-		this.age = age ;
-		randomGender();
-		this.choice = choice ;
-		this.energybar = energybar;
-		this.charater = charater;
-		this.env = env;
-		this.pos = pos;
-		this.marriedWith =  null;
 	}
 	
 	public Position getInitPosition(){
@@ -80,11 +80,20 @@ public class Beast implements Item{
 		return this.image;
 	}
 	
+	/**
+	 *Methode redefinit de l'interface item permettant de determiner 
+	 *que l'objet est de type "beast"
+	 */
+
 	public String getStringType() {
 		return "beast";
 	}
-
 	
+	/**
+	 * Cette méthode permet d'ajouter dans une arraylist des prénoms
+	 * que l'on attribura par la suite aux scorpions
+	 */
+
 	public static void initName() {
 		nm = new ArrayList <String> ();
 		nm.add("Georges");
@@ -149,7 +158,11 @@ public class Beast implements Item{
 	}
 	
 	
-	
+	/**
+	 * methode selectionnant un nom au hasard dans l'arraylist
+	 * une fois selectionné il est supprimé
+	 */
+
 	public void randomName() {
 		int rnd = (int) (Math.random() * nm.size());
 		this.name = nm.get(rnd);
@@ -170,6 +183,10 @@ public class Beast implements Item{
 		return age;
 	}
 	
+	/**
+	 * methode permettant d'incrementer l'âge de la bête 
+	 */
+
 	public int ageIncrement() {
 		age++;
 		return age;
@@ -183,6 +200,11 @@ public class Beast implements Item{
 		hm.put(1, "female");
 	} 
 	
+	/**
+	 * methode retournant le sexe de la bête
+	 * attribuer aléatoirement
+	 */
+
 	public String randomGender() {
 		Random rm = new Random();
 		int n;
@@ -220,6 +242,10 @@ public class Beast implements Item{
 		return choice;
 	}
 	
+	/**
+	 * Cette méthode créer une nouvelle bête ayant ses caracteristiques 
+	 * héritant de sa mere et de son pere (probabilité de 50%) 
+	 */
 	
 	public Beast reproduce(Beast scorpio1) {
 			Beast s = new Beast(GridConstructor.readImage("src/images/roudeaux.png"), new Position(pos.getX(),pos.getY())) ;
@@ -234,6 +260,7 @@ public class Beast implements Item{
 			s.getEnvironment();
 			return s;		
 	}
+	
 //	public void move(Beast,Map) {
 //		this.ic.move(this, Map);
 //	}
@@ -244,6 +271,12 @@ public class Beast implements Item{
 		return text;
 	}
 	
+	/**
+	 * Ce main est présent afin de tester dans la console que notre bête possède 
+	 * toutes les attributs nécessaires (age, sexe, nom ...)
+	 * Les seuls attributs manquant sont la position et l'image car nous utilisons 
+	 * le constructeur sans paramètres
+	 */
 
 	public static void main (String[] args) {
 		

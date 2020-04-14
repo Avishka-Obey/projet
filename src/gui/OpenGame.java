@@ -1,5 +1,11 @@
 package gui;
 
+/**
+ * Cette classe represente la création de la fenêtre d'ouverture du jeu
+ * Où l'utilisateur pourra entrer les paramètres choisit
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -29,11 +35,7 @@ public class OpenGame extends JFrame implements ActionListener {
 	private JLabel nourriture = new JLabel("Combien de nourritures voulez vous ?");
 	private JLabel environnement = new JLabel("Combien d'environnements voulez vous ?    ");
 	private JLabel tour = new JLabel("Combien de tours voulez vous ?");
-//	private JTextField taille1 = new JTextField();
-//	private JTextField bete1 = new JTextField();
-//	private JTextField nourriture1 = new JTextField();
-//	private JTextField environnement1 = new JTextField();
-	
+
 	JComboBox tour1 = new JComboBox();
 	JComboBox taille1 = new JComboBox();
 	JComboBox bete1 = new JComboBox();
@@ -57,14 +59,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		pan.setLayout(new BorderLayout());
 		
 		start.addActionListener(this);
-		
-//		taille1.setPreferredSize(new Dimension(150,30));
-//		bete1.setPreferredSize(new Dimension(150,30));
-//		nourriture1.setPreferredSize(new Dimension(150,30));
-//		environnement1.setPreferredSize(new Dimension(150,30));
-		
-
-		
+			
 		taille1.addActionListener(new ItemAction1());
 		bete1.addActionListener(new ItemAction2());
 		nourriture1.addActionListener(new ItemAction3());
@@ -118,18 +113,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		panCenter.setBackground(Color.pink) ;
 		panCenter.setSize(1200,700);
 		panCenter.add(squette);
-//		panCenter.add(bienvenue);
-//		panCenter.add(bete);
-//		panCenter.add(bete1);
-//		panCenter.add(nourriture);
-//		panCenter.add(nourriture1);
-//		panCenter.add(environnement);
-//		panCenter.add(environnement1);
-//		panCenter.add(start);
 		pan.add(panCenter, BorderLayout.CENTER);
-		
-		
-		
 		
 		this.setContentPane(pan);
 		setVisible(true) ;

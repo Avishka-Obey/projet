@@ -1,5 +1,10 @@
 package gui;
 
+/**
+ * Cette classe permet l'affichage de tous les objets ainsi que la grille
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import process.*;
 import data.*;
 import java.awt.Color;
@@ -83,6 +88,10 @@ public class GridPanel extends JPanel implements Runnable {
 		}
 	}
 	
+	/**
+	 * Création de la grille
+	 */
+	
 	private void drawDebugGrid(Graphics g, int width, int taille) {
 		
 		g.drawLine(width, 0, width, width);
@@ -99,6 +108,10 @@ public class GridPanel extends JPanel implements Runnable {
 			g.drawLine(1, i, width, i);
 		}
 	}
+	
+	/**
+	 * Affichage des environnements
+	 */
 			
 	private void printEnv(Graphics g2, int taille) {
 		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
@@ -107,12 +120,20 @@ public class GridPanel extends JPanel implements Runnable {
 		}
 	}
 	
+	/**
+	 * Affichage des nourritures
+	 */
+	
 	private void printFood(Graphics g2, int taille) {
 		for(Iterator<Item> it= items.values().iterator();it.hasNext(); ) {
 				Item val2 = it.next();
 				g2.drawImage(val2.getImage(),val2.getPosition().getX()*taille+1,val2.getPosition().getY()*taille+1, taille-1, taille-1, null);
 		}
 	}
+	
+	/**
+	 * Affichage des bêtes
+	 */
 	
 	private void printBeast(Graphics g2, int taille) {
 		
@@ -123,8 +144,9 @@ public class GridPanel extends JPanel implements Runnable {
 	}
 	
 	
-	
-	
+	/**
+	 * Déplacement de toute les bêtes
+	 */
 	
 	@Override
 	public void run() {
@@ -145,7 +167,6 @@ public class GridPanel extends JPanel implements Runnable {
 			catch(InterruptedException e) {
 				System.out.println("erreur");
 			}
-//			Thread.currentThread().interrupt();
 		}	
 		
 		

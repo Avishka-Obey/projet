@@ -1,5 +1,10 @@
 package process;
 
+/**
+ * Cette classe permet la construction de tous les objets ainsi que la grille
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
+
 import data.*;
 import java.awt.Image;
 import java.io.File;
@@ -9,9 +14,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import javax.imageio.ImageIO;
-
-
-
 
 public class GridConstructor {
 	
@@ -44,6 +46,10 @@ public class GridConstructor {
 		Beast.initName();		
 	}
 	
+	/**
+	 * Initialisation des images des bêtes dans une ArrayList
+	 */
+	
 	public void showBeast() {
 		al.add("src/images/scorpion.png");
 		al.add("src/images/blue.png");
@@ -67,6 +73,10 @@ public class GridConstructor {
 		al.add("src/images/yellow.png");
 	}
 	
+	/**
+	 * Initialisation des images des environnements dans une ArrayList
+	 */
+	
 	public void showEnvironment() {
 		env.add("src/images/desert.png");
 		env.add("src/images/mountain.png");
@@ -77,6 +87,10 @@ public class GridConstructor {
 		em.put(1, "Mountain");
 		em.put(2, "Forest");
 	}
+	
+	/**
+	 * Initialisation des images des nourritures dans une ArrayList
+	 */
 	
 	public void showFood() {
 		array.add("src/images/spider.png");
@@ -94,6 +108,10 @@ public class GridConstructor {
 		fm.put(4, "Mosquito");
 		fm.put(5, "Bay");
 	}
+	
+	/**
+	 * Création des bêtes
+	 */
 	
 	public void initBeasts(int i, int rdm) {
 	
@@ -124,6 +142,12 @@ public class GridConstructor {
 		return this.beasts;
 	}
 
+	/**
+	 * Lit une image à partir d'un fichier image
+	 * filePath est le chemin (depuis"src") du fichier image
+	 * retourne le fichier image
+	 */
+	
 	public static Image readImage(String filePath) {
 		try {
 			return ImageIO.read(new File(filePath));
@@ -132,6 +156,10 @@ public class GridConstructor {
 			return null;
 		}
 	}
+	
+	/**
+	 * Création des nourritures
+	 */
 									
 	public void initFoods(int i, int rdm) {
 		while(nbFood<i) {
@@ -151,6 +179,10 @@ public class GridConstructor {
 		return this.foods;
 	}
 
+	/**
+	 * Création des environnements
+	 */
+	
 	public void initEnvironments(int i, int rdm) {
 		while(nbEnvironment<i) {
 			Position pos = new Position((int)(Math.random() * rdm),(int)(Math.random() * rdm));

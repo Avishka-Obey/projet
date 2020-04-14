@@ -1,5 +1,9 @@
 package data;
 
+/**
+ * Cette classe represente l'environnement qui est un objet de la grille
+ * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
+ */
 import java.awt.Image;
 import java.util.HashMap;
 import java.util.Random;
@@ -11,12 +15,21 @@ public class Environment implements Item{
 	private Image image;
 	private Position pos;
 	
+	/**
+	 * Ce constructeur a été créer uniquement pour les tests en console
+	 */
+	
 	public Environment() {
 		hm = new HashMap<Integer, String> ();
 		initEnvironment();
 		randomEnvironment();
 		
 	}
+	
+	/**
+	 *Dans l'Interface graphique chaque objet sera déterminé par une image ainsi qu'une position
+	 *Ce constructeur attribue un type d'environnement, une image et une position à l'objet
+	 */
 	
 	public Environment(String type,Image image, Position pos) {
 		hm = new HashMap<Integer, String> ();
@@ -36,6 +49,10 @@ public class Environment implements Item{
 		return "environnement";
 	}
 	
+	/**
+	 *Initialisation des différents environnements dans une HashMap
+	 */
+	
 	public void initEnvironment() {
 		hm.put(0, "Desert");
 		hm.put(1, "Mountain");
@@ -48,6 +65,10 @@ public class Environment implements Item{
 		n = rm.nextInt(3);
 		return n;
 	}
+	
+	/**
+	 *Cette méthode renvoie un environnement aléatoirement
+	 */
 	
 	public void randomEnvironment() {
 		type = hm.get(Random());
@@ -73,48 +94,5 @@ public class Environment implements Item{
 		String texte="";
 		texte+=" type: " + getType() + " Position :" + getPosition();
 		return texte;
-	}
-	
-	
-	
-	public static void main(String [] args) {
-		Environment env = new Environment();
-		env.initEnvironment();
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
-		
-		env.randomEnvironment();
-		System.out.println(env.getType());
 	}
 }
