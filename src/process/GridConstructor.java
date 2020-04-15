@@ -29,6 +29,7 @@ public class GridConstructor {
 	private int nbEnvironment;
 	private ArrayList<Beast> beasts;
 	private ArrayList<Food> foods;
+	private ArrayList<Environment> environments;
 	private ArrayList<String> positions;
 	
 	
@@ -38,12 +39,14 @@ public class GridConstructor {
 		nbEnvironment=0;
 		beasts = new ArrayList<Beast>();
 		foods = new ArrayList<Food>();
+		environments = new ArrayList<Environment>();
 		showBeast();
 		showFood();
 		showEnvironment();
 		selectFood();
 		selectEnvironment();
-		Beast.initName();		
+		Beast.initName();
+		Beast.initBaby();
 	}
 	
 	/**
@@ -141,6 +144,10 @@ public class GridConstructor {
 	public ArrayList<Beast> getBeasts(){
 		return this.beasts;
 	}
+	
+	public ArrayList<Environment> getEnvironments(){
+		return this.environments;
+	}
 
 	/**
 	 * Lit une image à partir d'un fichier image
@@ -190,8 +197,8 @@ public class GridConstructor {
 				int rnds = (int) (Math.random() * em.size());
 				String type = em.get(rnds);
 			//	System.out.println(type);
-				Environment	e = new Environment(type,readImage(env.get(rnds)), pos);
-				items.put(e.getPosition().toString(), e);
+				environments.add(new Environment(type,readImage(env.get(rnds)), pos));
+				items.put(environments.get(nbEnvironment).getPosition().toString(), environments.get(nbEnvironment));
 				nbEnvironment++;
 			//	System.out.println(e);
 			}	

@@ -9,7 +9,7 @@ import data.*;
 
 public class Eating {
 	
-	public static String evolution(Beast s, Food f) {
+public static String evolution(Beast s, Food f) {
 		
 		if(f.getTypeFood() == "Spider") {
 			System.out.println(s);
@@ -19,7 +19,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
-			return "Araignée et a amélioré sa force";
+			return "Araignée et ça a amélioré ma force";
 		}
 		
 		else if(f.getTypeFood() == "Mouse") {
@@ -31,7 +31,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
-			return "Souris et a amélioré son inteligence";
+			return "Souris et ça a amélioré mon inteligence";
 		}
 		
 		else if(f.getTypeFood() == "Lizard") {
@@ -43,7 +43,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
-			return "Lézard et a amélioré son agilité";
+			return "Lézard et ça a amélioré mon agilité";
 		}
 		
 		else if(f.getTypeFood() == "Snake") {
@@ -55,7 +55,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
-			return "Serpent et a amélioré sa folie";
+			return "Serpent et ça a amélioré ma folie";
 		}
 		
 		else if(f.getTypeFood() == "Mosquito") {
@@ -67,7 +67,7 @@ public class Eating {
 				s.getEnergy().increment();
 			}
 			System.out.println(s);
-			return "Moustique et a amélioré sa vitesse";
+			return "Moustique et ça a amélioré ma vitesse";
 		}
 		
 		else if(f.getTypeFood() == "Bay") {
@@ -102,13 +102,12 @@ public class Eating {
 			
 			System.out.println(s);
 			
-			return "Baie et a fait descendre de 1 toutes ses capacités";
+			return "Baie et ça m'a fait descendre de 1 toutes mes capacités";
 		}
 		
 		return "";
 		
 	}
-	
 	public static void main (String[] args) {
 		
 		Beast s = new Beast();

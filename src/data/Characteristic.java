@@ -86,33 +86,43 @@ public class Characteristic {
 		int mini = tab[0];
 		
 		if(mini == getAgility()) {
-			mini += 3;
-			setAgility(mini);
-			System.out.println("\nAgility has been changed");
+			if(getAgility()<7) {
+				mini += 3;
+				setAgility(mini);
+				System.out.println("\nAgility has been changed");
+			}
 		}
 		
 		else if(mini == getVelocity()) {
-			mini += 3;
-			setVelocity(mini);
-			System.out.println("\nVelocity has been changed");
+			if(getVelocity()<7) {
+				mini += 3;
+				setVelocity(mini);
+				System.out.println("\nVelocity has been changed");
+			}
 		}
 		
 		else if(mini == getMadness()) {
-			mini += 3;
-			setMadness(mini);
-			System.out.println("\nMadness has been changed");
+			if(getMadness()<7) {
+				mini += 3;
+				setMadness(mini);
+				System.out.println("\nMadness has been changed");
+			}
 		}
 		
 		else if(mini == getIntelligence()) {
-			mini += 3;
-			setIntelligence(mini);
-			System.out.println("\nIntelligence has been changed");
+			if(getIntelligence()<7) {
+				mini += 3;
+				setIntelligence(mini);
+				System.out.println("\nIntelligence has been changed");
+			}
 		}
 		
 		else if(mini == getStrength()) {
-			mini += 3;
-			setStrength(mini);
-			System.out.println("\nStrength has been changed");
+			if(getStrength()<7) {
+				mini += 3;
+				setStrength(mini);
+				System.out.println("\nStrength has been changed");
+			}
 		}
 	}
 	

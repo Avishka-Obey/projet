@@ -26,6 +26,8 @@ public class Beast implements Item{
 //	private InterfaceChoice ic ;
 	private Position initPosition ;
 	private String marriedWith;
+	public static ArrayList<String> img = new ArrayList<String>();
+	private String str;
 	
 	/**
 	 * Ce constructeur ne prend aucun argument en paramètre car il est
@@ -176,7 +178,35 @@ public class Beast implements Item{
 	public String getName() {
 		return this.name;
 	}
+	public static void initBaby() {
+		img.add("src/images/bludeaux.png");
+		img.add("src/images/blurange.png");
+		img.add("src/images/browdeaux.png");
+		img.add("src/images/gred.png");
+		img.add("src/images/grink.png");
+		img.add("src/images/liblue.png");
+		img.add("src/images/librown.png");
+		img.add("src/images/ligray.png");
+		img.add("src/images/ligreen.png");
+		img.add("src/images/pirange.png");
+		img.add("src/images/purnude.png");
+		img.add("src/images/purpblue.png");
+		img.add("src/images/purpeen.png");
+		img.add("src/images/purpink.png");
+		img.add("src/images/roudeaux.png");
+		img.add("src/images/yellown.png");
+		img.add("src/images/yelrange.png");
+		img.add("src/images/yelray.png");
+		img.add("src/images/yelred.png");
+		img.add("src/images/yewleen.png");
+	}
 	
+	public String randomBaby() {
+		int rnd = (int) (Math.random() * img.size());
+		str = img.get(rnd);
+		img.remove(rnd);
+		return str;
+	}
 		
 	
 	public int getAge() {
@@ -248,17 +278,17 @@ public class Beast implements Item{
 	 */
 	
 	public Beast reproduce(Beast scorpio1) {
-			Beast s = new Beast(GridConstructor.readImage("src/images/roudeaux.png"), new Position(pos.getX(),pos.getY())) ;
-			s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
-			s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
-			s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
-			s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
-			s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
-			s.getAnt().setLove(this.getAnt().getLove());
-			s.getAnt().setSmell(scorpio1.getAnt().getSmell());
-			s.getAnt().setVision(this.getAnt().getVision());
-			s.getEnvironment();
-			return s;		
+		Beast s = new Beast(GridConstructor.readImage(randomBaby()), new Position(pos.getX(),pos.getY())) ;
+		s.getCharacteristic().setAgility(scorpio1.getCharacteristic().getAgility());
+		s.getCharacteristic().setIntelligence(this.getCharacteristic().getIntelligence());
+		s.getCharacteristic().setMadness(scorpio1.getCharacteristic().getMadness());
+		s.getCharacteristic().setStrength(this.getCharacteristic().getStrength());
+		s.getCharacteristic().setVelocity(scorpio1.getCharacteristic().getVelocity());
+		s.getAnt().setLove(this.getAnt().getLove());
+		s.getAnt().setSmell(scorpio1.getAnt().getSmell());
+		s.getAnt().setVision(this.getAnt().getVision());
+		s.getEnvironment();
+		return s;		
 	}
 	
 //	public void move(Beast,Map) {

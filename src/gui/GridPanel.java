@@ -40,7 +40,7 @@ public class GridPanel extends JPanel implements Runnable {
 		this.setSize(1200,700);
 		grid = new GridConstructor();
 		items = grid.getItems();
-		sim = new Simulation(items,grid.getBeasts(),grid.getFoods());
+		sim = new Simulation(items,grid.getBeasts(), grid.getFoods(), grid.getEnvironments());
 		grid.initBeasts(i, rdm);
 		grid.initFoods(j, rdm);
 		grid.initEnvironments(k, rdm);
