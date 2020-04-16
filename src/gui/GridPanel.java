@@ -154,9 +154,25 @@ public class GridPanel extends JPanel implements Runnable {
 			try {
 				if(!stop && this.round.getCompteurRound()>0) {
 					for(int j=0;j<GridConstructor.nbScorpion;j++) {
-						int i =(int)(Math.random()*4+1);
-						Move.move(grid.getBeasts().get(j), i, rdm);
-						 System.out.println(grid.getBeasts().get(j));	
+						
+						if(grid.getBeasts().get(j).getAnt().getSmell()>=6) {
+							if(grid.getFoods().size() != 0) {
+								
+								Choice.choice(grid.getBeasts().get(j), grid.getFoods().get(grid.getFoods().size()-1), rdm);
+							}
+							
+							else {
+								int i =(int)(Math.random()*4+1);
+								Move.move(grid.getBeasts().get(j), i, rdm);
+//								System.out.println(grid.getBeasts().get(j));
+							}
+						}
+							
+						else {
+							int i =(int)(Math.random()*4+1);
+							Move.move(grid.getBeasts().get(j), i, rdm);
+//							System.out.println(grid.getBeasts().get(j));
+						}
 					}
 					this.repaint() ;
 					Thread.sleep(500);
@@ -167,9 +183,7 @@ public class GridPanel extends JPanel implements Runnable {
 			catch(InterruptedException e) {
 				System.out.println("erreur");
 			}
-		}	
-		
-		
+		}
 	}
 	
 

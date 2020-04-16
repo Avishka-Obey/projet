@@ -98,7 +98,7 @@ public class Beast implements Item{
 
 	public static void initName() {
 		nm = new ArrayList <String> ();
-		nm.add("Georges");
+		nm.add("Tieks");
 		nm.add("Michel");
 		nm.add("Gertrude");
 		nm.add("Morcef");
@@ -126,35 +126,35 @@ public class Beast implements Item{
 		nm.add("Liberty");
 		nm.add("Fanta");
 		
-		nm.add("Jacquline");
-		nm.add("Issaq");
-		nm.add("Antoine");
-		nm.add("Benjamin");
-		nm.add("Lou");
-		nm.add("Logane");
-		nm.add("Mattieu");
-		nm.add("Christophe");
+		nm.add("Mg");
+		nm.add("Zozo");
+		nm.add("Slavisky");
+		nm.add("Firat");
+		nm.add("Crousty");
+		nm.add("King");
+		nm.add("Bengalawa");
+		nm.add("Dengala");
 		nm.add("Ad");
 		nm.add("Vivi");
-		nm.add("Charlie");
-		nm.add("Vanessa");
-		nm.add("Julie");
-		nm.add("Megane");
+		nm.add("Pums");
+		nm.add("Faco");
+		nm.add("Moudji");
+		nm.add("Grizzly");
 		
-		nm.add("00");
-		nm.add("01");
-		nm.add("02");
-		nm.add("03");
-		nm.add("004");
-		nm.add("009");
-		nm.add("0009");
-		nm.add("1234");
-		nm.add("6666");
-		nm.add("5667");
-		nm.add("667890");
-		nm.add("09876");
-		nm.add("4567");
-		nm.add("23456");
+		nm.add("Brasco");
+		nm.add("Fox");
+		nm.add("Trunk");
+		nm.add("Binks");
+		nm.add("Perche");
+		nm.add("Boms");
+		nm.add("Karel");
+		nm.add("Sose");
+		nm.add("Bulls");
+		nm.add("Medusa");
+		nm.add("Bousko");
+		nm.add("Wolf");
+		nm.add("Ous");
+		nm.add("Issou");
 		
 		
 	}

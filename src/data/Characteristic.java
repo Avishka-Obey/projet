@@ -89,7 +89,7 @@ public class Characteristic {
 			if(getAgility()<7) {
 				mini += 3;
 				setAgility(mini);
-				System.out.println("\nAgility has been changed");
+//				System.out.println("\nAgility has been changed");
 			}
 		}
 		
@@ -97,7 +97,7 @@ public class Characteristic {
 			if(getVelocity()<7) {
 				mini += 3;
 				setVelocity(mini);
-				System.out.println("\nVelocity has been changed");
+//				System.out.println("\nVelocity has been changed");
 			}
 		}
 		
@@ -105,7 +105,7 @@ public class Characteristic {
 			if(getMadness()<7) {
 				mini += 3;
 				setMadness(mini);
-				System.out.println("\nMadness has been changed");
+//				System.out.println("\nMadness has been changed");
 			}
 		}
 		
@@ -113,7 +113,7 @@ public class Characteristic {
 			if(getIntelligence()<7) {
 				mini += 3;
 				setIntelligence(mini);
-				System.out.println("\nIntelligence has been changed");
+//				System.out.println("\nIntelligence has been changed");
 			}
 		}
 		
@@ -121,7 +121,7 @@ public class Characteristic {
 			if(getStrength()<7) {
 				mini += 3;
 				setStrength(mini);
-				System.out.println("\nStrength has been changed");
+//				System.out.println("\nStrength has been changed");
 			}
 		}
 	}

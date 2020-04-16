@@ -123,7 +123,7 @@ public class OpenGame extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object Button = e.getSource();
 		if (Button == start) {
-			System.out.println("Start");
+//			System.out.println("Start");
 			
 			Interface.p.width = 600-(600%(int)taille1.getSelectedItem());
 			Interface.p.taille = 600/(int)taille1.getSelectedItem();

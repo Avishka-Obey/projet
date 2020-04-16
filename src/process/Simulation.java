@@ -160,8 +160,8 @@ public class Simulation {
 						}
 						
 						
-						System.out.println(naissance);
-						System.out.println("nouveau né "+naissance.getName());
+//						System.out.println(naissance);
+//						System.out.println("nouveau né "+naissance.getName());
 						mort.put(naissance.getName(), naissance.toString() + "\n\nBonjour ! Je m'appelle " + naissance.getName() +  " et je suis né(e) au tour n°" + Round.actuel + "\nJe suis l'enfant de " + beasts.get(q).getName() + " et " + beasts.get(p).getName() + "\n\n");
 						Interface.numberAlive++;
 						marriedPos.add(currentposBeast2);
