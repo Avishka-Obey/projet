@@ -9,6 +9,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -74,7 +75,7 @@ public class OpenGame extends JFrame implements ActionListener {
 			taille1.addItem(f);
 		}
 		
-		for(int i = 1; i<21; i++) {
+		for(int i = 2; i<21; i++) {
 			bete1.addItem(i);
 		}
 		
@@ -124,21 +125,41 @@ public class OpenGame extends JFrame implements ActionListener {
 		Object Button = e.getSource();
 		if (Button == start) {
 //			System.out.println("Start");
-			
-			Interface.p.width = 600-(600%(int)taille1.getSelectedItem());
-			Interface.p.taille = 600/(int)taille1.getSelectedItem();
-			Interface.p.rdm = (int)taille1.getSelectedItem();
-			Interface.nbRound = (int)tour1.getSelectedItem();
-			Interface.tt = new JLabel("Nombre tour total : " + (int)tour1.getSelectedItem());
-			Interface.nsub = new JLabel("Nombre de subsistances : " + (int)nourriture1.getSelectedItem());
-			Interface.nbfood = (int)nourriture1.getSelectedItem();
-			Interface.numberAlive = (int)bete1.getSelectedItem();
-			Interface.bv = new JLabel("Nombre de bete vivante : " + Interface.numberAlive);
-			Interface.numberDead = 0;
-			Interface.bm = new JLabel("Nombre de bete morte : " + Interface.numberDead);
-			Interface.p = new GridPanel((int)bete1.getSelectedItem(), (int)nourriture1.getSelectedItem(), (int)environnement1.getSelectedItem(), (int)taille1.getSelectedItem());
-			new Interface();
-			dispose();
+			if((int)bete1.getSelectedItem() + (int)nourriture1.getSelectedItem() + (int)environnement1.getSelectedItem() <= (int)taille1.getSelectedItem()*(int)taille1.getSelectedItem() ) {
+				Interface.p.width = 600-(600%(int)taille1.getSelectedItem());
+				Interface.p.taille = 600/(int)taille1.getSelectedItem();
+				Interface.p.rdm = (int)taille1.getSelectedItem();
+				Interface.nbRound = (int)tour1.getSelectedItem();
+				Interface.tt = new JLabel("Nombre tour total : " + (int)tour1.getSelectedItem());
+				Interface.nsub = new JLabel("Nombre de subsistances : " + (int)nourriture1.getSelectedItem());
+				Interface.nbfood = (int)nourriture1.getSelectedItem();
+				Interface.numberAlive = (int)bete1.getSelectedItem();
+				Interface.bv = new JLabel("Nombre de bete vivante : " + Interface.numberAlive);
+				Interface.numberDead = 0;
+				Interface.bm = new JLabel("Nombre de bete morte : " + Interface.numberDead);
+				Interface.p = new GridPanel((int)bete1.getSelectedItem(), (int)nourriture1.getSelectedItem(), (int)environnement1.getSelectedItem(), (int)taille1.getSelectedItem());
+				new Interface();
+				dispose();
+			}
+			else {
+				JFrame jf = new JFrame();
+				JLabel error = new JLabel("TROP D'ÉLÉMENTS DANS LA GRILLE !!!");
+				JLabel again = new JLabel("VEUILLEZ RÉESSAYER AVEC MOINS D'ÉLÉMENTS");
+				error.setFont(new java.awt.Font(Font.SERIF,Font.BOLD,24));
+				again.setFont(new java.awt.Font(Font.SERIF,Font.BOLD,24));
+				
+				JPanel container = new JPanel();
+				container.setLayout(new GridLayout(2,1));
+				container.add(error);
+				container.add(again);
+				
+				jf.add(container);
+				jf.setSize(625, 200) ;
+				jf.setVisible(true);
+				jf.setResizable(false);
+				jf.setLocationRelativeTo(null);
+				jf.setLocationRelativeTo(null);
+			}
 		}
 	}
 	
@@ -178,9 +199,7 @@ public class OpenGame extends JFrame implements ActionListener {
 		}
 	}
 
-	public static void main(String[] args) {
-		new OpenGame();
-	}
+	
 	
 	
 }

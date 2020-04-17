@@ -64,10 +64,6 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 	private int ord;
 	Thread tred;
 	
-		
-	public static void main (String[]args) {
-		 new Interface();	
-	}
 	
 	public Interface() {
 		build();
@@ -149,7 +145,6 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 		panOuest.add(bm);
 		nsub.setFont(new java.awt.Font(Font.SERIF,Font.BOLD,24));
 		panOuest.add(nsub);
-//		panOuest.add(tecG);
 		pan.add(panOuest, BorderLayout.WEST);
 		
 		this.setContentPane(pan);
@@ -179,9 +174,13 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(e.getX()>384 && e.getX()<984 && e.getY()>36 && e.getY()<636) {
-			x = e.getX()-384;
-			y = e.getY()-36;
+		if(e.getX()>314 && e.getX()<913 && e.getY()>35 && e.getY()<633) {
+			x = e.getX()-314;
+			y = e.getY()-35;
+		/*System.out.println(e.getX());
+		System.out.println(e.getY());
+		*/
+		
 			
 			for(int i = 0; i<p.sim.beasts.size();i++) {
 				abs = Simulation.beasts.get(i).getPosition().getX()*p.taille;

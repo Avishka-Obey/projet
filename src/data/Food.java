@@ -25,6 +25,12 @@ public class Food implements Item{
 		initFood();
 	}
 	
+	public Food(Position pos) {
+		hm = new HashMap<Integer, String> ();
+		initFood();
+		this.pos=pos;
+	}
+	
 	/**
 	 *Dans l'Interface graphique chaque objet sera déterminé par une image ainsi qu'une position
 	 *Ce constructeur attribue un type de nourriture, une image et une position à l'objet

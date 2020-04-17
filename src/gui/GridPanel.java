@@ -155,7 +155,7 @@ public class GridPanel extends JPanel implements Runnable {
 				if(!stop && this.round.getCompteurRound()>0) {
 					for(int j=0;j<GridConstructor.nbScorpion;j++) {
 						
-						if(grid.getBeasts().get(j).getAnt().getSmell()>=6) {
+						if(grid.getBeasts().get(j).getAnt().getSmell()>=20) {
 							if(grid.getFoods().size() != 0) {
 								
 								Choice.choice(grid.getBeasts().get(j), grid.getFoods().get(grid.getFoods().size()-1), rdm);

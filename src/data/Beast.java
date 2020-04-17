@@ -30,7 +30,7 @@ public class Beast implements Item{
 	private String str;
 	
 	/**
-	 * Ce constructeur ne prend aucun argument en paramètre car il est
+	 * Les 2 constructeurs ne prennne aucun arguments en paramètres car ils sont
 	 * seulement utiliser pour tester nos méthodes dans la console
 	 */
 	
@@ -44,6 +44,18 @@ public class Beast implements Item{
 		this.choice = new Antenna();
 		this.marriedWith = null;
 		
+	}
+	
+	public Beast(Position pos) {
+		randomName();
+		this.age = 0; 
+		randomGender();
+		this.energybar = new EnergyBar(20);
+		this.charater = new Characteristic();
+		this.env = new Environment();
+		this.choice = new Antenna();
+		this.pos = pos;
+		this.marriedWith = null;
 	}
 	
 	/**

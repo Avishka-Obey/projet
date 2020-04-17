@@ -1,18 +1,15 @@
-package process;
+package Unit;
 
-/**
- * Cette classe permet aux bêtes de se déplacer
- * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
- */
+import static org.junit.jupiter.api.Assertions.*;
 
-import data.*;
+import org.junit.jupiter.api.Test;
 
-public class Move {
+import data.Beast;
+import data.Item;
+import data.Position;
+import process.Move;
 
-	public Move() {
-
-	}
-	
+class MoveTest {
 	public static void move(Item b,int code, int rdm) {
 		if(code==1 && b.getPosition().getX()>0) {  // a gauche
 			b.getPosition().setX(b.getPosition().getX()-1);
@@ -28,14 +25,8 @@ public class Move {
 			b.getPosition().setY(b.getPosition().getY()+1);
 		}
 	}
-	
-	/**
-	 * Ce main est présent afin de tester dans la console que selon le code transmis aleatoirement
-	 *  la bête se deplace bien vers la direction choisit.
-	 */
-
-	
-	public static void main(String[] args) {
+	@Test
+	void test() {
 		Beast.initName();
 		int random;
 		Position pos = new Position(3, 4);
@@ -68,4 +59,6 @@ public class Move {
 		}
 	}
 	
+	
+
 }

@@ -1,11 +1,15 @@
-package process;
-/**
- * Cette classe represente le systeme d'antenne
- * @author cerini.enzo@gmail.com avishka2007@gmail.com rayane.dendoune@gmail.com 
- */
-import data.*;
+package Unit;
 
-public class Choice {
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import data.Beast;
+import data.Food;
+import data.Position;
+import process.Choice;
+
+class ChoiceTest {
 	private static Beast a  ;
 	private static Food b;
 	private static int aX;
@@ -13,11 +17,7 @@ public class Choice {
 	private static int bX;
 	private static int bY;
 	
-	public Choice(Beast a, Food b ) {
-		this.a = a ;
-		this.b =  b;	
-	}
-	
+
 	/**
 	 * Cette méthode permet le déplacement de la bête vers la nourriture
 	 */
@@ -49,12 +49,11 @@ public class Choice {
 			}
 		}
 	}
-	/**
-	 * Ce main est présent afin de tester dans la console que notre bête
-	 * se deplace bien vers une nourriture precise
-	 */
 	
-	public static void main(String[] args) {
+
+	
+	@Test
+	void test() {
 		Beast.initName();
 		Position pos1 = new Position(3,4);
 		Position pos2 = new Position(6,9);
@@ -66,4 +65,6 @@ public class Choice {
 		}
 		
 	}
-}
+	}
+
+
