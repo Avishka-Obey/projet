@@ -83,7 +83,7 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 		setLocationRelativeTo(null);
 		pan.setLayout(new BorderLayout());
 		
-		addFood = new JButton("add food");	
+		addFood = new JButton("Add Food");	
 		addFood.addActionListener(this);
 		addFood.setEnabled(false);
 		stop  = new JButton ("Stop");
