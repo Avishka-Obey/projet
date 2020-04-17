@@ -24,6 +24,9 @@ import java.util.Iterator;
 
 import javax.swing.*;
 
+import data.Food;
+import data.Position;
+
 
 public class Interface extends JFrame implements ActionListener, MouseListener {
 	
@@ -45,6 +48,8 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 	
 	public static JComboBox js = new JComboBox();
 	private JButton ok;
+	
+	private JButton addFood;
 	
 	private JButton start;
 	private JButton stop;
@@ -78,6 +83,9 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 		setLocationRelativeTo(null);
 		pan.setLayout(new BorderLayout());
 		
+		addFood = new JButton("add food");	
+		addFood.addActionListener(this);
+		addFood.setEnabled(false);
 		stop  = new JButton ("Stop");
 		stop.addActionListener(this);
 		start = new JButton("Start");
@@ -98,6 +106,7 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 		panCenter.add(p);
 		panCenter.add(start);
 		panCenter.add(stop);
+		panCenter.add(addFood);
 		pan.add(panCenter, BorderLayout.CENTER);
 		
 		panNord.setMinimumSize(new Dimension(0,0));
@@ -203,12 +212,14 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 		if (Button == start) {
 			
 			GridPanel.stop = false;
+			addFood.setEnabled(true);
 			
 		}
 		
 		if (Button==stop) {
 			
 			GridPanel.stop = true;
+			addFood.setEnabled(false);
 		}
 		
 		if(Button==ok) {
@@ -222,6 +233,21 @@ public class Interface extends JFrame implements ActionListener, MouseListener {
 			jf.setLocationRelativeTo(null);
 			jf.setLocationRelativeTo(null);
 			
+		}
+		if(Button == addFood) {
+			boolean isPut=false;
+			while(!isPut && nbfood<(p.rdm*p.rdm)-numberAlive-2) {
+				Position pos = new Position((int)(Math.random() * p.rdm),(int)(Math.random() * p.rdm));
+				if( !p.grid.getItems().containsKey(pos.toString()) && !p.grid.positions.contains(pos.toString())) {
+					int random = (int) (Math.random() * p.grid.fm.size());
+					String typefood = p.grid.fm.get(random);
+					p.grid.foods.add(new Food(typefood,p.grid.readImage(p.grid.array.get(random)), pos));
+					p.grid.getItems().put(p.grid.foods.get(nbfood).getPosition().toString(), p.grid.foods.get(nbfood));
+					Interface.nbfood++;
+				//	System.out.println(f);
+					isPut=true;
+				}
+			}
 		}
 	}
 }

@@ -18,7 +18,7 @@ public class Round implements Runnable {
 	private int compteurRound ;
 	public static String str;
 	public static String atc;
-	
+
 	public Round(int i,ArrayList<Beast> beasts){
 		this.compteurRound =i;
 		this.beasts = beasts;

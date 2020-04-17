@@ -19,18 +19,18 @@ public class GridConstructor {
 	
 	
 	private ArrayList<String> al = new ArrayList<String>(20);
-	private ArrayList<String> array = new ArrayList<String>(30);
+	public static ArrayList<String> array = new ArrayList<String>(30);
 	private ArrayList<String> env = new ArrayList<String>(20);
 	private HashMap<String,Item> items;
-	private HashMap <Integer,String> fm = new HashMap<Integer,String>();
+	public static HashMap <Integer,String> fm = new HashMap<Integer,String>();
 	private HashMap <Integer,String> em = new HashMap<Integer,String>();
 	public static int nbScorpion=0;
-	private int nbFood=0;
+	public static int nbFood=0;
 	private int nbEnvironment;
 	private ArrayList<Beast> beasts;
-	private ArrayList<Food> foods;
+	public static ArrayList<Food> foods;
 	private ArrayList<Environment> environments;
-	private ArrayList<String> positions;
+	public static ArrayList<String> positions;
 	
 	
 	public GridConstructor() {

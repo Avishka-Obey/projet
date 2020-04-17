@@ -64,7 +64,7 @@ public class Simulation {
 					}
 				}
 			}
-			catch (Exception e) {
+			catch (Exception e) { 
 			      e.printStackTrace();
 			}
 		}

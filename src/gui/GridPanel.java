@@ -31,7 +31,7 @@ public class GridPanel extends JPanel implements Runnable {
 		
 	private static final long serialVersionUID = -541698616292452515L;
 	private HashMap<String,Item> items;
-	private GridConstructor grid;
+	public static GridConstructor grid;
 	public static boolean stop =true;
 	public static Round round;
 	
